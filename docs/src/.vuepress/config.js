@@ -54,6 +54,10 @@ module.exports = {
         text: "XLIX Escola de Verão MAT/UnB",
         link: "https://www.mat.unb.br/verao2021/verao/verao_pt.html",
       },
+      {
+        text: "Ecloud",
+        link: "https://ecloud.global/s/758fkTTNfjetfNd",
+      },
     ],
     sidebar: {
       "/guide/": [
