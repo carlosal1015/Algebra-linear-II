@@ -11,6 +11,24 @@ jobs:
   deploy_pages:
     runs-on: ubuntu-20.04
     steps:
+      - name: Partial Clone
+        shell: bash
+        run: |
+          REPO="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+          git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
+          git sparse-checkout set docs
+          git checkout
+          cd docs
+
+      - name: Yarn actions
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: |
+            install
+            src:build
+
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
         with:
@@ -21,10 +39,10 @@ jobs:
       - name: "Untar files"
         run: |
           tar -I zstd -xvf PDF.tar.zst
-          mv src/TeX/*.pdf docs/public
+          mv src/TeX/*.pdf docs/src/.vuepress/dist/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/public
+          publish_dir: docs/src/.vuepress/dist/

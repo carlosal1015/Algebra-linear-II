@@ -1,5 +1,7 @@
 # [Álgebra Linear II](https://moodle.mat.unb.br/20201)
 
+[![GitHub Super-Linter](https://github.com/carlosal1015/Algebra-linear-II/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 Um dos [cursos](https://www.mat.unb.br/verao2021/verao/verao_pt.html)
 de pós-graduação serão oferecidos na XLIX Escola de Verão do
 Departamento de Matemática da Universidade de Brasília.
