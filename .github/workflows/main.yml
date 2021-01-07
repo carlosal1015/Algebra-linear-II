@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "15.5.1"
-      - run: yarn install -cwd docs && pwd && ls -R
+      - run: echo $GITHUB_WORKSPACE && yarn install -cwd $GITHUB_WORKSPACE/docs && pwd && ls -R
       # - run: yarn src:build -cwd $GITHUB_REPOSITORY/Algebra-linear-II/docs
 
       - name: Download artifact
