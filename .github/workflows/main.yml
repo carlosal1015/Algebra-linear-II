@@ -24,8 +24,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "15.5.1"
-      - run: yarn install -cwd $GITHUB_REPOSITORY/docs
-      - run: yarn src:build -cwd $GITHUB_REPOSITORY/docs
+      - run: pwd #yarn install -cwd $GITHUB_REPOSITORY/docs
+      - run: ls -R #yarn src:build -cwd $GITHUB_REPOSITORY/docs
 
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2

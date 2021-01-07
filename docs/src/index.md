@@ -2,7 +2,7 @@
 home: true
 heroImage: https://v1.vuepress.vuejs.org/hero.png
 tagline: Notas das aulas de álgebra linear 2 na escola de verão.
-actionText: Quick Start →
+actionText: Começo rápido →
 actionLink: /guide/
 features:
 - title: Recurso 1 Título
