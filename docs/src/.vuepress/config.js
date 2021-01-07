@@ -40,12 +40,12 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: "Guide",
-        link: "/guide/",
+        text: "Aulas",
+        link: "/aulas/",
       },
       {
-        text: "Config",
-        link: "/config/",
+        text: "Videos",
+        link: "/videos/",
       },
       {
         text: "Moodle",
@@ -61,9 +61,9 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/guide/": [
+      "/aulas/": [
         {
-          title: "Guide",
+          title: "Aulas",
           collapsable: false,
           children: ["", "using-vue"],
         },

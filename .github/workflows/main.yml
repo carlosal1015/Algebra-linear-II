@@ -36,10 +36,10 @@ jobs:
       - name: "Untar files"
         run: |
           tar -I zstd -xvf PDF.tar.zst
-          mv src/TeX/*.pdf docs/src/.vuepress/dist/
+          mv src/TeX/*.pdf docs/src/.vuepress/dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/src/.vuepress/dist/
+          publish_dir: docs/src/.vuepress/dist
