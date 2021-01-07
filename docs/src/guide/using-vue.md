@@ -2,7 +2,7 @@
 
 ## Browser
 
-$\mathbb{F}$
+$\mathbb{F}$ é
 
 $$
 \frac{1}{2}\overline{x}
