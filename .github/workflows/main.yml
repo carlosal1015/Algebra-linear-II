@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "15.5.1"
-      - run: pwd #yarn install -cwd $GITHUB_REPOSITORY/docs
+      - run: yarn install -cwd $GITHUB_REPOSITORY/Algebra-linear-II/docs
       - run: ls -R #yarn src:build -cwd $GITHUB_REPOSITORY/docs
 
       - name: Download artifact
@@ -37,7 +37,8 @@ jobs:
       - name: "Untar files"
         run: |
           tar -I zstd -xvf PDF.tar.zst
-          mv src/TeX/*.pdf docs/src/.vuepress/dist/
+          ls -R
+          mv src/TeX/*.pdf $GITHUB_REPOSITORY/Algebra-linear-II/docs/src/.vuepress/dist/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
