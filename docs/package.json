@@ -1,0 +1,23 @@
+{
+  "name": "Algebra-linear-II",
+  "version": "0.0.1",
+  "description": "Notas das aulas de álgebra linear 2 na escola de verão.",
+  "main": "index.js",
+  "authors": {
+    "name": "Oromion",
+    "email": "caznaranl@uni.pe"
+  },
+  "repository": "https://github.com/carlosal1015/Algebra-linear-II/Algebra-linear-II",
+  "scripts": {
+    "src:dev": "vuepress dev src",
+    "src:build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "@maginapp/vuepress-plugin-katex": "^1.0.7",
+    "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
+  }
+}
