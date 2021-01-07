@@ -11,7 +11,7 @@ jobs:
         uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: carlosal1015/october-math
+          TARGET_REPO: carlosal1015/Algebra-linear-II
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: cd docs && yarn && yarn src:build
           BUILD_DIR: src/.vuepress/dist/
