@@ -14,4 +14,4 @@ jobs:
           TARGET_REPO: carlosal1015/october-math
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: cd docs && yarn && yarn src:build
-          BUILD_DIR: docs/.vuepress/dist/
+          BUILD_DIR: docs/src/.vuepress/dist/
