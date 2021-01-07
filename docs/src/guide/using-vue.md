@@ -5,7 +5,7 @@
 $\mathbb{F}$ é
 
 $$
-\frac{1}{2}\overline{x}
+\frac{1}{2}\overline{x}.
 $$
 
 Sistemas linears
