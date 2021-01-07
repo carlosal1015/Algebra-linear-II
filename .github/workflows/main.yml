@@ -20,14 +20,13 @@ jobs:
           git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
           git sparse-checkout set docs
           git checkout
-          cd docs
 
-      - name: Yarn actions
-        uses: borales/actions-yarn@v2.0.0
+      - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: |
-            install
-            src:build
+          cmd: install -cwd $GITHUB_REPOSITORY/docs
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: src:build -cwd $GITHUB_REPOSITORY/docs
 
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
