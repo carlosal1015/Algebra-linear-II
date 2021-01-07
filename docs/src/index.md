@@ -5,11 +5,11 @@ tagline: Notas das aulas de álgebra linear 2 na escola de verão.
 actionText: Quick Start →
 actionLink: /guide/
 features:
-- title: Feature 1 Title
-  details: Feature 1 Description
-- title: Feature 2 Title
-  details: Feature 2 Description
-- title: Feature 3 Title
-  details: Feature 3 Description
+- title: Recurso 1 Título
+  details: Recurso 1 Descrição
+- title: Recurso 2 Título
+  details: Recurso 2 Descrição
+- title: Recurso 3 Título
+  details: Recurso 3 Descrição
 footer: Feito por Oromion com ❤️
 ---

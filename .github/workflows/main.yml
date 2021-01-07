@@ -21,12 +21,11 @@ jobs:
           git sparse-checkout set docs
           git checkout
 
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: actions/setup-node@v2
         with:
-          cmd: install -cwd $GITHUB_REPOSITORY/docs
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: src:build -cwd $GITHUB_REPOSITORY/docs
+          node-version: "15.5.1"
+      - run: yarn install -cwd $GITHUB_REPOSITORY/docs
+      - run: yarn src:build -cwd $GITHUB_REPOSITORY/docs
 
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
