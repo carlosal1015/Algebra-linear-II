@@ -25,6 +25,7 @@ jobs:
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
+            apk add font-fira-code && fc-cache -fv
             cd src/TeX && lualatex main.tex #arara -v [ma]*.tex
 
       - name: Check pdf files
