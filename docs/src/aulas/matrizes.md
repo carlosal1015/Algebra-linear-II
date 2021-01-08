@@ -1,0 +1,3 @@
+---
+noGlobalSocialShare: true
+---

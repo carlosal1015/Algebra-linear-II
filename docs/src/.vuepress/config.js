@@ -1,5 +1,16 @@
 const { description } = require("../../package");
 
+const extendsNetworks = {
+  email: {
+    sharer: 'mailto:alex@mat.unb.br',
+    type: 'popup',
+    isPlain: true,
+  },
+  twitter: {
+    sharer: "https://t.me/joinchat/UtLfrvtie1G3qHLn",
+  },
+};
+
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -9,7 +20,7 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: description,
-  base: '/Algebra-linear-II/',
+  base: "/Algebra-linear-II/",
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -80,6 +91,12 @@ module.exports = {
     "@maginapp/vuepress-plugin-katex",
     {
       delimiters: "dollars",
+    },
+    "social-share",
+    {
+      networks: ["telegram", "whatsapp", "email"],
+      autoQuote: true,
+      extendsNetworks,
     },
   ],
 };

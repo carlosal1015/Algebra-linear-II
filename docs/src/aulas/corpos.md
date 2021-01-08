@@ -1,3 +1,6 @@
+---
+noGlobalSocialShare: true
+---
 # Corpos
 
 ## Browser

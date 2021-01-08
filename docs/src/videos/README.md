@@ -1,4 +1,5 @@
 ---
+noGlobalSocialShare: true
 sidebar: auto
 ---
 
