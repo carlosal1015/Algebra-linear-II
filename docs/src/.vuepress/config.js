@@ -65,7 +65,7 @@ module.exports = {
         {
           title: "Aulas",
           collapsable: false,
-          children: ["", "corpos", "sistemas-lineares"],
+          children: ["", "corpos", "sistemas-lineares", "matrizes"],
         },
       ],
     },

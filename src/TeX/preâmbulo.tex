@@ -28,12 +28,21 @@
 \usepackage{pdfpages}
 \usepackage{svg,graphicx}
 \usepackage{caption,subcaption}
+\usepackage[shortlabels]{enumitem}
 \graphicspath{ {img/} }
 
 \usepackage{background}
 \usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{bookmark}
+
+\usepackage{imakeidx}
+\makeindex[
+	columns=2,
+	title=Índice,
+	options= -s header.ist,
+	intoc
+]
 
 \usepackage[
   citestyle=numeric,
@@ -81,12 +90,13 @@
 }
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definição}
-\newtheorem{proposition}{Proposição}
-\newtheorem{example}{Exemplo}
-\newtheorem{exercise}{Exercício}
+\newtheorem{definition}{Definição}[chapter]
+\newtheorem{proposition}{Proposição}[chapter]
+\newtheorem{example}{Exemplo}[chapter]
+\newtheorem{exercise}{Exercício}[chapter]
 
 \newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
 
 \setkomafont{title}{\bfseries\sffamily\Huge\color{DarkBlue}}
 \setkomafont{subtitle}{\bfseries\sffamily\Large\color{DarkBlue}}

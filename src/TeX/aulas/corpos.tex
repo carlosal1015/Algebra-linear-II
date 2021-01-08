@@ -1,56 +1,92 @@
-\chapter{Corpos}
+\chapter{Corpos e Sistemas Lineares\quad$\left(06/01/2021\right)$}
 
 \begin{definition}[Corpo]
-	Um \emph{corpo} é um conjunto não vazio $\mathbb{F}$ munido de duas
-	operacões: adição mais e multiplicação
-	\[ +\colon\mathbb{F}\times\mathbb{F}\left(x,y\right)\mapsto x+y \]
-	\[ \cdot\colon\mathbb{F}\times\mathbb{F}\left(x,y\right)\mapsto x\cdot y \]
-	e tais que
-	\begin{enumerate}
-		\item[Asociatividade na adição]
 
-		      $\left(x+y\right)+z=x+\left(y+z\right)$, $\forall x,y,z\mathbb{F}$;
+	Um \index{corpo}\emph{corpo} é um conjunto não vazio $\mathbb{F}$
+	munido de duas operações: adição mais e multiplicação.
 
-		\item[Existênza de neutro aditivo]
+	\[
+		\begin{aligned}
+			+\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+			\left(x,y\right)                  & \longmapsto x+y
+		\end{aligned}\quad
+		\begin{aligned}
+			\cdot\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+			\left(x,y\right)                      & \longmapsto x\cdot y
+		\end{aligned}
+	\]
 
-		      $\exists0\in\mathbb{F}$ tal que $x+0=0+x=x$, $\forall x\in\mathbb{F}$;
+	e tais que en $\left(\mathbb{F},+\right)$
 
-		\item[Existênza de elemento oposto o inverso aditivo]
+	\begin{enumerate}[label={A\arabic*.},leftmargin=0em,itemindent=*]
+		\item\label{adição:1}
 
-		      Dado $x\in\mathbb{F}$, existe $-x\in\mathbb{F}$ tal que $x+\left(-x\right)=\left(-x\right)+x=0$.
+		      (Asociatividade na adição)
+		      $\left(x+y\right)+z=x+\left(y+z\right)$,
+		      $\forall x,y,z\in\mathbb{F}$;
 
-		\item[Conmutatividade na adição]
+		\item\label{adição:2}
 
+		      (Existênza de neutro aditivo)
+		      $\exists0\in\mathbb{F}$ tal que $x+0=0+x=x$,
+		      $\forall x\in\mathbb{F}$;
+
+		\item\label{adição:3}
+
+		      (Existênza de elemento oposto o inverso aditivo)
+		      Dado $x\in\mathbb{F}$, existe $-x\in\mathbb{F}$ tal que
+		      $x+\left(-x\right)=\left(-x\right)+x=0$.
+
+		\item\label{adição:4}
+
+		      (Conmutatividade na adição)
 		      $x+y=y+x$, $\forall x,y\in\mathbb{F}$;
 
-		\item[Associatividade na multiplicação]
+		\item\label{adição:5}
 
-		      $\left(x\cdot y\right)z=x\cdot\left(y\cdot z\right)$, $\forall x,y,z\in\mathbb{F}$;
+		      (Associatividade na multiplicação)
+					$\left(x\cdot y\right)z=x\cdot\left(y\cdot z\right)$,
+					$\forall x,y,z\in\mathbb{F}$;
+	\end{enumerate}
 
-		\item[Existênza do elemento neutro na multiplicação]
+	e $\left(\mathbb{F}\setminus\left\{0\right\},\cdot\right)$
 
+	\begin{enumerate}[label={M\arabic*.},leftmargin=0em,itemindent=*]
+		\item\label{multiplicação:1}
+
+		      (Existênza do elemento neutro na multiplicação)
 		      $\exists 1\in\mathbb{F}$ tal que $x\cdot 1=1\cdot x=x$, $\forall x\in\mathbb{F}$;
 
-		\item[Existênza inverso multiplicativo]
+		\item\label{multiplicação:2}
 
-		      Dado $x\in\mathbb{F}\setminus\left\{0\right\}$, existe $x^{-1}\in\mathbb{F}$ tal que $x\cdot x^{-1}=x^{-1}\cdot x=1$;
+		      (Existênza inverso multiplicativo)
+		      Dado $x\in\mathbb{F}\setminus\left\{0\right\}$,
+		      existe $x^{-1}\in\mathbb{F}$ tal que
+		      $x\cdot x^{-1}=x^{-1}\cdot x=1$;
 
-		\item[Conmutatividade na multiplicação]
+		\item\label{multiplicação:3}
 
+		      (Conmutatividade na multiplicação)
 		      $x\cdot y=y\cdot x$, $\forall x,y\in\mathbb{F}$.
 
-		\item[Distributiva]
+		\item\label{multiplicação:4}
 
-		      $x\cdot\left(y+z\right)=xy+xz$, $\forall x,y,z\in\mathbb{F}$.
+		      (Distributiva)
+		      $x\cdot\left(y+z\right)=xy+xz$,
+		      $\forall x,y,z\in\mathbb{F}$.
 	\end{enumerate}
 \end{definition}
 
 \begin{proposition}
-	$x\cot0=0$, $\forall x\in\mathbb{F}$.
+	$x\cdot0=0$, $\forall x\in\mathbb{F}$.
 \end{proposition}
 
+\begin{proof}
+	$x=0$
+\end{proof}
+
 \begin{example}
-	\begin{enumerate}
+	\begin{enumerate}\leavevmode
 		\item
 
 		      $\left(\mathbb{Z},+,\cdot\right)$ não é um corpo.
@@ -61,6 +97,8 @@
 
 		      $\left(\mathbb{Q},+,\cdot\right)$ é um corpo, onde
 		      $\mathbb{Q}=\left\{\frac{a}{b}\mid a,b\in\mathbb{Z},b\neq0\right\}$.
+		      $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$
+		      $\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
 
 		\item
 
@@ -68,10 +106,43 @@
 		      $\mathbb{C}=\left\{a+b\imath\mid a,b\in\mathbb{R},\text{ e }\imath^{2}=1\right\}$,
 		      $+\colon\left(a+b\imath\right)+\left(c+d\imath\right)=\left(a+c\right)+\left(b+d\right)\imath$
 		      $\cdot\colon\left(a+b\imath\right)\cdot\left(c+d\imath\right)=\left(ac-bd\right)+\left(ad+bc\right)\imath$.
+		      \begin{align*}
+			      \left(a+bi\right)\left(c+di\right)
+			       & =ac+adi+bci+bdi^{2}=                       \\
+			       & =ac+\left(-1\right)bd+\left(ad+bc\right)i= \\
+			       & =\left(ac-bd\right)+\left(ad+bc\right)i
+		      \end{align*}
+		      $\mathbb{C}$ é chamado del conjunto nos números complexos.
+		      Tome $a+bi\in\mathbb{C}\setminus\left\{0\right\}$
+		      $(0=0+0i)$.
+		      Assim
+		      \begin{align*}
+			      \left(a+bi\right)\left(a-bi\right)
+			       & =a^{2}+b^{2}+\left(ab-ba\right)i= \\
+			       & =a^{2}+b^{2} \neq 0               \\
+			      \left(a+bi\right)\left(a-bi\right)
+			      \left(a^{2}+b^{2}\right)^{-1}
+			       & =1
+		      \end{align*}
+		      Logo
+		      $$
+			      \left(a+bi\right)^{-1}=
+			      \frac{a}{a^{2}+b^{2}}-
+			      \frac{b}{a^{2}+b^{2}}i
+		      $$
 
 		\item
 
 		      $\left(\mathbb{Z}/p\mathbb{Z},+,\cdot\right)$ é um corpo, onde $\mathbb{Z}/p\mathbb{Z}=\left\{\overline{a}\mid \overline{a}\in\mathbb{Z}\right\}$.
+
+		      \[
+			      \mathbb{Z}/p\mathbb{Z}=
+			      \left\{\overline{a}/a\in\mathbb{Z}\right\}
+			      \overline{a}=
+			      \left\{a+pu/u\in\mathbb{Z}\right\}
+			      \neq0\leq a\leq p-1
+		      \]
+
 	\end{enumerate}
 \end{example}
 
@@ -87,6 +158,57 @@ $$
 	+\colon
 	\left(\overline{a}+\overline{b}\imath\right)+
 	\left(\overline{c}+\overline{d}\imath\right)=
+	\left(\overline{a}+\overline{c}\right)+
+	\left(\overline{b}+\overline{d}\right)i.
+	\cdot\colon
+	\left(\overline{a}+\overline{b}i\right)
+	\left(\overline{c}+\overline{d}i\right)=
+	\left(\overline{a}\cdot\overline{c}+\overline{2}\overline{b}d\right)+
+	\left(\overline{a}\overline{d}+\overline{b}\overline{c}\right)i
 $$
 %https://www.learn-portuguese-with-rafa.com/portuguese-keyboard-characters.html
 
+$\underbrace{1+\cdots+1}_{n}=0$
+
+\[
+	\begin{array}{l}
+		\left\{\begin{array}{l}
+			2 x+3 y=1 \\
+			x+4 y=2 .
+		\end{array}\right.                                                       \\
+		+\left\{\begin{array}{l}
+			2 x+3 y=1 \\
+			-2 x-8 y=-4
+		\end{array} \Rightarrow\left\{\begin{array}{l}
+			2 x+3 y=1 \\
+			-5 y=-3 \Rightarrow y=\frac{3}{5}
+		\end{array}\right.\right. \\
+		\begin{array}{l}
+			2 x+3 \cdot \frac{3}{5}=1 \\
+			2 x+\frac{9}{5}=1 \Rightarrow 2 x=-\frac{4}{5} \Rightarrow x=-\frac{2}{5}
+		\end{array}
+	\end{array}
+\]
+
+\[
+	\left\{\begin{array}{l}
+		\overline{2} x+\overline{2} y=\overline{1} \\
+		\overline{2} x+y=\overline{0}
+	\end{array}\right.
+\]
+
+\[
+	\left\{\begin{aligned}
+		\overline{2} x+\overline{2} y & =\overline{1} \\
+		r_{y}                         & =\bar{I}
+	\end{aligned}\right.
+\]
+
+\[
+	\begin{aligned}
+		\overline{2} x+\overline{2} \cdot I=1 \Rightarrow & 2 x=\overline{1}-\overline{2} \\
+		& \overline{2} x=-\overline{1} \\
+		& \overline{2} x=\overline{2} \\
+		& x=\overline{1}
+		\end{aligned}
+\]
