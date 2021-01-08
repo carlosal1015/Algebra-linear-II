@@ -1,9 +1,127 @@
-\documentclass{scrreprt}
+\documentclass[
+  fontsize=12pt,
+  pagesize,
+  paper=landscape,
+  a5,
+  DIV=calc,
+  headsepline,
+  footsepline,
+  abstract=true,
+  bibliography=totoc
+]{scrreprt}
+
+\usepackage[margin=.5cm]{geometry}
 
 \usepackage[brazilian]{babel}
-\usepackage{amsthm}
+\usepackage{csquotes}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmonofont{Fira Code}[Contextuals=Alternate]
+\setmainfont{TeX Gyre Pagella}
+
+\usepackage{mathtools,amssymb,amsthm}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[useregional]{datetime2}
+
+\usepackage{pdfpages}
+\usepackage{svg,graphicx}
+\usepackage{caption,subcaption}
+\graphicspath{ {img/} }
+
+\usepackage{background}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{bookmark}
+
+\usepackage[
+  citestyle=numeric,
+  style=numeric,
+  backend=biber,
+  maxnames=5,
+  minnames=3
+]{biblatex}
+
+\addbibresource{referências.bib}
+
+\usepackage{hyperref}
+
+\hypersetup{
+  pdfinfo={
+      Title={Álgebra linear~Verão 2021~Notas das aulas na escola},
+      Author={Alex Dantas et al.},
+      Keywords={corpos, sistemas lineares},
+      Subject={Álgebra linear},
+      Producer={TeXstudio 3.0.4 Using Qt Version 5.15.2},
+      Creator={LuaHBTeX, Version 1.12.0 (TeX Live 2020/Arch Linux)},
+    }
+  %	hyperref,
+  pdfencoding=auto,
+  linktocpage=true,
+  colorlinks=true,
+  linkcolor=NavyBlue,
+  urlcolor=magenta,
+  linktoc=all,
+  pdfpagelabels,
+  bookmarks=true,
+  unicode,
+  pdfborder = {0 0 0}
+  %	filecolor = red,
+}
+
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=.1,
+  contents={
+      \begin{tikzpicture}[remember picture,overlay]
+        \node at ([yshift=11pt,xshift=5pt]current page.center) {\includegraphics[width=8.5cm]{unb}};
+      \end{tikzpicture}}
+}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definição}
+\newtheorem{proposition}{Proposição}
+\newtheorem{example}{Exemplo}
+\newtheorem{exercise}{Exercício}
+
+\newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
+
+\setkomafont{title}{\bfseries\sffamily\Huge\color{DarkBlue}}
+\setkomafont{subtitle}{\bfseries\sffamily\Large\color{DarkBlue}}
+\setkomafont{author}{\bfseries\sffamily\large\color{DarkBlue}}
+\setkomafont{date}{\bfseries\sffamily\color{DarkBlue}}
+\setkomafont{chapter}{\LARGE\color{DarkBlue}}
+\setkomafont{section}{\Large\color{DarkBlue}}
+\setkomafont{subsection}{\large\color{DarkBlue}}
 
 \title{Álgebra Linear II}
-\author{aulas do professor Alex Dantas}
+
+\subtitle{
+  \href{https://www.mat.unb.br/verao2021/verao/verao_pt.html}{
+    XLIX Escola de Verão en Matemática da UnB
+  }
+}
+
+\titlehead{\Huge
+\[
+  J_{j}=
+  \begin{pmatrix}
+    \lambda_{j} & 1           &        &             & 0           \\
+                & \lambda_{j} & 1      &             &             \\
+                &             & \ddots & \ddots      &             \\
+                &             &        & \lambda_{j} & 1           \\
+    0           &             &        &             & \lambda_{j}
+  \end{pmatrix}
+  \in\mathbb{C}^{s_{j}\times s_{j}}.
+\]
+}
+
+\author{Aulas do professor Alex Carrazedo Dantas\thanks{alex\MVAt mat.unb.br}}
+
+\date{
+  Última modificação: \today{} às $\DTMcurrenttime$.
+  \\[\baselineskip]
+  \url{https://carlosal1015.github.io/Algebra-linear-II/main.pdf}
+}

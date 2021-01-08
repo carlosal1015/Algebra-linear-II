@@ -1,5 +1,72 @@
 \chapter{Corpos}
 
 \begin{definition}[Corpo]
-  Um \emph{corpo} é um conjunto.
+	Um \emph{corpo} é um conjunto não vazio $\mathbb{F}$ munido de duas
+	operacões: adição mais e multiplicação
+	\[ +\colon\mathbb{F}\times\mathbb{F}\left(x,y\right)\mapsto x+y \]
+	\[ \cdot\colon\mathbb{F}\times\mathbb{F}\left(x,y\right)\mapsto x\cdot y \]
+	e tais que
+	\begin{enumerate}
+		\item[Asociatividade na adição]
+
+		      $\left(x+y\right)+z=x+\left(y+z\right)$, $\forall x,y,z\mathbb{F}$;
+
+		\item[Existênza de neutro aditivo]
+
+		      $\exists0\in\mathbb{F}$ tal que $x+0=0+x=x$, $\forall x\in\mathbb{F}$;
+
+		\item[Existênza de elemento oposto o inverso aditivo]
+
+		      Dado $x\in\mathbb{F}$, existe $-x\in\mathbb{F}$ tal que $x+\left(-x\right)=\left(-x\right)+x=0$.
+
+		\item[Conmutatividade na adição]
+
+		      $x+y=y+x$, $\forall x,y\in\mathbb{F}$;
+
+		\item[Associatividade na multiplicação]
+
+		      $\left(x\cdot y\right)z=x\cdot\left(y\cdot z\right)$, $\forall x,y,z\in\mathbb{F}$;
+
+		\item[Existênza do elemento neutro na multiplicação]
+
+		      $\exists 1\in\mathbb{F}$ tal que $x\cdot 1=1\cdot x=x$, $\forall x\in\mathbb{F}$;
+
+		\item[Existênza inverso multiplicativo]
+
+		      Dado $x\in\mathbb{F}\setminus\left\{0\right\}$, existe $x^{-1}\in\mathbb{F}$ tal que $x\cdot x^{-1}=x^{-1}\cdot x=1$;
+
+		\item[Conmutatividade na multiplicação]
+
+		      $x\cdot y=y\cdot x$, $\forall x,y\in\mathbb{F}$.
+
+		\item[Distributiva]
+
+		      $x\cdot\left(y+z\right)=xy+xz$, $\forall x,y,z\in\mathbb{F}$.
+	\end{enumerate}
 \end{definition}
+
+\begin{proposition}
+	$x\cot0=0$, $\forall x\in\mathbb{F}$.
+\end{proposition}
+
+\begin{example}
+	\begin{enumerate}
+		\item
+
+		      $\left(\mathbb{Z},+,\cdot\right)$ não é um corpo.
+
+		      O seja el conjunto.
+
+		\item
+
+		      $\left(\mathbb{Q},+,\cdot\right)$ é um corpo, onde
+		      $\mathbb{Q}=\left\{\frac{a}{b}\mid a,b\in\mathbb{Z},b\neq0\right\}$.
+
+		\item $\left(\mathbb{C},+,\cdot\right)$ é um corpo, onde
+		      $\mathbb{C}=\left\{a+b\imath\mid a,b\in\mathbb{R},\text{ e }\imath^{2}=1\right\}$,
+		      $+\colon\left(a+b\imath\right)+\left(c+d\imath\right)=\left(a+c\right)+\left(b+d\right)\imath$
+		      $\cdot\colon\left(a+b\imath\right)\cdot\left(c+d\imath\right)=\left(ac-bd\right)+\left(ad+bc\right)\imath$.
+
+	\end{enumerate}
+\end{example}
+%https://www.learn-portuguese-with-rafa.com/portuguese-keyboard-characters.html

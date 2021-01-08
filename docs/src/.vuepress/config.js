@@ -65,7 +65,7 @@ module.exports = {
         {
           title: "Aulas",
           collapsable: false,
-          children: ["", "using-vue"],
+          children: ["", "corpos", "sistemas-lineares"],
         },
       ],
     },

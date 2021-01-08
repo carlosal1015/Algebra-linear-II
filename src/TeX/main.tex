@@ -1,12 +1,36 @@
-% arara: lualatex
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','pdf',
+% arara: --> 'toc']
+% arara: --> }
+% arara: lualatex: {
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: biber
+% arara: lualatex: {
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: lualatex: {
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log',
+% arara: --> 'toc']
+% arara: --> }
 
 \input{preâmbulo}
 
 \begin{document}
 
 \maketitle
+\tableofcontents
 
+\input{aulas/introdução}
+\part{Teoria}
 \input{aulas/corpos}
 \input{aulas/lineares}
+
+\part{Prática}
 
 \end{document}
