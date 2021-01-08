@@ -1,5 +1,0 @@
----
-noGlobalSocialShare: true
----
-
-# Matrizes
