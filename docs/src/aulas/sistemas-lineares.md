@@ -1,6 +1,0 @@
----
-noGlobalSocialShare: true
----
-# Sistemas lineares
-
-.
