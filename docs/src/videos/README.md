@@ -30,6 +30,9 @@ sidebar: auto
 
 ## [Aula 09/01/2021](https://carlosal1015.github.io/Algebra-linear-II/aulas/reposição.html)
 
+- [PDF](https://ecloud.global/s/Q2Z4eRD8Cabf63k)
+- [Atendimentos da tutoria](https://ecloud.global/s/kbT4gPrKdii36MQ)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GgWnd_sDlKI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Escrito em $\KaTeX$.
