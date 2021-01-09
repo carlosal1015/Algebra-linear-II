@@ -1,6 +1,6 @@
 ---
 noGlobalSocialShare: true
 ---
-# Introdução
+# Introdução ao curso
 
 $x$.
