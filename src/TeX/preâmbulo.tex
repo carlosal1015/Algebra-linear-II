@@ -17,24 +17,36 @@
 \usepackage[brazilian]{babel}
 \usepackage{csquotes}
 
-\usepackage{mathpazo}
-\usepackage{fontspec}
-\setmonofont{Fira Code}[Contextuals=Alternate]
-\setmainfont{TeX Gyre Pagella}
-
-\usepackage{mathtools,amssymb,amsthm}
-
-\usepackage[svgnames]{xcolor}
 \usepackage[useregional]{datetime2}
-
-\usepackage{pdfpages}
-\usepackage{svg,graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx,svg}
 \usepackage{caption,subcaption}
 \usepackage[shortlabels]{enumitem}
+
+%\usepackage{mathpazo}
+\usepackage{mathtools,amssymb,amsthm}
+
+\usepackage{fontspec}%unicode-math
+\usepackage{newunicodechar}
+\setmainfont{TeX Gyre Pagella}
+\setmonofont{Fira Code}[Contextuals=Alternate]
+
+
+\usepackage[chapter]{minted}
+\newmintedfile[juliacode]{julia}{
+	breaklines,
+	breakanywhere,
+	tabsize=4,
+	samepage=false,
+	showspaces=false,
+	showtabs =false
+}
+%\usepackage{pdfpages}
 \graphicspath{ {img/} }
 
 \usepackage{background}
 \usepackage{tikz}
+\usepackage{varwidth}
 \usepackage{booktabs}
 \usepackage{bookmark}
 
@@ -96,9 +108,17 @@
 \newtheorem{proposition}{Proposição}[chapter]
 \newtheorem{example}{Exemplo}[chapter]
 \newtheorem{exercise}{Exercício}[chapter]
+\newtheorem{remark}{Observação}[chapter]
 
 \newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
 \renewcommand{\qedsymbol}{\(\blacksquare\)}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução}\par\noindent}
+\definecolor{SolutionColor}{rgb}{0.2,0.9,1}
+\colorsolutionboxes
+\definecolor{SolutionBoxColor}{rgb}{0.2,0.9,1}
+\vqword{Questão}
+\vpword{Pontos}
+\vsword{Pontuaçõe}
 
 \setkomafont{title}{\bfseries\sffamily\Huge\color{DarkBlue}}
 \setkomafont{subtitle}{\bfseries\sffamily\Large\color{DarkBlue}}
@@ -107,6 +127,12 @@
 \setkomafont{chapter}{\LARGE\color{DarkBlue}}
 \setkomafont{section}{\Large\color{DarkBlue}}
 \setkomafont{subsection}{\large\color{DarkBlue}}
+
+\urlstyle{rm}
+
+\setmonofont{Consolas}
+\newunicodechar{∈}{\makebox[\fontcharwd\font`a]{$\in$}}
+\newunicodechar{⊗}{\makebox[\fontcharwd\font`a]{$\otimes$}}
 
 \title{Álgebra Linear II}
 

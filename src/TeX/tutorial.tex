@@ -1,0 +1,15 @@
+\chapter{\texttt{LinearAlgebra} from Julia}
+
+\begin{listing}[H]
+  \footnotesize
+  %\inputminted{c}{exercise3_1.c}
+  \begin{minted}[autogobble]{julia}
+    f(x) = x.^2 + π
+    const ⊗ = kron
+    const Σ = sum # Although `sum` may be just as good in the code.
+    # Calculate Σ_{j=1}^5 j^2
+    Σ([j^2 for j ∈ 1:5])
+    \end{minted}
+  \caption{Programa \texttt{exercise3\_1.c}.}
+  \label{lst:3.1}
+\end{listing}

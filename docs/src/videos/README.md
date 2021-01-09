@@ -28,6 +28,8 @@ sidebar: auto
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-njpfeWaYAY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Aula 09/01/2021
+## [Aula 09/01/2021](https://carlosal1015.github.io/Algebra-linear-II/aulas/reposição.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GgWnd_sDlKI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Escrito em $\KaTeX$.

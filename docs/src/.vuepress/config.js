@@ -2,8 +2,8 @@ const { description } = require("../../package");
 
 const extendsNetworks = {
   email: {
-    sharer: 'mailto:alex@mat.unb.br',
-    type: 'popup',
+    sharer: "mailto:alex@mat.unb.br",
+    type: "popup",
     isPlain: true,
   },
   twitter: {
@@ -76,7 +76,13 @@ module.exports = {
         {
           title: "Aulas",
           collapsable: false,
-          children: ["", "corpos", "sistemas-lineares", "matrizes"],
+          children: [
+            "",
+            "corpos",
+            "sistemas-lineares",
+            "matrizes",
+            "reposição",
+          ],
         },
       ],
     },

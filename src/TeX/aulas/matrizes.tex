@@ -138,16 +138,18 @@ Denotaremos a matriz $B$ por $A^{-1}$.
             \begin{cases}
               \delta_{ij}, & \text{se }i\neq k \\
               \delta_{ij}, & \text{se }i=k
-            \end{cases}\quad
-            \fbox{
-              $m=3$, $k=2$\\
-              $E_{1}=
-                \begin{pmatrix}
-                  1 & 0 & 0 \\
-                  0 & c & 0 \\
-                  0 & 0 & 1
-                \end{pmatrix}$
-            }
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$\\[\baselineskip]
+                \begin{math}
+                  E_{1}=
+                  \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    0 & c & 0 \\
+                    0 & 0 & 1
+                  \end{pmatrix}
+                \end{math}
+              \end{varwidth}}
           \]
           con $k$ um inteiro fixo entre $1$ e $m$;
     \item
@@ -156,20 +158,20 @@ Denotaremos a matriz $B$ por $A^{-1}$.
           \[
             e_{ij}=
             \begin{cases}
-              \delta_{ij},\text{se }i\neq l\text{ e }i\neq k \\
-              \delta_{lj},\text{se }i=k                      \\
-              \delta_{kj},\text{se }i=l
-            \end{cases}\quad
-            \fbox{
-              $m=3$, $k=2$, $l=3$ \\
-              \begin{math}
-                \begin{pmatrix}
-                  1 & 0 & 0 \\
-                  0 & 0 & 1 \\
-                  0 & 1 & 0
-                \end{pmatrix}
-              \end{math}
-            }
+              \delta_{ij}, & \text{se }i\neq l\text{ e }i\neq k \\
+              \delta_{lj}, & \text{se }i=k                      \\
+              \delta_{kj}, & \text{se }i=l
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$, $l=3$\\[\baselineskip]
+                \begin{math}
+                  \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    0 & 0 & 1 \\
+                    0 & 1 & 0
+                  \end{pmatrix}
+                \end{math}
+              \end{varwidth}}
           \]
           con $k<l$ inteiros fixos entre $1$ e $m$;
     \item
@@ -180,17 +182,17 @@ Denotaremos a matriz $B$ por $A^{-1}$.
             \begin{cases}
               \delta_{i j},                  & i\neq k \\
               \delta_{kj}+c\cdot\delta_{lj}, & i=k
-            \end{cases}
-            \fbox{
-              $m=3$, $k=2$, $l=3$ \\
-              \begin{math}
-                \begin{pmatrix}
-                  1 & 0 & 0 \\
-                  0 & 1 & c \\
-                  0 & 0 & 1
-                \end{pmatrix}
-              \end{math}
-            }
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$, $l=3$\\[\baselineskip]
+                \begin{math}
+                  \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    0 & 1 & c \\
+                    0 & 0 & 1
+                  \end{pmatrix}
+                \end{math}
+              \end{varwidth}}
           \]
   \end{enumerate}
 \end{definition}

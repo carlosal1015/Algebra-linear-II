@@ -4,14 +4,17 @@
 % arara: --> 'toc','bbl', 'bcf','run.xml','ilg','pdf']
 % arara: --> }
 % arara: lualatex: {
+% arara: --> shell: 1,
 % arara: --> interaction: batchmode
 % arara: --> }
 % arara: biber
 % arara: makeindex
 % arara: lualatex: {
+% arara: --> shell: 1,
 % arara: --> interaction: batchmode
 % arara: --> }
 % arara: lualatex: {
+% arara: --> shell: 1,
 % arara: --> interaction: batchmode
 % arara: --> }
 % arara: clean: {
@@ -34,11 +37,18 @@
 \input{aulas/corpos}
 \input{aulas/lineares}
 \input{aulas/matrizes}
+\input{aulas/reposição}
 
 \part{Prática}
 
 \input{aulas/exercizios_1}
 \input{aulas/exercizios_2}
+
+\part{Tutorial}
+
+\input{tutorial}
+
+\appendix
 
 \printindex
 
