@@ -25,7 +25,10 @@ sidebar: auto
 
 ## Aula 08/01/2021
 
-- [PDF]()
-- [Web]()
+- [PDF](https://ecloud.global/s/9R7wgkxEXAwJCj2)
+- [PDF](https://ecloud.global/s/QccbFRH3z39do2S)
+- [Web](https://carlosal1015.github.io/Algebra-linear-II/aulas/matrizes.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-njpfeWaYAY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Escrito em $\KaTeX$.
