@@ -1,4 +1,4 @@
-name: Compiling (La)TeX
+name: Compiling LaTeX
 
 on:
   push:

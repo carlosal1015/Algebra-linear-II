@@ -1,7 +1,7 @@
 % arara: clean: {
 % arara: --> extensions:
-% arara: --> ['aux','log','out','pdf',
-% arara: --> 'toc','bbl', 'bcf','run.xml']
+% arara: --> ['aux','log','out','blg','idx','ind',
+% arara: --> 'toc','bbl', 'bcf','run.xml','ilg','pdf']
 % arara: --> }
 % arara: lualatex: {
 % arara: --> interaction: batchmode
@@ -16,8 +16,8 @@
 % arara: --> }
 % arara: clean: {
 % arara: --> extensions:
-% arara: --> ['aux','log','out',
-% arara: --> 'toc','bbl', 'bcf','run.xml']
+% arara: --> ['aux','log','out','blg','idx','ind',
+% arara: --> 'toc','bbl', 'bcf','run.xml','ilg']
 % arara: --> }
 
 \input{preâmbulo}
@@ -28,7 +28,9 @@
 \tableofcontents
 
 \input{aulas/introdução}
+
 \part{Teoria}
+
 \input{aulas/corpos}
 \input{aulas/lineares}
 \input{aulas/matrizes}
@@ -36,6 +38,7 @@
 \part{Prática}
 
 \input{aulas/exercizios_1}
+\input{aulas/exercizios_2}
 
 \printindex
 

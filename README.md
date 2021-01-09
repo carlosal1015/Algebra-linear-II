@@ -1,6 +1,7 @@
 # [Álgebra Linear II](https://moodle.mat.unb.br/20201)
 
 [![GitHub Super-Linter](https://github.com/carlosal1015/Algebra-linear-II/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+![Compiling LaTeX](https://github.com/carlosal1015/Algebra-linear-II/workflows/Compiling%20LaTeX/badge.svg)
 [![License](https://img.shields.io/github/license/carlosal1015/Algebra-linear-II.svg?style=flat-square&logo=opensourceinitiative)](https://github.com/carlosal1015/Algebra-linear-II/blob/master/LICENSE)
 [![Latest tag via GitHub](https://img.shields.io/github/v/tag/carlosal1015/Algebra-linear-II.svg?sort=semver&style=flat-square&logo=github)](https://github.com/carlosal1015/Algebra-linear-II/tags)
 

@@ -4613,20 +4613,20 @@
       This command makes use of the package color.sty,\MessageBreak
       and so you have to load color.sty before your\MessageBreak
       \protect\begin{document} command.\MessageBreak
-      }%
-  }%
-  {%
-    \definecolor{FillWithLinesColor}{gray}{0.8}
-    \@colorfillwithlinestrue
-  }%
+}%
+}%
+{%
+\definecolor{FillWithLinesColor}{gray}{0.8}
+\@colorfillwithlinestrue
+}%
 }% \colorfillwithlines
 \def\nocolorfillwithlines{\@colorfillwithlinesfalse}
 
 \newcommand\fillwithlines[1]{%
   \if@colorfillwithlines
     \color@begingroup
-      \color{FillWithLinesColor}%
-      \do@fillwithlines{#1}%
+    \color{FillWithLinesColor}%
+    \do@fillwithlines{#1}%
     \color@endgroup
   \else
     \do@fillwithlines{#1}%
@@ -4634,7 +4634,7 @@
 }% \fillwithlines
 
 \newcommand\linefill{\leavevmode
-    \leaders\hrule height \linefillthickness \hfill\kern\z@}
+  \leaders\hrule height \linefillthickness \hfill\kern\z@}
 
 % \do@fillwithlines is called only by \fillwithlines
 \def\do@fillwithlines#1{%
@@ -4645,8 +4645,8 @@
   \hrule height \z@
   \nobreak
   \setbox0=\hbox to \hsize{\hskip \@totalleftmargin
-          \vrule height \linefillheight depth \z@ width \z@
-          \linefill}%
+    \vrule height \linefillheight depth \z@ width \z@
+    \linefill}%
   % We use \cleaders (rather than \leaders) so that a given
   % vertical space will always produce the same number of lines
   % no matter where on the page it happens to start:
@@ -4708,11 +4708,11 @@
       \space\space\protect\usepackage{color}\MessageBreak
       in order to use the command \protect\colorfillwithdottedlines
       \MessageBreak
-      }{%
+    }{%
       This command makes use of the package color.sty,\MessageBreak
       and so you have to load color.sty before your\MessageBreak
       \protect\begin{document} command.\MessageBreak
-      }%
+    }%
   }%
   {%
     \definecolor{FillWithDottedLinesColor}{gray}{0.8}
@@ -4724,8 +4724,8 @@
 \newcommand\fillwithdottedlines[1]{%
   \if@colorfillwithdottedlines
     \color@begingroup
-      \color{FillWithDottedLinesColor}%
-      \do@fillwithdottedlines{#1}%
+    \color{FillWithDottedLinesColor}%
+    \do@fillwithdottedlines{#1}%
     \color@endgroup
   \else
     \do@fillwithdottedlines{#1}%
@@ -4741,8 +4741,8 @@
   \hrule height \z@
   \nobreak
   \setbox0=\hbox to \hsize{\hskip \@totalleftmargin
-          \vrule height \dottedlinefillheight depth \z@ width \z@
-          \dotfill}%
+    \vrule height \dottedlinefillheight depth \z@ width \z@
+    \dotfill}%
   % We use \cleaders (rather than \leaders) so that a given
   % vertical space will always produce the same number of lines
   % no matter where on the page it happens to start:
@@ -4799,11 +4799,11 @@
       You must load the color package with the command\MessageBreak
       \space\space\protect\usepackage{color}\MessageBreak
       in order to use the command \protect\colorgrids
-      }{%
+    }{%
       This command makes use of the package color.sty,\MessageBreak
       and so you have to load color.sty before your\MessageBreak
       \protect\begin{document} command.\MessageBreak
-      }%
+    }%
   }%
   {%
     \definecolor{GridColor}{gray}{0.8}
@@ -4908,8 +4908,8 @@
 \newcommand\makeemptybox[1]{%
   \if@colorsolutionboxes
     \color@begingroup
-      \color{SolutionBoxColor}%
-      \do@emptybox{#1}%
+    \color{SolutionBoxColor}%
+    \do@emptybox{#1}%
     \color@endgroup
   \else
     \do@emptybox{#1}%
@@ -4922,21 +4922,21 @@
   \hbox to \hsize{\hskip\@totalleftmargin \leaders\hrule\hfill}%
   \nointerlineskip
   \begingroup
-    \setbox0=\hbox to \hsize{\hskip\@totalleftmargin
-                           \vrule height\minboxheight \hfill \vrule}%
-    % The vertical size desired may not be an exact multiple of
-    % \minboxheight, and so \cleaders might leave a gap between the
-    % vertical lines and the horizontal lines above and below it.
-    % Thus, we put a single copy of \box0 immediately below the
-    % horizontal line above and we'll also put a single copy of \box0
-    % immediately above the horizontal line below.
-    \copy0
-    \nobreak
-    \vskip -\minboxheight
-    \cleaders \copy0 \vskip #1
-    \vskip -\minboxheight
-    \nointerlineskip
-    \copy0
+  \setbox0=\hbox to \hsize{\hskip\@totalleftmargin
+    \vrule height\minboxheight \hfill \vrule}%
+  % The vertical size desired may not be an exact multiple of
+  % \minboxheight, and so \cleaders might leave a gap between the
+  % vertical lines and the horizontal lines above and below it.
+  % Thus, we put a single copy of \box0 immediately below the
+  % horizontal line above and we'll also put a single copy of \box0
+  % immediately above the horizontal line below.
+  \copy0
+  \nobreak
+  \vskip -\minboxheight
+  \cleaders \copy0 \vskip #1
+  \vskip -\minboxheight
+  \nointerlineskip
+  \copy0
   \endgroup
   \nointerlineskip
   \hbox to \hsize{\hskip\@totalleftmargin \leaders\hrule\hfill}%
@@ -4982,17 +4982,17 @@
 }
 
 \newenvironment{EnvUplevel}
-  {\par\bigskip\vbox\bgroup
-    % We set \leftskip to provide the correct left margin for whatever
-    % is inside of the environment:
-    \leftskip=\@totalleftmargin
-    \advance\leftskip-\leftmargin
-    % We adjust \@totalleftmargin (and linewidth?) in case there's a
-    % solution environment inside of the environment:
-    \advance\@totalleftmargin-\leftmargin
-    \advance\linewidth\leftmargin
-  }
-  {\egroup\nobreak}
+{\par\bigskip\vbox\bgroup
+  % We set \leftskip to provide the correct left margin for whatever
+  % is inside of the environment:
+  \leftskip=\@totalleftmargin
+  \advance\leftskip-\leftmargin
+  % We adjust \@totalleftmargin (and linewidth?) in case there's a
+  % solution environment inside of the environment:
+  \advance\@totalleftmargin-\leftmargin
+  \advance\linewidth\leftmargin
+}
+{\egroup\nobreak}
 
 
 \long\def\fullwidth#1{%
@@ -5008,15 +5008,15 @@
 }
 
 \newenvironment{EnvFullwidth}
-  {\par\bigskip\vbox\bgroup
-    % We entered internal vertical mode, and so we get \parshape=0.
-    \leftskip=0pt \rightskip=0pt
-    % We adjust \@totalleftmargin (and linewidth?) in case there's a
-    % solution environment inside of the environment:
-    \advance\linewidth\@totalleftmargin
-    \@totalleftmargin=0pt
-  }
-  {\egroup\nobreak}
+{\par\bigskip\vbox\bgroup
+  % We entered internal vertical mode, and so we get \parshape=0.
+  \leftskip=0pt \rightskip=0pt
+  % We adjust \@totalleftmargin (and linewidth?) in case there's a
+  % solution environment inside of the environment:
+  \advance\linewidth\@totalleftmargin
+  \@totalleftmargin=0pt
+}
+{\egroup\nobreak}
 
 
 %--------------------------------------------------------------------
@@ -5301,11 +5301,11 @@
   \immediate\write\@mainaux
   {\string\expandafter\string\gdef
     \string\csname\space range@#1@firstq\string\endcsname
-      {\arabic{num@cols}}}%
+    {\arabic{num@cols}}}%
   \write\@mainaux
   {\string\expandafter\string\gdef
     \string\csname\space range@#1@firstp\string\endcsname
-      {\thepage}}%
+    {\thepage}}%
 }% begingradingrange
 
 \def\endgradingrange#1{%
@@ -5313,11 +5313,11 @@
   \immediate\write\@mainaux
   {\string\expandafter\string\gdef
     \string\csname\space range@#1@lastq\string\endcsname
-      {\arabic{num@cols}}}%
+    {\arabic{num@cols}}}%
   \write\@mainaux
   {\string\expandafter\string\gdef
     \string\csname\space range@#1@lastp\string\endcsname
-      {\thepage}}%
+    {\thepage}}%
 }% endgradingrange
 
 
@@ -5810,23 +5810,23 @@
   % indexed by questions or by pages.
   \if@addpoints
     \@ifundefined{exam@numpoints}%
-      {\ClassWarning{exam}%
-        {%
-          You must run LaTeX again to produce the
-            table.\MessageBreak
-        }%
-        \fbox{Run \LaTeX{} again to produce the table}%
+    {\ClassWarning{exam}%
+      {%
+        You must run LaTeX again to produce the
+        table.\MessageBreak
       }%
-      {\find@p@or@q@range{#1}{#2}}%
+      \fbox{Run \LaTeX{} again to produce the table}%
+    }%
+    {\find@p@or@q@range{#1}{#2}}%
   \else
     \ClassError{exam}{%
       You must give the command \protect\addpoints\MessageBreak
       \space\space in order to create a grade table.\MessageBreak
-      }{%
+    }{%
       If you don't give the command \protect\addpoints\MessageBreak
       \space\space then we're not keeping track of point values.
       \MessageBreak
-      }%
+    }%
   \fi
 }% ii@gtable
 
@@ -5840,30 +5840,30 @@
   % questions (in which case we go to \find@qrange) or by pages (in
   % which case we go to \find@prange):
   \begingroup
-    % We've begun a group that will contain the construction of the
-    % table, to confine the effect of any \def's that we use.
-    \def\exam@temp{#2}%
-    \ifx\exam@temp\@questionsref
-      \tbl@pgsfalse
-      \find@qrange{#1}%
+  % We've begun a group that will contain the construction of the
+  % table, to confine the effect of any \def's that we use.
+  \def\exam@temp{#2}%
+  \ifx\exam@temp\@questionsref
+    \tbl@pgsfalse
+    \find@qrange{#1}%
+  \else
+    \ifx\exam@temp\@pagesref
+      \tbl@pgstrue
+      \find@prange{#1}%
     \else
-      \ifx\exam@temp\@pagesref
-        \tbl@pgstrue
-        \find@prange{#1}%
-      \else
-        \ClassError{exam}{%
-          Grade and point tables can be indexed\MessageBreak
-          \space\space by either `questions' or `pages',\MessageBreak
-          \space\space but not by `#2'.\MessageBreak
-        }{%
-          Grade tables and point tables can be indexed by questions or
-          pages;\MessageBreak
-          \space\space for others, you're on your own.\MessageBreak
-        }%
-        \fbox{\textbf{Error:} grade or point table: Invalid argument
-              `#2' must be `questions' or `pages'.}%
-      \fi
+      \ClassError{exam}{%
+        Grade and point tables can be indexed\MessageBreak
+        \space\space by either `questions' or `pages',\MessageBreak
+        \space\space but not by `#2'.\MessageBreak
+      }{%
+        Grade tables and point tables can be indexed by questions or
+        pages;\MessageBreak
+        \space\space for others, you're on your own.\MessageBreak
+      }%
+      \fbox{\textbf{Error:} grade or point table: Invalid argument
+        `#2' must be `questions' or `pages'.}%
     \fi
+  \fi
   \endgroup
 }% find@p@or@q@range
 
@@ -5871,7 +5871,7 @@
 % \find@prange
 \def\range@undefined{%
   \fbox{Warning: grading range `\tbl@range ' not defined;
-                               run \LaTeX{} again.}%
+    run \LaTeX{} again.}%
   \ClassWarning{exam}{%
     Grading range `\tbl@range' not defined.\MessageBreak
     \space\space Run LaTeX again to produce the table.\MessageBreak
@@ -5898,37 +5898,37 @@
   % We're doing a table indexed by question numbers.
   \if@partial
     \@ifundefined{range@\tbl@range @firstq}%
+    {%
+      \range@undefined
+    }%
+    {%
+      \@ifundefined{range@\tbl@range @lastq}%
       {%
         \range@undefined
       }%
       {%
-        \@ifundefined{range@\tbl@range @lastq}%
-          {%
-            \range@undefined
+        \edef\tbl@firstq{\csname range@\tbl@range @firstq\endcsname}%
+        \edef\tbl@lastq{\csname range@\tbl@range @lastq\endcsname}%
+        \let\first@pq@index=\tbl@firstq
+        \let\last@pq@index=\tbl@lastq
+        % Check that firstq precedes or equals lastq:
+        \ifnum \tbl@firstq > \tbl@lastq\relax
+          \fbox{\textbf{Error:} Grading Range `\tbl@range':
+            Last question precedes first question.}%
+          \ClassError{exam}{%
+            In grading range `\tbl@range',
+            the last question\MessageBreak
+            \space\space comes before the first question.\MessageBreak
+          }{%
+            \string\begingradingrange \space must precede
+            \string\endgradingrange \space by at
+            least one question.\MessageBreak
           }%
-          {%
-            \edef\tbl@firstq{\csname range@\tbl@range @firstq\endcsname}%
-            \edef\tbl@lastq{\csname range@\tbl@range @lastq\endcsname}%
-            \let\first@pq@index=\tbl@firstq
-            \let\last@pq@index=\tbl@lastq
-            % Check that firstq precedes or equals lastq:
-            \ifnum \tbl@firstq > \tbl@lastq\relax
-              \fbox{\textbf{Error:} Grading Range `\tbl@range':
-                      Last question precedes first question.}%
-              \ClassError{exam}{%
-                In grading range `\tbl@range',
-                                the last question\MessageBreak
-                \space\space comes before the first question.\MessageBreak
-                }{%
-                  \string\begingradingrange \space must precede
-                  \string\endgradingrange \space by at
-                             least one question.\MessageBreak
-                }%
-            \else
-              \tbl@v@or@h{#1}%
-            \fi
-          }%
+        \else
+          \tbl@v@or@h{#1}%
+        \fi
       }%
+    }%
   \else
     \def\tbl@firstq{1}%
     \let\first@pq@index=\tbl@firstq
@@ -5966,7 +5966,7 @@
         \space\space no diagonals allowed.\MessageBreak
       }%
       \fbox{\textbf{Error:} grade or point table: Invalid argument
-            `#1' must be `v' or `h'.}%
+        `#1' must be `v' or `h'.}%
     \fi
   \fi
 }% tbl@v@or@h
@@ -6018,35 +6018,35 @@
   % information we need about which pages have points on them).
   \if@partial
     \@ifundefined{range@\tbl@range @firstp}%
+    {%
+      \range@undefined
+    }%
+    {%
+      \@ifundefined{range@\tbl@range @lastp}%
       {%
         \range@undefined
       }%
       {%
-        \@ifundefined{range@\tbl@range @lastp}%
-          {%
-            \range@undefined
+        \edef\tbl@firstp{\csname range@\tbl@range @firstp\endcsname}%
+        \edef\tbl@lastp{\csname range@\tbl@range @lastp\endcsname}%
+        \let\first@pq@index=\tbl@firstp
+        \let\last@pq@index=\tbl@lastp
+        % Check that firstp precedes or equals lastp:
+        \ifnum \tbl@firstp > \tbl@lastp\relax
+          \fbox{\textbf{Error:} Grading Range `\tbl@range ':
+            Last page precedes first page.}%
+          \ClassError{exam}{%
+            In grading range `\tbl@range', the last page\MessageBreak
+            \space\space comes before the first page.\MessageBreak
+          }{%
+            \string\begingradingrange \space must precede
+            \string\endgradingrange.\MessageBreak
           }%
-          {%
-            \edef\tbl@firstp{\csname range@\tbl@range @firstp\endcsname}%
-            \edef\tbl@lastp{\csname range@\tbl@range @lastp\endcsname}%
-            \let\first@pq@index=\tbl@firstp
-            \let\last@pq@index=\tbl@lastp
-            % Check that firstp precedes or equals lastp:
-            \ifnum \tbl@firstp > \tbl@lastp\relax
-              \fbox{\textbf{Error:} Grading Range `\tbl@range ':
-                      Last page precedes first page.}%
-              \ClassError{exam}{%
-                In grading range `\tbl@range', the last page\MessageBreak
-                \space\space comes before the first page.\MessageBreak
-                }{%
-                  \string\begingradingrange \space must precede
-                  \string\endgradingrange.\MessageBreak
-                }%
-            \else
-              \check@secondrun{#1}%
-            \fi
-          }%
+        \else
+          \check@secondrun{#1}%
+        \fi
       }%
+    }%
   \else
     % It's not a partial table:
     \def\tbl@firstp{1}%
@@ -6063,7 +6063,7 @@
       \ifnum \lastpage@withbonuspoints > \lastpage@withpoints\relax
         \def\tbl@lastp{\lastpage@withbonuspoints}%
         \let\last@pq@index=\tbl@lastp
-      \fi        
+      \fi
     \fi
     \check@secondrun{#1}%
   \fi
@@ -6078,18 +6078,18 @@
   % Check that there's enough info from the .aux file to do a page
   % indexed grade table.  If so, call \tbl@v@or@h{#1}:
   \@ifundefined{pointsonpage@\romannumeral
-               \csname lastpage@withpoints\endcsname}%
-    {\@ifundefined{bonuspointsonpage@\romannumeral
-               \csname lastpage@withbonuspoints\endcsname}%
-        {\ClassWarning{exam}{%
-           You must run LaTeX again to produce the table.\MessageBreak}%
-           \fbox{Run \LaTeX{} again to produce the table}%
-        }%
-        {\tbl@v@or@h{#1}%
-        }%
+    \csname lastpage@withpoints\endcsname}%
+  {\@ifundefined{bonuspointsonpage@\romannumeral
+      \csname lastpage@withbonuspoints\endcsname}%
+    {\ClassWarning{exam}{%
+        You must run LaTeX again to produce the table.\MessageBreak}%
+      \fbox{Run \LaTeX{} again to produce the table}%
     }%
     {\tbl@v@or@h{#1}%
     }%
+  }%
+  {\tbl@v@or@h{#1}%
+  }%
 }% check@secondrun
 
 %--------------------------------------------------------------------
@@ -6125,9 +6125,9 @@
   \addtocounter{@iterator}{1}%
   \set@hlfcntr{tmp@hlfcntr}{\pointsonpage{\the@iterator}}%
   \ifhlfcntr@pos{tmp@hlfcntr}%
-    \addtocounter{#1}{1}%
+  \addtocounter{#1}{1}%
   \else
-    \check@bnsptpage{#1}%
+  \check@bnsptpage{#1}%
   \fi
   \ifnum \the@iterator < \tbl@lastp\relax
     \def\nextdocount@pgswcpts{\docount@pgswcpts{#1}}%
@@ -6143,7 +6143,7 @@
   % \ifhlfcntr@pos, but it does see the \fi, and so it get confused.
   \set@hlfcntr{tmp@hlfcntr}{\bonuspointsonpage{\the@iterator}}%
   \ifhlfcntr@pos{tmp@hlfcntr}%
-    \addtocounter{#1}{1}%
+  \addtocounter{#1}{1}%
   \fi
 }% check@bnsptpage
 
@@ -6153,7 +6153,7 @@
   \addtocounter{@iterator}{1}%
   \set@hlfcntr{tmp@hlfcntr}{\pointsonpage{\the@iterator}}%
   \ifhlfcntr@pos{tmp@hlfcntr}%
-    \addtocounter{#1}{1}%
+  \addtocounter{#1}{1}%
   \fi
   \ifnum \the@iterator < \tbl@lastp\relax
     \def\nextdocount@pgswpts{\docount@pgswpts{#1}}%
@@ -6169,7 +6169,7 @@
   \addtocounter{@iterator}{1}%
   \set@hlfcntr{tmp@hlfcntr}{\bonuspointsonpage{\the@iterator}}%
   \ifhlfcntr@pos{tmp@hlfcntr}%
-    \addtocounter{#1}{1}%
+  \addtocounter{#1}{1}%
   \fi
   \ifnum \the@iterator < \tbl@lastp\relax
     \def\nextdocount@pgswbpts{\docount@pgswbpts{#1}}%
@@ -6285,14 +6285,14 @@
   % conditional, so we're hiding it in this macro.
   \set@hlfcntr{tmp@hlfcntr}{\pointsonpage{\arabic{#1}}}%
   \ifhlfcntr@pos{tmp@hlfcntr}%
-    \pageref{firstpoints@onpage@\arabic{#1}}%
+  \pageref{firstpoints@onpage@\arabic{#1}}%
   \else
-    % In theory, there *must* be bonus points on this page, because
-    % there aren't any plain points, but there are allegedly *some*
-    % points.  We're being brave and assuming that's correct, and not
-    % checking (which we'd have to hide inside a macro, because it
-    % would use \ifhlfcntr@pos):
-    \pageref{firstbonuspoints@onpage@\arabic{#1}}%
+  % In theory, there *must* be bonus points on this page, because
+  % there aren't any plain points, but there are allegedly *some*
+  % points.  We're being brave and assuming that's correct, and not
+  % checking (which we'd have to hide inside a macro, because it
+  % would use \ifhlfcntr@pos):
+  \pageref{firstbonuspoints@onpage@\arabic{#1}}%
   \fi
 }% refto@comb@index
 
@@ -6340,12 +6340,12 @@
   \setcounter{pq@index}{\value{num@cols}}%
   % Divide the number of slots needed by num@rows:
   \divide \csname c@num@cols\endcsname by
-    \csname c@num@rows\endcsname
+  \csname c@num@rows\endcsname
   % Division truncates: See if there was truncation.
   % Use @iterator as a scratch counter.
   \setcounter{@iterator}{\value{num@cols}}%
   \multiply \csname c@@iterator\endcsname by
-    \csname c@num@rows\endcsname
+  \csname c@num@rows\endcsname
   \ifnum \value{@iterator} < \value{pq@index}\relax
     % There was truncation; add a column to num@cols:
     \addtocounter{num@cols}{1}%
@@ -6374,101 +6374,101 @@
     \else
       \do@lines@h
     \fi
-}% @multirowtable
+    }% @multirowtable
 
 
-\def\do@lines@h{%
-  % Called only by \@multirowtable.
-  % It's either bonus or regular, but not combined:
-  \addtocounter{current@row}{1}% Set to the number of the current row
-  \iftbl@pgs
-    \if@bonus
-      \@bhpgword
-    \else
-      \@hpgword
-    \fi
-  \else
-    \if@bonus
-      \@bhqword
-    \else
-      \@hqword
-    \fi
-  \fi
-  \setcounter{cols@done}{0}%
-  \do@pq@indexloop@h
-  % When we finish \do@pq@indexloop@h, either we've finished a
-  % complete row of page numbers (or questions), or we've done all 
-  % the page numbers (or questions) through \last@pq@index, or both:
-  \ifnum \value{cols@done} < \value{num@cols}\relax
-    % We've inserted all the page or question numbers, and there's
-    % room remaining on the current line for \@htword (or \@bhtword):
-    \ifnum \value{current@row} = \value{num@rows}\relax
-      % This is the last row; put in the total:
-      \do@htword@h
-    \else
-      % This isn't the last row.  We insert (\value{num@cols} -
-      % \value{cols@done}) ampersands.
-      \setcounter{@iterator}{\value{num@cols}}%
-      \addtocounter{@iterator}{-\value{cols@done}}%
-      \do@emptycols@h
-    \fi
-  \fi
-  \\
-  \hline
-  % Point values go here!
-  \setcounter{cols@done}{0}%
-  \if@bonus
-    \@bhpword
-    \do@bptloop@h
-  \else
-    \@hpword
-    \do@ptloop@h
-  \fi
-  % When we finish \do@ptloop@h or \do@bptloop@h, either
-  % we've finished a complete row of point values, or we've done all
-  % the question (or page) numbers through \last@pq@index, or both:  
-  \ifnum \value{cols@done} < \value{num@cols}\relax
-    % We've inserted all the point values, and there's room
-    % remaining on the current line for Total Points:
-    \ifnum \value{current@row} = \value{num@rows}\relax
-      % This is the last row; put in the total:
+    \def\do@lines@h{%
+    % Called only by \@multirowtable.
+    % It's either bonus or regular, but not combined:
+    \addtocounter{current@row}{1}% Set to the number of the current row
+    \iftbl@pgs
       \if@bonus
-        \do@totalbpts@h
+        \@bhpgword
       \else
-        \do@totalpts@h
+        \@hpgword
       \fi
     \else
-      % This isn't the last row.  We insert (\value{num@cols} -
-      % \value{cols@done}) ampersands.
-      \setcounter{@iterator}{\value{num@cols}}%
-      \addtocounter{@iterator}{-\value{cols@done}}%
-      \do@emptycols@h
-    \fi
-  \fi
-  % We hold off on putting in the "\\ \hline" because we may want to
-  % immediately follow it with either an "\end{tabular}" or another
-  % "\hline".
-  % Scores?
-  \if@scores
-    \\
-    \hline
-    \if@bonus
-      \@bhsword \hidden@ampersand
-    \else
-      \@hsword \hidden@ampersand
+      \if@bonus
+        \@bhqword
+      \else
+        \@hqword
+      \fi
     \fi
     \setcounter{cols@done}{0}%
-    \do@sloop@h
-  \fi
-  \ifnum \value{current@row} = \value{num@rows}\relax
+    \do@pq@indexloop@h
+    % When we finish \do@pq@indexloop@h, either we've finished a
+    % complete row of page numbers (or questions), or we've done all 
+    % the page numbers (or questions) through \last@pq@index, or both:
+    \ifnum \value{cols@done} < \value{num@cols}\relax
+      % We've inserted all the page or question numbers, and there's
+      % room remaining on the current line for \@htword (or \@bhtword):
+      \ifnum \value{current@row} = \value{num@rows}\relax
+        % This is the last row; put in the total:
+        \do@htword@h
+      \else
+        % This isn't the last row.  We insert (\value{num@cols} -
+        % \value{cols@done}) ampersands.
+        \setcounter{@iterator}{\value{num@cols}}%
+        \addtocounter{@iterator}{-\value{cols@done}}%
+        \do@emptycols@h
+      \fi
+    \fi
+    \\
+    \hline
+    % Point values go here!
+    \setcounter{cols@done}{0}%
+    \if@bonus
+      \@bhpword
+      \do@bptloop@h
+    \else
+      \@hpword
+      \do@ptloop@h
+    \fi
+    % When we finish \do@ptloop@h or \do@bptloop@h, either
+    % we've finished a complete row of point values, or we've done all
+    % the question (or page) numbers through \last@pq@index, or both:  
+    \ifnum \value{cols@done} < \value{num@cols}\relax
+      % We've inserted all the point values, and there's room
+      % remaining on the current line for Total Points:
+      \ifnum \value{current@row} = \value{num@rows}\relax
+        % This is the last row; put in the total:
+        \if@bonus
+          \do@totalbpts@h
+        \else
+          \do@totalpts@h
+        \fi
+      \else
+        % This isn't the last row.  We insert (\value{num@cols} -
+        % \value{cols@done}) ampersands.
+        \setcounter{@iterator}{\value{num@cols}}%
+        \addtocounter{@iterator}{-\value{cols@done}}%
+        \do@emptycols@h
+      \fi
+    \fi
+    % We hold off on putting in the "\\ \hline" because we may want to
+    % immediately follow it with either an "\end{tabular}" or another
+    % "\hline".
+    % Scores?
+    \if@scores
+    \\
+      \hline
+      \if@bonus
+        \@bhsword \hidden@ampersand
+      \else
+        \@hsword \hidden@ampersand
+      \fi
+      \setcounter{cols@done}{0}%
+      \do@sloop@h
+    \fi
+    \ifnum \value{current@row} = \value{num@rows}\relax
     % This is the last line!  End the tabular:
     \\
     \hline
-    \end{tabular}%
+  \end{tabular}%
   \else
-    % Don't end the tabular:
-    \\
-    \hline\hline
+  % Don't end the tabular:
+  \\
+  \hline\hline
   \fi
   % Check if we should repeat:
   \ifnum \value{current@row} < \value{num@rows}\relax
@@ -6829,12 +6829,12 @@
   \setcounter{pq@index@bpts}{\value{num@rows}}%
   % Divide the number of slots needed by num@cols:
   \divide \csname c@num@rows\endcsname by
-    \csname c@num@cols\endcsname
+  \csname c@num@cols\endcsname
   % Division truncates: See if there was truncation.
   % Use the counter @iterator as a scratch counter:
   \setcounter{@iterator}{\value{num@rows}}%
   \multiply \csname c@@iterator\endcsname by
-    \csname c@num@cols\endcsname
+  \csname c@num@cols\endcsname
   \ifnum \value{@iterator} < \value{pq@index@bpts}\relax
     % There was truncation; add one to num@rows:
     \addtocounter{num@rows}{1}%
@@ -6853,356 +6853,356 @@
   \set@hlfcntr{tbl@points}{0}%
   \set@hlfcntr{tbl@bonuspoints}{0}%
   \if@combined
-    \if@scores
-      % combinedgradetable, possibly partial.
-      % Note: We'll never use the final "c" in the format of the
-      % tabular, but there's no harm in that. 
-      \begin{tabular}{*{\value{num@cols}}{|c|c|c|c|c}}
-      % We need to make sure that the \cline@stuff@v commands come
-      % *immediately* following the \\ or \begin{tabular} (with no
-      % conditionals evaluated, even if those conditionals expand to
-      % the empty string)! 
-      % Put in the row of column headings, with \cline@stuff@v above and
-      % below:
-      \cline@stuff@v  
-      \setcounter{@iterator}{0}%
-      \docolumn@heads@comb@v
-      \\
-      \cline@stuff@v
-    \else
-      % combinedpointtable, possibly partial.
-      % Note: We'll never use the final "c" in the format of the
-      % tabular, but there's no harm in that. 
-      \begin{tabular}{*{\value{num@cols}}{|c|c|c|c}}
-      % We need to make sure that the \cline@stuff@v commands come
-      % *immediately* following the \\ or \begin{tabular} (with no
-      % conditionals evaluated, even if those conditionals expand to
-      % the empty string)! 
-      % Put in the row of column headings, with \cline@stuff@v above and
-      % below:
-      \cline@stuff@v  
-      \setcounter{@iterator}{0}%
-      \docolumn@heads@comb@noscores@v
-      \\
-      \cline@stuff@v
-    \fi
-    % pq@index@pts will hold the question number (or page number) in
-    % the first column of the row. 
-    \setcounter{pq@index@pts}{\first@pq@index}%
-    \iftbl@pgs
-      % If we're indexed by pages, we need to make sure there are
-      % points of the appropriate type on the first page listed:
-      \addtocounter{pq@index@pts}{-1}%
-      \find@nextpagewithpoints{pq@index@pts}%
-    \fi
-    \setcounter{current@row}{0}%
-    \do@lines@v
+  \if@scores
+    % combinedgradetable, possibly partial.
+    % Note: We'll never use the final "c" in the format of the
+    % tabular, but there's no harm in that. 
+    \begin{tabular}{*{\value{num@cols}}{|c|c|c|c|c}}
+    % We need to make sure that the \cline@stuff@v commands come
+    % *immediately* following the \\ or \begin{tabular} (with no
+    % conditionals evaluated, even if those conditionals expand to
+    % the empty string)! 
+    % Put in the row of column headings, with \cline@stuff@v above and
+    % below:
+    \cline@stuff@v
+    \setcounter{@iterator}{0}%
+    \docolumn@heads@comb@v
+    \\
+    \cline@stuff@v
   \else
-    % It's not combined:
-    \if@scores
-      % Note: We'll never use the final "c" in the format of the
-      % tabular, but there's no harm in that. 
-      \begin{tabular}{*{\value{num@cols}}{|c|c|c|c}}
+    % combinedpointtable, possibly partial.
+    % Note: We'll never use the final "c" in the format of the
+    % tabular, but there's no harm in that. 
+    \begin{tabular}{*{\value{num@cols}}{|c|c|c|c}}
+    % We need to make sure that the \cline@stuff@v commands come
+    % *immediately* following the \\ or \begin{tabular} (with no
+    % conditionals evaluated, even if those conditionals expand to
+    % the empty string)! 
+    % Put in the row of column headings, with \cline@stuff@v above and
+    % below:
+    \cline@stuff@v
+    \setcounter{@iterator}{0}%
+    \docolumn@heads@comb@noscores@v
+    \\
+    \cline@stuff@v
+  \fi
+  % pq@index@pts will hold the question number (or page number) in
+  % the first column of the row. 
+  \setcounter{pq@index@pts}{\first@pq@index}%
+  \iftbl@pgs
+    % If we're indexed by pages, we need to make sure there are
+    % points of the appropriate type on the first page listed:
+    \addtocounter{pq@index@pts}{-1}%
+    \find@nextpagewithpoints{pq@index@pts}%
+  \fi
+  \setcounter{current@row}{0}%
+  \do@lines@v
+  \else
+  % It's not combined:
+  \if@scores
+    % Note: We'll never use the final "c" in the format of the
+    % tabular, but there's no harm in that. 
+    \begin{tabular}{*{\value{num@cols}}{|c|c|c|c}}
+    % We need to make sure that the \cline@stuff@v commands come
+    % *immediately* following the \\ or \begin{tabular} (with no
+    % conditionals evaluated, even if those conditionals expand to
+    % the empty string)! 
+    % Put in the row of column headings, with \cline@stuff@v above and
+    % below:
+    \cline@stuff@v
+    \setcounter{@iterator}{0}%
+    \docolumn@heads@v
+    \\
+    \cline@stuff@v
+  \else
+    % Note: We'll never use the final "c" in the format of the
+    % tabular, but there's no harm in that. 
+    \begin{tabular}{*{\value{num@cols}}{|c|c|c}}
       % We need to make sure that the \cline@stuff@v commands come
       % *immediately* following the \\ or \begin{tabular} (with no
       % conditionals evaluated, even if those conditionals expand to
       % the empty string)! 
       % Put in the row of column headings, with \cline@stuff@v above and
       % below:
-      \cline@stuff@v  
-      \setcounter{@iterator}{0}%
-      \docolumn@heads@v
-      \\
       \cline@stuff@v
-    \else
-      % Note: We'll never use the final "c" in the format of the
-      % tabular, but there's no harm in that. 
-      \begin{tabular}{*{\value{num@cols}}{|c|c|c}}
-      % We need to make sure that the \cline@stuff@v commands come
-      % *immediately* following the \\ or \begin{tabular} (with no
-      % conditionals evaluated, even if those conditionals expand to
-      % the empty string)! 
-      % Put in the row of column headings, with \cline@stuff@v above and
-      % below:
-      \cline@stuff@v  
       \setcounter{@iterator}{0}%
       \docolumn@heads@noscores@v
       \\
       \cline@stuff@v
-    \fi
-    % pq@index@pts will hold the question number (or page number) in
-    % the first column of the row. 
-    \setcounter{pq@index@pts}{\first@pq@index}%
-    \iftbl@pgs
-      % If we're indexed by pages, we need to make sure there are
-      % points of the appropriate type on the first page listed:
-      \addtocounter{pq@index@pts}{-1}%
-      \find@nextpagewithpoints{pq@index@pts}%
-    \fi
-    \setcounter{current@row}{0}%
-    \do@lines@v
-  \fi
-}% @multicolumntable
-
-%--------------------------------------------------------------------
-% \create@cline@stuff@v
-
-% The function \create@cline@stuff@v defines \cline@stuff@v to be whatever's
-% appropriate given the values of num@cols, \if@bonus, \if@combined, and
-% \if@scores.
-
-% We wimped out of generating \cline@stuff@v on the fly because we didn't
-% see how to get the correct expansions/nonexpansions without using a
-% primitive of e-TeX.
-
-% \clines@ii@whatever is for tables in which a  logical column consists
-% of two columns; it's used for pointtable and bonuspointtable.
-
-\def\clines@ii@i{\cline{1-2}}
-\def\clines@ii@ii{\cline{1-2} \cline{4-5}}
-\def\clines@ii@iii{\cline{1-2} \cline{4-5} \cline{7-8}}
-\def\clines@ii@iv{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}}
-\def\clines@ii@v{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14}}
-\def\clines@ii@vi{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14} \cline{16-17}}
-\def\clines@ii@vii{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14} \cline{16-17} \cline{19-20}}
-\def\clines@ii@viii{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}}
-\def\clines@ii@vix{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}
-  \cline{25-26}}
-\def\clines@ii@x{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
-  \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}
-  \cline{25-26} \cline{28-29}}
-
-% \clines@iii@whatever is for tables in which a  logical column consists
-% of three columns; it's are used for gradetable, bonusgradetable, and
-% combinedpointtable:
-
-\def\clines@iii@i{\cline{1-3}}
-\def\clines@iii@ii{\cline{1-3} \cline{5-7}}
-\def\clines@iii@iii{\cline{1-3} \cline{5-7} \cline{9-11}}
-\def\clines@iii@iv{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}}
-\def\clines@iii@v{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19}}
-\def\clines@iii@vi{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19} \cline{21-23}}
-\def\clines@iii@vii{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19} \cline{21-23} \cline{25-27}}
-\def\clines@iii@viii{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}}
-\def\clines@iii@ix{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}
-  \cline{33-35}}
-\def\clines@iii@x{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
-  \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}
-  \cline{33-35} \cline{37-39}}
-
-
-% \clines@iv@whatever is for tables in which a  logical column
-% consists of four columns; it's used for combinedgradetable.
-
-\def\clines@iv@i{\cline{1-4}}
-\def\clines@iv@ii{\cline{1-4} \cline{6-9}}
-\def\clines@iv@iii{\cline{1-4} \cline{6-9} \cline{11-14}}
-\def\clines@iv@iv{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}}
-\def\clines@iv@v{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24}}
-\def\clines@iv@vi{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24} \cline{26-29}}
-\def\clines@iv@vii{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24} \cline{26-29} \cline{31-34}}
-\def\clines@iv@viii{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}}
-\def\clines@iv@ix{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}
-  \cline{41-44}}
-\def\clines@iv@x{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
-  \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}
-  \cline{41-44} \cline{46-49}}
-
-% The definition of \cline ends with \noalign{\vskip-\arrayrulewidth},
-% and so we want to throw in a \noalign{\vskip\arrayrulewidth} to
-% cancel that.
-\def\cline@correction{\noalign{\vskip\arrayrulewidth}}
-
-\def\create@cline@stuff@v{%
-  % Called by \@multicolumntable.
-  \if@combined
-    \if@scores
-      \edef\cline@stuff@v{\expandafter\noexpand\csname
-        clines@iv@\romannumeral \c@num@cols\endcsname
-        \noexpand\cline@correction}%
-    \else
-      \edef\cline@stuff@v{\expandafter\noexpand\csname
-        clines@iii@\romannumeral \c@num@cols\endcsname
-        \noexpand\cline@correction}%
-    \fi
-  \else
-    \if@scores
-      \edef\cline@stuff@v{\expandafter\noexpand\csname
-        clines@iii@\romannumeral \c@num@cols\endcsname
-        \noexpand\cline@correction}%
-    \else
-      \edef\cline@stuff@v{\expandafter\noexpand\csname
-        clines@ii@\romannumeral \c@num@cols\endcsname
-        \noexpand\cline@correction}%
-    \fi
-  \fi
-}% create@cline@stuff@v
-
-%--------------------------------------------------------------------
-% The various \docolumn@heads@something@v
-
-\def\docolumn@heads@v{%
-  % Called by \@multicolumntable.
-  % multicolumngradetable or multicolumnbonusgradetable, possibly
-  % partial.
-    \iftbl@pgs
-      \if@bonus
-        \@bvpgword
-      \else
-        \@vpgword
       \fi
-    \else
-      \if@bonus
-        \@bvqword
-      \else
-        \@vqword
+      % pq@index@pts will hold the question number (or page number) in
+      % the first column of the row. 
+      \setcounter{pq@index@pts}{\first@pq@index}%
+      \iftbl@pgs
+        % If we're indexed by pages, we need to make sure there are
+        % points of the appropriate type on the first page listed:
+        \addtocounter{pq@index@pts}{-1}%
+        \find@nextpagewithpoints{pq@index@pts}%
       \fi
-    \fi
-  & \if@bonus
-      \@bvpword
-    \else
-      \@vpword
-    \fi
-  & \if@bonus
-      \@bvsword
-    \else
-      \@vsword
-    \fi
-  \addtocounter{@iterator}{1}%
-  \ifnum \value{@iterator} < \value{num@cols}\relax
-    \hidden@ampersand
-    \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
-    \hidden@ampersand
-    \let\nextdocolumn@heads@v=\docolumn@heads@v
-  \else
-    \let\nextdocolumn@heads@v=\relax
-  \fi
-  \nextdocolumn@heads@v
-}% docolumn@heads@v
-
-\def\docolumn@heads@noscores@v{%
-  % Called by \@multicolumntable.
-  % multicolumnpointtable or multicolumnbonuspointtable, possibly
-  % partial.
-    \iftbl@pgs
-      \if@bonus
-        \@bvpgword
-      \else
-        \@vpgword
+      \setcounter{current@row}{0}%
+      \do@lines@v
       \fi
-    \else
-      \if@bonus
-        \@bvqword
+      }% @multicolumntable
+
+      %--------------------------------------------------------------------
+      % \create@cline@stuff@v
+
+      % The function \create@cline@stuff@v defines \cline@stuff@v to be whatever's
+      % appropriate given the values of num@cols, \if@bonus, \if@combined, and
+      % \if@scores.
+
+      % We wimped out of generating \cline@stuff@v on the fly because we didn't
+      % see how to get the correct expansions/nonexpansions without using a
+      % primitive of e-TeX.
+
+      % \clines@ii@whatever is for tables in which a  logical column consists
+      % of two columns; it's used for pointtable and bonuspointtable.
+
+      \def\clines@ii@i{\cline{1-2}}
+      \def\clines@ii@ii{\cline{1-2} \cline{4-5}}
+      \def\clines@ii@iii{\cline{1-2} \cline{4-5} \cline{7-8}}
+      \def\clines@ii@iv{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}}
+      \def\clines@ii@v{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14}}
+      \def\clines@ii@vi{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14} \cline{16-17}}
+      \def\clines@ii@vii{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14} \cline{16-17} \cline{19-20}}
+      \def\clines@ii@viii{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}}
+      \def\clines@ii@vix{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}
+        \cline{25-26}}
+      \def\clines@ii@x{\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11}
+        \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23}
+        \cline{25-26} \cline{28-29}}
+
+      % \clines@iii@whatever is for tables in which a  logical column consists
+      % of three columns; it's are used for gradetable, bonusgradetable, and
+      % combinedpointtable:
+
+      \def\clines@iii@i{\cline{1-3}}
+      \def\clines@iii@ii{\cline{1-3} \cline{5-7}}
+      \def\clines@iii@iii{\cline{1-3} \cline{5-7} \cline{9-11}}
+      \def\clines@iii@iv{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}}
+      \def\clines@iii@v{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19}}
+      \def\clines@iii@vi{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19} \cline{21-23}}
+      \def\clines@iii@vii{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19} \cline{21-23} \cline{25-27}}
+      \def\clines@iii@viii{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}}
+      \def\clines@iii@ix{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}
+        \cline{33-35}}
+      \def\clines@iii@x{\cline{1-3} \cline{5-7} \cline{9-11} \cline{13-15}
+        \cline{17-19} \cline{21-23} \cline{25-27} \cline{29-31}
+        \cline{33-35} \cline{37-39}}
+
+
+      % \clines@iv@whatever is for tables in which a  logical column
+      % consists of four columns; it's used for combinedgradetable.
+
+      \def\clines@iv@i{\cline{1-4}}
+      \def\clines@iv@ii{\cline{1-4} \cline{6-9}}
+      \def\clines@iv@iii{\cline{1-4} \cline{6-9} \cline{11-14}}
+      \def\clines@iv@iv{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}}
+      \def\clines@iv@v{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24}}
+      \def\clines@iv@vi{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24} \cline{26-29}}
+      \def\clines@iv@vii{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24} \cline{26-29} \cline{31-34}}
+      \def\clines@iv@viii{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}}
+      \def\clines@iv@ix{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}
+        \cline{41-44}}
+      \def\clines@iv@x{\cline{1-4} \cline{6-9} \cline{11-14} \cline{16-19}
+        \cline{21-24} \cline{26-29} \cline{31-34} \cline{36-39}
+        \cline{41-44} \cline{46-49}}
+
+      % The definition of \cline ends with \noalign{\vskip-\arrayrulewidth},
+      % and so we want to throw in a \noalign{\vskip\arrayrulewidth} to
+      % cancel that.
+      \def\cline@correction{\noalign{\vskip\arrayrulewidth}}
+
+      \def\create@cline@stuff@v{%
+        % Called by \@multicolumntable.
+        \if@combined
+          \if@scores
+            \edef\cline@stuff@v{\expandafter\noexpand\csname
+              clines@iv@\romannumeral \c@num@cols\endcsname
+              \noexpand\cline@correction}%
+          \else
+            \edef\cline@stuff@v{\expandafter\noexpand\csname
+              clines@iii@\romannumeral \c@num@cols\endcsname
+              \noexpand\cline@correction}%
+          \fi
+        \else
+          \if@scores
+            \edef\cline@stuff@v{\expandafter\noexpand\csname
+              clines@iii@\romannumeral \c@num@cols\endcsname
+              \noexpand\cline@correction}%
+          \else
+            \edef\cline@stuff@v{\expandafter\noexpand\csname
+              clines@ii@\romannumeral \c@num@cols\endcsname
+              \noexpand\cline@correction}%
+          \fi
+        \fi
+      }% create@cline@stuff@v
+
+      %--------------------------------------------------------------------
+      % The various \docolumn@heads@something@v
+
+      \def\docolumn@heads@v{%
+        % Called by \@multicolumntable.
+        % multicolumngradetable or multicolumnbonusgradetable, possibly
+        % partial.
+        \iftbl@pgs
+          \if@bonus
+            \@bvpgword
+          \else
+            \@vpgword
+          \fi
+        \else
+          \if@bonus
+            \@bvqword
+          \else
+            \@vqword
+          \fi
+        \fi
+       & \if@bonus
+          \@bvpword
+        \else
+          \@vpword
+        \fi
+       & \if@bonus
+          \@bvsword
+        \else
+          \@vsword
+        \fi
+        \addtocounter{@iterator}{1}%
+        \ifnum \value{@iterator} < \value{num@cols}\relax
+          \hidden@ampersand
+          \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
+          \hidden@ampersand
+          \let\nextdocolumn@heads@v=\docolumn@heads@v
+        \else
+          \let\nextdocolumn@heads@v=\relax
+        \fi
+        \nextdocolumn@heads@v
+      }% docolumn@heads@v
+
+      \def\docolumn@heads@noscores@v{%
+        % Called by \@multicolumntable.
+        % multicolumnpointtable or multicolumnbonuspointtable, possibly
+        % partial.
+        \iftbl@pgs
+          \if@bonus
+            \@bvpgword
+          \else
+            \@vpgword
+          \fi
+        \else
+          \if@bonus
+            \@bvqword
+          \else
+            \@vqword
+          \fi
+        \fi
+       &
+        \if@bonus
+          \@bvpword
+        \else
+          \@vpword
+        \fi
+        \addtocounter{@iterator}{1}%
+        \ifnum \value{@iterator} < \value{num@cols}\relax
+          \hidden@ampersand
+          \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
+          \hidden@ampersand
+          \let\nextdocolumn@heads@noscores@v=\docolumn@heads@noscores@v
+        \else
+          \let\nextdocolumn@heads@noscores@v=\relax
+        \fi
+        \nextdocolumn@heads@noscores@v
+      }% docolumn@heads@noscores@v
+
+      \def\docolumn@heads@comb@v{%
+        % Called by \@multicolumntable.
+        % multicolumncombinedgradetable, possibly partial.
+        \iftbl@pgs
+          \@cvpgword
+        \else
+          \@cvqword
+        \fi
+       & \@cvpword
+       & \@cvbpword
+       & \@cvsword
+        \addtocounter{@iterator}{1}%
+        \ifnum \value{@iterator} < \value{num@cols}\relax
+          \hidden@ampersand
+          \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
+          \hidden@ampersand
+          \let\nextdocolumn@heads@comb@v=\docolumn@heads@comb@v
+        \else
+          \let\nextdocolumn@heads@comb@v=\relax
+        \fi
+        \nextdocolumn@heads@comb@v
+      }% docolumn@heads@comb@v
+
+      \def\docolumn@heads@comb@noscores@v{%
+        % Called by \@multicolumntable.
+        % multicolumncombinedpointtable, possibly partial.
+        \iftbl@pgs
+          \@cvpgword
+        \else
+          \@cvqword
+        \fi
+       & \@vpword
+       & \@bvpword
+        \addtocounter{@iterator}{1}%
+        \ifnum \value{@iterator} < \value{num@cols}\relax
+          \hidden@ampersand
+          \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
+          \hidden@ampersand
+          \let\nextdocolumn@heads@comb@noscores@v=\docolumn@heads@comb@noscores@v
+        \else
+          \let\nextdocolumn@heads@comb@noscores@v=\relax
+        \fi
+        \nextdocolumn@heads@comb@noscores@v
+      }% docolumn@heads@comb@noscores@v
+
+      %--------------------------------------------------------------------
+      % \do@lines@v is used by *all* multicolumn tables.
+      % It calls \do@oneline@v for all non-combined tables and
+      % \do@oneline@comb@v for all combined tables.
+
+      \def\do@lines@v{%
+      % We get here from \@multicolumntable.
+      % ALL MULTICOLUMN TABLES!!!!
+      % pq@index@pts holds the question number or page number in the first
+      % column of the current row.
+      \addtocounter{current@row}{1}%
+      \setcounter{pq@index}{\value{pq@index@pts}}%
+      \setcounter{cols@done}{0}% Number of columns done
+      % We're doing both grade tables and point tables!!
+      \if@combined
+        \do@oneline@comb@v
       \else
-        \@vqword
+        \do@oneline@v
       \fi
-    \fi
-    &
-    \if@bonus
-      \@bvpword
-    \else
-      \@vpword
-    \fi
-  \addtocounter{@iterator}{1}%
-  \ifnum \value{@iterator} < \value{num@cols}\relax
-    \hidden@ampersand
-    \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
-    \hidden@ampersand
-    \let\nextdocolumn@heads@noscores@v=\docolumn@heads@noscores@v
-  \else
-    \let\nextdocolumn@heads@noscores@v=\relax
-  \fi
-  \nextdocolumn@heads@noscores@v
-}% docolumn@heads@noscores@v
-
-\def\docolumn@heads@comb@v{%
-  % Called by \@multicolumntable.
-  % multicolumncombinedgradetable, possibly partial.
-    \iftbl@pgs
-      \@cvpgword
-    \else
-      \@cvqword
-    \fi
-  & \@cvpword
-  & \@cvbpword
-  &  \@cvsword
-  \addtocounter{@iterator}{1}%
-  \ifnum \value{@iterator} < \value{num@cols}\relax
-    \hidden@ampersand
-    \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
-    \hidden@ampersand
-    \let\nextdocolumn@heads@comb@v=\docolumn@heads@comb@v
-  \else
-    \let\nextdocolumn@heads@comb@v=\relax
-  \fi
-  \nextdocolumn@heads@comb@v
-}% docolumn@heads@comb@v
-
-\def\docolumn@heads@comb@noscores@v{%
-  % Called by \@multicolumntable.
-  % multicolumncombinedpointtable, possibly partial.
-    \iftbl@pgs
-      \@cvpgword
-    \else
-      \@cvqword
-    \fi
-  & \@vpword
-  & \@bvpword
-  \addtocounter{@iterator}{1}%
-  \ifnum \value{@iterator} < \value{num@cols}\relax
-    \hidden@ampersand
-    \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
-    \hidden@ampersand
-    \let\nextdocolumn@heads@comb@noscores@v=\docolumn@heads@comb@noscores@v
-  \else
-    \let\nextdocolumn@heads@comb@noscores@v=\relax
-  \fi
-  \nextdocolumn@heads@comb@noscores@v
-}% docolumn@heads@comb@noscores@v
-
-%--------------------------------------------------------------------
-% \do@lines@v is used by *all* multicolumn tables.
-% It calls \do@oneline@v for all non-combined tables and
-% \do@oneline@comb@v for all combined tables.
-
-\def\do@lines@v{%
-  % We get here from \@multicolumntable.
-  % ALL MULTICOLUMN TABLES!!!!
-  % pq@index@pts holds the question number or page number in the first
-  % column of the current row.
-  \addtocounter{current@row}{1}%
-  \setcounter{pq@index}{\value{pq@index@pts}}%
-  \setcounter{cols@done}{0}% Number of columns done
-  % We're doing both grade tables and point tables!!
-  \if@combined
-    \do@oneline@comb@v
-  \else
-    \do@oneline@v
-  \fi
-  \increment@index{pq@index@pts}%
-  % We need the "\\ \cline@stuff@v" to *immediately* precede the
-  % \end{tabular} (i.e., with no \ifnum separating them), to avoid
-  % having crap after the \cline@stuff@v that
-  % causes there to be an extra row at the end of the table.  We also
-  % need there to be nothing between \\ and \cline@stuff@v.
-  \ifnum \value{current@row} = \value{num@rows}\relax
-    \\
-    \cline@stuff@v
+      \increment@index{pq@index@pts}%
+      % We need the "\\ \cline@stuff@v" to *immediately* precede the
+      % \end{tabular} (i.e., with no \ifnum separating them), to avoid
+      % having crap after the \cline@stuff@v that
+      % causes there to be an extra row at the end of the table.  We also
+      % need there to be nothing between \\ and \cline@stuff@v.
+      \ifnum \value{current@row} = \value{num@rows}\relax
+      \\
+      \cline@stuff@v
     \end{tabular}%
     \let\nextdo@lines@v=\relax
   \else
@@ -7227,61 +7227,61 @@
       \ifnum \value{current@row} = \value{num@rows}\relax
         % We're in the last column, last row!
         % Print the total:
+        \if@bonus
+          \@bvtword
+        \else
+          \@vtword
+        \fi
+        \hidden@ampersand
+        \if@scores
           \if@bonus
-            \@bvtword
+            \prt@tablebonuspoints
           \else
-            \@vtword
+            \prt@tablepoints
           \fi
           \hidden@ampersand
-        \if@scores
-            \if@bonus
-              \prt@tablebonuspoints
-            \else
-              \prt@tablepoints
-            \fi
-          \hidden@ampersand
-            \hbox to \@cellwidth{\hfill}%
+          \hbox to \@cellwidth{\hfill}%
         \else
-            \if@bonus
-              \prt@tablebonuspoints
-            \else
-              \prt@tablepoints
-            \fi
+          \if@bonus
+            \prt@tablebonuspoints
+          \else
+            \prt@tablepoints
+          \fi
         \fi
       \else
         % Not last column last row; insert empty space:
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
         \if@scores
           \hidden@ampersand
-            \hbox to \@cellwidth{\hfill}%
+          \hbox to \@cellwidth{\hfill}%
         \fi
         \hidden@ampersand
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
       \fi
     \else
       % Not last column; insert empty space:
       \hbox to \@cellwidth{\hfill}%
       \if@scores
         \hidden@ampersand
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
       \fi
       \hidden@ampersand
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
     \fi
   \else
     % We need to do question (or page) number pq@index:
-      \refto@index{pq@index}%
+    \refto@index{pq@index}%
     \hidden@ampersand
-      \if@scores
-        \if@bonus
-          \bonuspointsof@index{pq@index}%
-          \addto@hlfcntr{tbl@bonuspoints}{\bonuspointsof@index{pq@index}}%
-        \else
-          \pointsof@index{pq@index}%
-          \addto@hlfcntr{tbl@points}{\pointsof@index{pq@index}}%
-        \fi
+    \if@scores
+      \if@bonus
+        \bonuspointsof@index{pq@index}%
+        \addto@hlfcntr{tbl@bonuspoints}{\bonuspointsof@index{pq@index}}%
+      \else
+        \pointsof@index{pq@index}%
+        \addto@hlfcntr{tbl@points}{\pointsof@index{pq@index}}%
+      \fi
       \hidden@ampersand
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
     \else
       \if@bonus
         \bonuspointsof@index{pq@index}%
@@ -7295,10 +7295,10 @@
   \addtocounter{cols@done}{1}% Number of columns done
   \ifnum \value{cols@done} < \value{num@cols}\relax
     \hidden@ampersand
-      \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
-      \nextcolumn@index@v{pq@index}%
+    \hspace*{-\arrayrulewidth}\hspace*{\doublerulesep}%
+    \nextcolumn@index@v{pq@index}%
     \hidden@ampersand
-      \let\nextdo@oneline@v=\do@oneline@v
+    \let\nextdo@oneline@v=\do@oneline@v
   \else
     \let\nextdo@oneline@v=\relax
   \fi
@@ -7321,51 +7321,51 @@
         % Print the total:
         \@cvtword
         \hidden@ampersand
-          \prt@tablepoints
+        \prt@tablepoints
         \hidden@ampersand
         \if@scores
-            \prt@tablebonuspoints
+          \prt@tablebonuspoints
           \hidden@ampersand
-            \hbox to \@cellwidth{\hfill}%
+          \hbox to \@cellwidth{\hfill}%
         \else
           \prt@tablebonuspoints
         \fi
       \else
         % Last column, but not last row; insert empty space:
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
         \hidden@ampersand
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
         \if@scores
           \hidden@ampersand
-            \hbox to \@cellwidth{\hfill}%
+          \hbox to \@cellwidth{\hfill}%
         \fi
         \hidden@ampersand
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
       \fi
     \else
       % Not last column; insert empty space:
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
       \hidden@ampersand
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
       \if@scores
         \hidden@ampersand
-          \hbox to \@cellwidth{\hfill}%
+        \hbox to \@cellwidth{\hfill}%
       \fi
       \hidden@ampersand
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
     \fi
   \else
     % We need to do question number pq@index:
-      \refto@index{pq@index}%
+    \refto@index{pq@index}%
     \hidden@ampersand
-      \pointsof@index{pq@index}%
-      \addto@hlfcntr{tbl@points}{\pointsof@index{pq@index}}%
+    \pointsof@index{pq@index}%
+    \addto@hlfcntr{tbl@points}{\pointsof@index{pq@index}}%
     \hidden@ampersand
     \if@scores
-        \bonuspointsof@index{pq@index}%
-        \addto@hlfcntr{tbl@bonuspoints}{\bonuspointsof@index{pq@index}}%
+      \bonuspointsof@index{pq@index}%
+      \addto@hlfcntr{tbl@bonuspoints}{\bonuspointsof@index{pq@index}}%
       \hidden@ampersand
-        \hbox to \@cellwidth{\hfill}%
+      \hbox to \@cellwidth{\hfill}%
     \else
       \bonuspointsof@index{pq@index}%
       \addto@hlfcntr{tbl@bonuspoints}{\bonuspointsof@index{pq@index}}%
@@ -7408,13 +7408,13 @@
     \fi
   \fi
   \ifhlfcntr@pos{tmp@hlfcntr}%
+  \let\nextfind@nextpagewithpoints=\relax
+  \else
+  \ifnum \value{#1} > \tbl@lastp\relax
     \let\nextfind@nextpagewithpoints=\relax
   \else
-    \ifnum \value{#1} > \tbl@lastp\relax
-      \let\nextfind@nextpagewithpoints=\relax
-    \else
-      \def\nextfind@nextpagewithpoints{\find@nextpagewithpoints{#1}}%
-    \fi
+    \def\nextfind@nextpagewithpoints{\find@nextpagewithpoints{#1}}%
+  \fi
   \fi
   \nextfind@nextpagewithpoints
 }% find@nextpagewithpoints
@@ -7462,16 +7462,16 @@
   \@bonusfalse
   \def\tbl@range{#1}%
   \@ifundefined{exam@numpoints}%
-    {\mbox{\normalfont\bfseries ??}}%
-    {\read@range}%
+  {\mbox{\normalfont\bfseries ??}}%
+  {\read@range}%
 }% pointsinrange
 
 \def\bonuspointsinrange#1{%
   \@bonustrue
   \def\tbl@range{#1}%
   \@ifundefined{exam@numpoints}%
-    {\mbox{\normalfont\bfseries ??}}%
-    {\read@range}%
+  {\mbox{\normalfont\bfseries ??}}%
+  {\read@range}%
 }% bonuspointsinrange
 
 \def\bad@range{%
@@ -7530,14 +7530,14 @@
   \addtocounter{@iterator}{1}%
   \if@bonus
     \@ifundefined{bonuspointsofq@\romannumeral \c@@iterator}%
-      {}%
-      {\addto@hlfcntr{tbl@points}
-         {\csname bonuspointsofq@\romannumeral \c@@iterator\endcsname}}%
+    {}%
+    {\addto@hlfcntr{tbl@points}
+      {\csname bonuspointsofq@\romannumeral \c@@iterator\endcsname}}%
   \else
     \@ifundefined{pointsofq@\romannumeral \c@@iterator}%
-      {}%
-      {\addto@hlfcntr{tbl@points}
-         {\csname pointsofq@\romannumeral \c@@iterator\endcsname}}%
+    {}%
+    {\addto@hlfcntr{tbl@points}
+      {\csname pointsofq@\romannumeral \c@@iterator\endcsname}}%
   \fi
   \ifnum \value{@iterator} < \tbl@lastq\relax
     \let\next@countloop=\do@countloop
@@ -7642,14 +7642,14 @@
 % insert blank vertical space equal to the optional argument (the
 % default value of which is 0pt).
 \newenvironment{solution}[1][0pt]%
-  {%
-    \@insolutiontrue % cancelled by the end of the environment
-    \@addpointsfalse % cancelled by the end of the environment
-    \ifprintanswers
-      \begingroup
-      \Solution@Emphasis
-      \begin{TheSolution}%
-    \else
+{%
+  \@insolutiontrue % cancelled by the end of the environment
+  \@addpointsfalse % cancelled by the end of the environment
+  \ifprintanswers
+    \begingroup
+    \Solution@Emphasis
+    \begin{TheSolution}%
+      \else
       \ifcancelspace
         % Do nothing
       \else
@@ -7662,15 +7662,15 @@
         \fi
       \fi
       \setbox\z@\vbox\bgroup
-    \fi
-  }{%
-    \ifprintanswers
-      \end{TheSolution}%
-      \endgroup
-    \else
-      \egroup
-    \fi
-  }%
+      \fi
+      }{%
+      \ifprintanswers
+    \end{TheSolution}%
+    \endgroup
+  \else
+    \egroup
+  \fi
+}%
 
 % If printanswers is true, we print the solution using a TheSolution
 % environment.  If printanswers is false and cancelspace is false,
@@ -7679,14 +7679,14 @@
 % \fill, or \stretch{number}.  If the optional argument is omitted,
 % then the box is entirely omitted when printanswers is false.
 \newenvironment{solutionorbox}[1][-1pt]%
-  {%
-    \@insolutiontrue % cancelled by the end of the environment
-    \@addpointsfalse % cancelled by the end of the environment
-    \ifprintanswers
-      \begingroup
-      \Solution@Emphasis
-      \begin{TheSolution}%
-    \else
+{%
+  \@insolutiontrue % cancelled by the end of the environment
+  \@addpointsfalse % cancelled by the end of the environment
+  \ifprintanswers
+    \begingroup
+    \Solution@Emphasis
+    \begin{TheSolution}%
+      \else
       \ifcancelspace
         % Do nothing
       \else
@@ -7713,29 +7713,29 @@
         \fi
       \fi
       \setbox\z@\vbox\bgroup
-    \fi
-  }{%
-    \ifprintanswers
-      \end{TheSolution}%
-      \endgroup
-    \else
-      \egroup
-    \fi
-  }%
-  
+      \fi
+      }{%
+      \ifprintanswers
+    \end{TheSolution}%
+    \endgroup
+  \else
+    \egroup
+  \fi
+}%
+
 % If printanswers is true, we print the solution using a TheSolution
 % environment.  If printanswers is false and cancelspace is false,
 % we insert lined vertical space equal to the optional argument (the
 % default value of which is 0pt).
 \newenvironment{solutionorlines}[1][0pt]%
-  {%
-    \@insolutiontrue % cancelled by the end of the environment
-    \@addpointsfalse % cancelled by the end of the environment
-    \ifprintanswers
-      \begingroup
-      \Solution@Emphasis
-      \begin{TheSolution}%
-    \else
+{%
+  \@insolutiontrue % cancelled by the end of the environment
+  \@addpointsfalse % cancelled by the end of the environment
+  \ifprintanswers
+    \begingroup
+    \Solution@Emphasis
+    \begin{TheSolution}%
+      \else
       \ifcancelspace
         % Do nothing
       \else
@@ -7744,29 +7744,29 @@
         \fillwithlines{#1}%
       \fi
       \setbox\z@\vbox\bgroup
-    \fi
-  }{%
-    \ifprintanswers
-      \end{TheSolution}%
-      \endgroup
-    \else
-      \egroup
-    \fi
-  }%
-  
+      \fi
+      }{%
+      \ifprintanswers
+    \end{TheSolution}%
+    \endgroup
+  \else
+    \egroup
+  \fi
+}%
+
 % If printanswers is true, we print the solution using a TheSolution
 % environment.  If printanswers is false and cancelspace is false,
 % we insert dotted lined vertical space equal to the optional
 % argument (the default value of which is 0pt).
 \newenvironment{solutionordottedlines}[1][0pt]%
-  {%
-    \@insolutiontrue % cancelled by the end of the environment
-    \@addpointsfalse % cancelled by the end of the environment
-    \ifprintanswers
-      \begingroup
-      \Solution@Emphasis
-      \begin{TheSolution}%
-    \else
+{%
+  \@insolutiontrue % cancelled by the end of the environment
+  \@addpointsfalse % cancelled by the end of the environment
+  \ifprintanswers
+    \begingroup
+    \Solution@Emphasis
+    \begin{TheSolution}%
+      \else
       \ifcancelspace
         % Do nothing
       \else
@@ -7775,29 +7775,29 @@
         \fillwithdottedlines{#1}%
       \fi
       \setbox\z@\vbox\bgroup
-    \fi
-  }{%
-    \ifprintanswers
-      \end{TheSolution}%
-      \endgroup
-    \else
-      \egroup
-    \fi
-  }%
+      \fi
+      }{%
+      \ifprintanswers
+    \end{TheSolution}%
+    \endgroup
+  \else
+    \egroup
+  \fi
+}%
 
 % If printanswers is true, we print the solution using a TheSolution
 % environment.  If printanswers is false and cancelspace is false,
 % we insert a grid occupying vertically the optional argument (the
 % default value of which is 0pt).
 \newenvironment{solutionorgrid}[1][0pt]%
-  {%
-    \@insolutiontrue % cancelled by the end of the environment
-    \@addpointsfalse % cancelled by the end of the environment
-    \ifprintanswers
-      \begingroup
-      \Solution@Emphasis
-      \begin{TheSolution}%
-    \else
+{%
+  \@insolutiontrue % cancelled by the end of the environment
+  \@addpointsfalse % cancelled by the end of the environment
+  \ifprintanswers
+    \begingroup
+    \Solution@Emphasis
+    \begin{TheSolution}%
+      \else
       \ifcancelspace
         % Do nothing
       \else
@@ -7806,15 +7806,15 @@
         \fillwithgrid{#1}%
       \fi
       \setbox\z@\vbox\bgroup
-    \fi
-  }{%
-    \ifprintanswers
-      \end{TheSolution}%
-      \endgroup
-    \else
-      \egroup
-    \fi
-  }%
+      \fi
+      }{%
+      \ifprintanswers
+    \end{TheSolution}%
+    \endgroup
+  \else
+    \egroup
+  \fi
+}%
 
 
 % The environment TheSolution is called from the solution,
@@ -7830,33 +7830,33 @@
 % command.
 \newcommand{\solutiontitle}{\noindent\textbf{Solution:}\enspace}
 \newenvironment{TheSolution}%
-  {%
-    \vspace{\parskip}%
-    % If we don't set \leftskip and \rightskip to 0pt, then if we
-    % appear inside of an \uplevel command we'd have indentation
-    % inside of the solution box:
-    \leftskip=0pt
-    \rightskip=0pt
-    % If the user said \unframedsolutions, then both
-    % \if@framedsolutions and \if@shadedsolutions are false:
-    \if@framedsolutions
-      % We'll use the default \exam@FrameCommand
+{%
+  \vspace{\parskip}%
+  % If we don't set \leftskip and \rightskip to 0pt, then if we
+  % appear inside of an \uplevel command we'd have indentation
+  % inside of the solution box:
+  \leftskip=0pt
+  \rightskip=0pt
+  % If the user said \unframedsolutions, then both
+  % \if@framedsolutions and \if@shadedsolutions are false:
+  \if@framedsolutions
+    % We'll use the default \exam@FrameCommand
+  \else
+    \if@shadedsolutions
+      \def\exam@FrameCommand{\colorbox{SolutionColor}}%
     \else
-      \if@shadedsolutions
-        \def\exam@FrameCommand{\colorbox{SolutionColor}}%
-      \else
-        % It's \unframedsolutions:
-        \def\exam@FrameCommand{}%
-      \fi
+      % It's \unframedsolutions:
+      \def\exam@FrameCommand{}%
     \fi
-    \exam@MakeFramed{\advance\hsize-\exam@width}%
-    \solutiontitle
-    \ignorespaces
-  }%
-  {%
-    \unskip
-    \endexam@MakeFramed
-  }%
+  \fi
+  \exam@MakeFramed{\advance\hsize-\exam@width}%
+  \solutiontitle
+  \ignorespaces
+}%
+{%
+  \unskip
+  \endexam@MakeFramed
+}%
 
 \newif\if@framedsolutions
 \@framedsolutionstrue
@@ -7874,11 +7874,11 @@
       \space\space\protect\usepackage{color}\MessageBreak
       in order to use the command \protect\shadedsolutions
       \MessageBreak
-      }{%
+    }{%
       This command makes use of the package color.sty,\MessageBreak
       and so you have to load color.sty before your\MessageBreak
       \protect\begin{document} command.\MessageBreak
-      }%
+    }%
   }%
   {%
     \definecolor{SolutionColor}{gray}{0.8}
@@ -7947,11 +7947,11 @@
       \space\space\protect\usepackage{color}\MessageBreak
       in order to use the command \protect\colorsolutionboxes
       \MessageBreak
-      }{%
+    }{%
       This command makes use of the package color.sty,\MessageBreak
       and so you have to load color.sty before your\MessageBreak
       \protect\begin{document} command.\MessageBreak
-      }%
+    }%
   }%
   {%
     \definecolor{SolutionBoxColor}{gray}{0.8}
@@ -7965,10 +7965,10 @@
   \@insolutiontrue % cancelled by the end of the environment
   \@addpointsfalse % cancelled by the end of the environment
   \def\solutionbox@size{#1}% saved for end of environment
-% Change, 2016/02/08: So that the solutionbox environment will work
-% correctly inside of a tabular environment, we use \hsize instead of
-% \textwidth:
-%  \@tempdima=\textwidth
+  % Change, 2016/02/08: So that the solutionbox environment will work
+  % correctly inside of a tabular environment, we use \hsize instead of
+  % \textwidth:
+  %  \@tempdima=\textwidth
   \@tempdima=\hsize
   \advance\@tempdima -\@totalleftmargin
   \advance\@tempdima -6\fboxsep
@@ -7976,54 +7976,54 @@
   % Confine the \Solution@Emphasis, as well as anything the user puts
   % into the solution (e.g., \color{red}, or whatever); don't say
   % \endgroup until after using \box\exam@box:
-  \begingroup 
-    \Solution@Emphasis
-    % We save the solution in a box of the proper width.  We'll either
-    % print it (if we're printing solutions) or throw it away by just
-    % not using it before the environment ends:
-    \setbox\exam@box=\vtop\bgroup
-      \hsize=\@tempdima
-      \leftskip=0pt
-      \rightskip=0pt
-      \vskip 2\fboxsep
-% Change, 2016/05/09: We change \@totalleftmargin and \linewidth in
-% case there are enumerate, itemize, or description environments
-% inside the solution:
-      \@totalleftmargin=0pt
-      \linewidth=\hsize
-      \solutiontitle
-      \ignorespaces
-  }%
-  {%
-    \unskip
-    \egroup
-    % OK, the solution is now inside \box\exam@box.
-    % Set the height and depth to 0pt, so that if we use it we won't
-    % be advancing our position on the page:
-    \ht\exam@box=0pt
-    \dp\exam@box=0pt
-    \par
-    \vspace{\parskip}
-    \ifprintanswers
-      % We enclose the \vtop in an \hbox to avoid having the
-      % indentation of the enclosing list environment (implemented via
-      % \parshape) shift us to the right when we enter horizontal
-      % mode.  If we don't use this \hbox, then we'd have to comment
-      % out the \hskip \@totalleftmargin:
-      % 2016/02/08: Changed \textwidth to \hsize:
-      \hbox to \hsize{%
-        \noindent
-        \hskip\@totalleftmargin
-        \hskip3\fboxsep\hskip\fboxrule
-        \box\exam@box\hfill
-      }%
-      \par\nointerlineskip
-    \fi
+  \begingroup
+  \Solution@Emphasis
+  % We save the solution in a box of the proper width.  We'll either
+  % print it (if we're printing solutions) or throw it away by just
+  % not using it before the environment ends:
+  \setbox\exam@box=\vtop\bgroup
+  \hsize=\@tempdima
+  \leftskip=0pt
+  \rightskip=0pt
+  \vskip 2\fboxsep
+  % Change, 2016/05/09: We change \@totalleftmargin and \linewidth in
+  % case there are enumerate, itemize, or description environments
+  % inside the solution:
+  \@totalleftmargin=0pt
+  \linewidth=\hsize
+  \solutiontitle
+  \ignorespaces
+}%
+{%
+  \unskip
+  \egroup
+  % OK, the solution is now inside \box\exam@box.
+  % Set the height and depth to 0pt, so that if we use it we won't
+  % be advancing our position on the page:
+  \ht\exam@box=0pt
+  \dp\exam@box=0pt
+  \par
+  \vspace{\parskip}
+  \ifprintanswers
+    % We enclose the \vtop in an \hbox to avoid having the
+    % indentation of the enclosing list environment (implemented via
+    % \parshape) shift us to the right when we enter horizontal
+    % mode.  If we don't use this \hbox, then we'd have to comment
+    % out the \hskip \@totalleftmargin:
+    % 2016/02/08: Changed \textwidth to \hsize:
+    \hbox to \hsize{%
+      \noindent
+      \hskip\@totalleftmargin
+      \hskip3\fboxsep\hskip\fboxrule
+      \box\exam@box\hfill
+    }%
+    \par\nointerlineskip
+  \fi
   \endgroup % Finish confining the \Solution@Emphasis
-% Starting in version 2.502, 2016/03/23,the decision of whether to
-% color the box is made in the \makeemptybox command:
+  % Starting in version 2.502, 2016/03/23,the decision of whether to
+  % color the box is made in the \makeemptybox command:
   \makeemptybox{\solutionbox@size}
-  }% End of the second argument of \newenvironment{solutionbox}
+}% End of the second argument of \newenvironment{solutionbox}
 
 
 %--------------------------------------------------------------------
@@ -8134,39 +8134,39 @@
 \newcount\@sollistdepth
 
 \newenvironment{examframed}% using default \exam@FrameCommand
-  {\exam@MakeFramed {\advance\hsize-\exam@width \exam@FrameRestore}}%
-  {\endexam@MakeFramed}
+{\exam@MakeFramed {\advance\hsize-\exam@width \exam@FrameRestore}}%
+{\endexam@MakeFramed}
 
 \newenvironment{examshaded}{%
   \def\exam@FrameCommand{\colorbox{shadecolor}}%
   \exam@MakeFramed {\exam@FrameRestore}}%
- {\endexam@MakeFramed}
+{\endexam@MakeFramed}
 
 \newenvironment{examleftbar}{%
   \def\exam@FrameCommand{\vrule width 3pt \hspace{10pt}}%
   \exam@MakeFramed {\advance\hsize-\exam@width \exam@FrameRestore}}%
- {\endexam@MakeFramed}
+{\endexam@MakeFramed}
 
 \chardef\exam@FrameRestore=\catcode`\| % for debug
 \catcode`\|=\catcode`\% % (debug: insert space after backslash)
 
 \def\exam@MakeFramed#1{\par
- % measure added width and height; call result \exam@width and \exam@height
- \setbox\z@\vbox{\vskip-1in \hbox{\hskip-1in 
-   \exam@FrameCommand{\hbox{\vrule \@height .7in \@depth.3in \@width 1in}}}%
-   \vskip\z@skip}%
- \def\exam@width{\wd\z@}\def\exam@height{\ht\z@}%
- \edef\exam@fb@frw{\the\exam@width}\edef\exam@fb@frh{\the\exam@height}%
- % insert pre-penalties and skips
- \begingroup
- \skip@\lastskip
- \if@nobreak\else 
+  % measure added width and height; call result \exam@width and \exam@height
+  \setbox\z@\vbox{\vskip-1in \hbox{\hskip-1in
+      \exam@FrameCommand{\hbox{\vrule \@height .7in \@depth.3in \@width 1in}}}%
+    \vskip\z@skip}%
+  \def\exam@width{\wd\z@}\def\exam@height{\ht\z@}%
+  \edef\exam@fb@frw{\the\exam@width}\edef\exam@fb@frh{\the\exam@height}%
+  % insert pre-penalties and skips
+  \begingroup
+  \skip@\lastskip
+  \if@nobreak\else
     \penalty9999 % updates \page parameters
     \ifdim\pagefilstretch=\z@ \ifdim\pagefillstretch=\z@
-       \edef\@tempa{\the\skip@}%
-       \ifx\@tempa\exam@zero@glue \penalty-30
-       \else \vskip-\skip@ \penalty-30 \vskip\skip@
-    \fi\fi\fi
+        \edef\@tempa{\the\skip@}%
+        \ifx\@tempa\exam@zero@glue \penalty-30
+        \else \vskip-\skip@ \penalty-30 \vskip\skip@
+        \fi\fi\fi
     \penalty\z@
     % Give a stretchy breakpoint that will always be taken in preference
     % to the \penalty 9999 used to update page parameters.  The cube root
@@ -8178,16 +8178,16 @@
     \advance\skip@ \z@ plus-.231\skip@
     \advance\skip@ \z@ plus-.231\topsep
     \vskip-\skip@ \penalty 1800 \vskip\skip@
- \fi
- \addvspace{\topsep}%
- \endgroup
- % clear out pending page break
- \penalty\@M \vskip 2\baselineskip \vskip\exam@height
- \penalty9999 \vskip -2\baselineskip \vskip-\exam@height
- \penalty9999 % updates \pagetotal
-|\message{After clearout, \pagetotal=\the\pagetotal, \pagegoal=\the\pagegoal. }%
- \exam@fb@adjheight 
-%psh: Added commands:
+  \fi
+  \addvspace{\topsep}%
+  \endgroup
+  % clear out pending page break
+  \penalty\@M \vskip 2\baselineskip \vskip\exam@height
+  \penalty9999 \vskip -2\baselineskip \vskip-\exam@height
+  \penalty9999 % updates \pagetotal
+  |\message{After clearout, \pagetotal=\the\pagetotal, \pagegoal=\the\pagegoal. }%
+  \exam@fb@adjheight
+  %psh: Added commands:
   \advance\hsize-\@totalleftmargin
   \saved@totalleftmargin=\@totalleftmargin
   \@totalleftmargin=0pt
@@ -8195,20 +8195,20 @@
   \let\@listdepth=\@sollistdepth
   \@sollistdepth=0
   \leftmargin=0pt
-%psh: end of added commands
- \setbox\@tempboxa\vbox\bgroup
-   #1% Modifications to \hsize (can use \exam@width and \exam@height)
-   \textwidth\hsize \columnwidth\hsize
-%psh: added one line:
-   \linewidth=\hsize
+  %psh: end of added commands
+  \setbox\@tempboxa\vbox\bgroup
+  #1% Modifications to \hsize (can use \exam@width and \exam@height)
+  \textwidth\hsize \columnwidth\hsize
+  %psh: added one line:
+  \linewidth=\hsize
 }
 
 \def\endexam@MakeFramed{\par
-     \kern\z@ \penalty-100 % put depth into height
- \egroup
- \begingroup \exam@put@frame \endgroup
-%psh: Added one line:
- \@totalleftmargin=\saved@totalleftmargin
+  \kern\z@ \penalty-100 % put depth into height
+  \egroup
+  \begingroup \exam@put@frame \endgroup
+  %psh: Added one line:
+  \@totalleftmargin=\saved@totalleftmargin
 }
 
 % \exam@put@frame takes the contents of \@tempboxa and puts all, or a
@@ -8217,47 +8217,47 @@
 % have zero depth.)
 
 \def\exam@put@frame{\relax
- \ifdim\pagegoal=\maxdimen \pagegoal\vsize \fi
-|   \message{=============== Entering putframe ====================^^J
-|     \pagegoal=\the\pagegoal,  \pagetotal=\the\pagetotal. }%
- \ifinner \else
+  \ifdim\pagegoal=\maxdimen \pagegoal\vsize \fi
+  |   \message{=============== Entering putframe ====================^^J
+    |     \pagegoal=\the\pagegoal,  \pagetotal=\the\pagetotal. }%
+  \ifinner \else
     \dimen@\pagegoal \advance\dimen@-\pagetotal % natural space left on page
-  \ifdim\dimen@<2\baselineskip 
-|   \message{Page has only \the\dimen@\space room left; eject. }%
-    \eject \exam@fb@adjheight \exam@put@frame
-  \else % there's appreciable room left on the page
-|    \message{\string\pagetotal=\the\pagetotal,
-|        \string\pagegoal=\the\pagegoal, 
-|        \string\pagestretch=\the\pagestretch,
-|        \string\pageshrink=\the\pageshrink,
-|        \string\exam@fb@frh=\exam@fb@frh. \space}
-|    \message{Box of size \the\ht\@tempboxa\space + \exam@fb@frh}%
-     \begingroup % temporarily set \dimen@ to be...
-     \advance\dimen@.8\pageshrink  % maximum space available on page
-     \advance\dimen@-\exam@fb@frh\relax % space available for frame's contents
-     \expandafter\endgroup
-     % restore \dimen@ to real room left on page
-     \ifdim\dimen@>\ht\@tempboxa % whole box does fit
-|       \message{fits in \the\dimen@. }%
-     \else % box must be split
-|       \message{must be split to fit in \the\dimen@. }%
+    \ifdim\dimen@<2\baselineskip
+      |   \message{Page has only \the\dimen@\space room left; eject. }%
+      \eject \exam@fb@adjheight \exam@put@frame
+    \else % there's appreciable room left on the page
+      |    \message{\string\pagetotal=\the\pagetotal,
+        |        \string\pagegoal=\the\pagegoal,
+        |        \string\pagestretch=\the\pagestretch,
+        |        \string\pageshrink=\the\pageshrink,
+        |        \string\exam@fb@frh=\exam@fb@frh. \space}
+      |    \message{Box of size \the\ht\@tempboxa\space + \exam@fb@frh}%
+      \begingroup % temporarily set \dimen@ to be...
+      \advance\dimen@.8\pageshrink  % maximum space available on page
+      \advance\dimen@-\exam@fb@frh\relax % space available for frame's contents
+      \expandafter\endgroup
+      % restore \dimen@ to real room left on page
+      \ifdim\dimen@>\ht\@tempboxa % whole box does fit
+        |       \message{fits in \the\dimen@. }%
+      \else % box must be split
+        |       \message{must be split to fit in \the\dimen@. }%
         \setbox\@tempboxa\vbox{% simulate frame and flexiblity of the page:
-           \vskip \exam@fb@frh \@plus\pagestretch \@minus.8\pageshrink
-           \kern137sp\kern-137sp\penalty-30
-           \unvbox\@tempboxa}%
+          \vskip \exam@fb@frh \@plus\pagestretch \@minus.8\pageshrink
+          \kern137sp\kern-137sp\penalty-30
+          \unvbox\@tempboxa}%
         \edef\exam@fb@resto@set{\boxmaxdepth\the\boxmaxdepth
           \splittopskip\the\splittopskip}%
         \boxmaxdepth\z@ \splittopskip\z@
         \setbox\tw@\vsplit\@tempboxa to\dimen@
         \setbox\tw@\vbox{\unvbox\tw@}% natural-sized
-|       \message{Box of size \the\ht\@tempboxa\space split to \the\dimen@. 
-|          Natural height of split box is \the\ht\tw@. }%
+        |       \message{Box of size \the\ht\@tempboxa\space split to \the\dimen@.
+          |          Natural height of split box is \the\ht\tw@. }%
         % If the split-to size > (\vsize-\topskip), then set box to full size
         \begingroup
-          \advance\dimen@\topskip
-          \expandafter\endgroup
+        \advance\dimen@\topskip
+        \expandafter\endgroup
         \ifdim\dimen@>\pagegoal
-|         \message{Frame is big -- Use up the full column. }%
+          |         \message{Frame is big -- Use up the full column. }%
           \dimen@ii\pagegoal
           \advance\dimen@ii -\topskip
           \advance\dimen@ii \exam@frameHeightAdjust\relax
@@ -8265,7 +8265,7 @@
           % If the split-to size > feasible room_on_page, rebox it smaller.
           \advance\dimen@.8\pageshrink
           \ifdim\ht\tw@>\dimen@
-|           \message{Box too tall; rebox it to \the\dimen@. }%
+            |           \message{Box too tall; rebox it to \the\dimen@. }%
             \dimen@ii\dimen@
           \else % use natural size
             \dimen@ii\ht\tw@
@@ -8278,35 +8278,35 @@
         \vskip -\exam@fb@frh \@plus-\pagestretch \@minus-.8\pageshrink
         \unvbox\tw@ \unpenalty\unpenalty
         \ifdim\lastkern=-137sp % whole box went to next page
-|          \message{box split at beginning! }%
-           \egroup \exam@fb@resto@set \eject % (\vskip for frame size
-                                             % was discarded)  
-           \exam@fb@adjheight
+          |          \message{box split at beginning! }%
+          \egroup \exam@fb@resto@set \eject % (\vskip for frame size
+          % was discarded)  
+          \exam@fb@adjheight
         \else %
-           \egroup \exam@fb@resto@set
-           \ifvoid\@tempboxa % it all fit after all
-|             \message{box split at end! }%
-              \setbox\@tempboxa\box\tw@
-           \else % it really did split
-|             \message{box split as expected. Its reboxed height is \the\ht\tw@. }%
-              \ifdim\wd\tw@>\z@
-%psh: Changed the command that inserts the box:
-%     Instead of \centerline, we shift right by \saved@totalleftmargin:
-%              \centerline{\exam@FrameCommand{\box\tw@}}%  ??? \centerline bad idea
-       \hbox{\hskip \saved@totalleftmargin\exam@FrameCommand{\box\tw@}}%
-              \else
-|               \message{Zero width means likely blank. Don't frame it (guess)}%
-                \box\tw@
-              \fi
-              \hrule \@height\z@
-              \eject
-              \exam@fb@adjheight
-              \exam@put@frame
-  \fi\fi\fi\fi\fi
+          \egroup \exam@fb@resto@set
+          \ifvoid\@tempboxa % it all fit after all
+            |             \message{box split at end! }%
+            \setbox\@tempboxa\box\tw@
+          \else % it really did split
+            |             \message{box split as expected. Its reboxed height is \the\ht\tw@. }%
+            \ifdim\wd\tw@>\z@
+              %psh: Changed the command that inserts the box:
+              %     Instead of \centerline, we shift right by \saved@totalleftmargin:
+              %              \centerline{\exam@FrameCommand{\box\tw@}}%  ??? \centerline bad idea
+              \hbox{\hskip \saved@totalleftmargin\exam@FrameCommand{\box\tw@}}%
+            \else
+              |               \message{Zero width means likely blank. Don't frame it (guess)}%
+              \box\tw@
+            \fi
+            \hrule \@height\z@
+            \eject
+            \exam@fb@adjheight
+            \exam@put@frame
+          \fi\fi\fi\fi\fi
   \ifvoid\@tempboxa\else
-%psh: Changed the command that inserts the box:
-%     Instead of \centerline, we shift right by \saved@totalleftmargin:
-%    \centerline{\exam@FrameCommand{\box\@tempboxa}}%
+    %psh: Changed the command that inserts the box:
+    %     Instead of \centerline, we shift right by \saved@totalleftmargin:
+    %    \centerline{\exam@FrameCommand{\box\@tempboxa}}%
     \hbox{\hskip\saved@totalleftmargin\exam@FrameCommand{\box\@tempboxa}}%
     \nointerlineskip \null %{\showoutput \showlists}
     \penalty-30 \vskip\topsep
@@ -8350,18 +8350,18 @@
 \def\exam@FrameRestore{%
   \let\if@nobreak\iffalse
   \let\if@noskipsec\iffalse
-%  \let\par\@@par  ??
+  %  \let\par\@@par  ??
   \let\-\@dischyph
   \let\'\@acci\let\`\@accii\let\=\@acciii
-%  \parindent\z@ \parskip\z@skip    Definitely omit!
-%  \everypar{}%  ??
+  %  \parindent\z@ \parskip\z@skip    Definitely omit!
+  %  \everypar{}%  ??
   \linewidth\hsize
-%  \@totalleftmargin\z@
-%  \leftskip\z@skip \rightskip\z@skip \@rightskip\z@skip
-%  \parfillskip\@flushglue \lineskip\normallineskip
-%  \baselineskip\normalbaselineskip
+  %  \@totalleftmargin\z@
+  %  \leftskip\z@skip \rightskip\z@skip \@rightskip\z@skip
+  %  \parfillskip\@flushglue \lineskip\normallineskip
+  %  \baselineskip\normalbaselineskip
   \sloppy
-%  \let\\\@normalcr
+  %  \let\\\@normalcr
 }
 
 %  Compatibility with previous versions (temporary!):

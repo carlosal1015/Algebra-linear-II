@@ -45,8 +45,8 @@
 		\item\label{adição:5}
 
 		      (Associatividade na multiplicação)
-					$\left(x\cdot y\right)z=x\cdot\left(y\cdot z\right)$,
-					$\forall x,y,z\in\mathbb{F}$;
+		      $\left(x\cdot y\right)z=x\cdot\left(y\cdot z\right)$,
+		      $\forall x,y,z\in\mathbb{F}$;
 	\end{enumerate}
 
 	e $\left(\mathbb{F}\setminus\left\{0\right\},\cdot\right)$
@@ -82,7 +82,25 @@
 \end{proposition}
 
 \begin{proof}
-	$x=0$
+	\begin{math}
+		x\cdot0=
+		\overset{A2}{=}
+		x\cdot\left(0+0\right)
+		\overset{D}{=}
+		x\cdot0+x\cdot0
+	\end{math}.
+	Assim
+	\begin{align*}
+		x\cdot0+
+		\underbrace{x\cdot0+\left(-x\cdot0\right)}_{=0}
+		        & =
+		\underbrace{x\cdot0+\left(-x\cdot0\right)}_{=0} \\
+		x\cdot0+
+		0       & \overset{A3}{=}
+		0                                               \\
+		x\cdot0 & \overset{A2}{=}
+		0.
+	\end{align*}
 \end{proof}
 
 \begin{example}
@@ -90,22 +108,52 @@
 		\item
 
 		      $\left(\mathbb{Z},+,\cdot\right)$ não é um corpo.
-
-		      O seja el conjunto.
+		      De fato não existe o inverso multiplicativo de $2$ em
+		      $\mathbb{Z}$, ou seja, a equação $2\cdot x=1$ não se
+		      resolue em $\mathbb{Z}$.
 
 		\item
 
 		      $\left(\mathbb{Q},+,\cdot\right)$ é um corpo, onde
-		      $\mathbb{Q}=\left\{\frac{a}{b}\mid a,b\in\mathbb{Z},b\neq0\right\}$.
-		      $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$
+		      \begin{math}
+			      \mathbb{Q}=
+			      \left\{
+			      \frac{a}{b}\mid a,b\in\mathbb{Z},b\neq0
+			      \right\}
+		      \end{math}
+		      e $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$ e
 		      $\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
 
 		\item
 
+		      $\left(\mathbb{R},+,\cdot\right)$ é um corpo (conjunto dos
+		      números reais);
+
+		\item
+
 		      $\left(\mathbb{C},+,\cdot\right)$ é um corpo, onde
-		      $\mathbb{C}=\left\{a+b\imath\mid a,b\in\mathbb{R},\text{ e }\imath^{2}=1\right\}$,
-		      $+\colon\left(a+b\imath\right)+\left(c+d\imath\right)=\left(a+c\right)+\left(b+d\right)\imath$
-		      $\cdot\colon\left(a+b\imath\right)\cdot\left(c+d\imath\right)=\left(ac-bd\right)+\left(ad+bc\right)\imath$.
+		      \begin{math}
+			      \mathbb{C}=
+			      \left\{
+			      a+bi\mid a,b\in\mathbb{R},\text{ e }i^{2}=1
+			      \right\}
+		      \end{math},
+
+		      \begin{math}
+			      +\colon
+			      \left(a+bi\right)+
+			      \left(c+di\right)=
+			      \left(a+c\right)+
+			      \left(b+d\right)i
+		      \end{math}.
+
+		      \begin{math}
+			      \cdot\colon
+			      \left(a+bi\right)\cdot
+			      \left(c+di\right)=
+			      \left(ac-bd\right)+\left(ad+bc\right)i
+		      \end{math}.
+
 		      \begin{align*}
 			      \left(a+bi\right)\left(c+di\right)
 			       & =ac+adi+bci+bdi^{2}=                       \\
@@ -175,7 +223,7 @@ $\underbrace{1+\cdots+1}_{n}=0$
 		\left\{\begin{array}{l}
 			2 x+3 y=1 \\
 			x+4 y=2 .
-		\end{array}\right.                                                       \\
+		\end{array}\right.                                                      \\
 		+\left\{\begin{array}{l}
 			2 x+3 y=1 \\
 			-2 x-8 y=-4
@@ -207,8 +255,8 @@ $\underbrace{1+\cdots+1}_{n}=0$
 \[
 	\begin{aligned}
 		\overline{2} x+\overline{2} \cdot I=1 \Rightarrow & 2 x=\overline{1}-\overline{2} \\
-		& \overline{2} x=-\overline{1} \\
-		& \overline{2} x=\overline{2} \\
-		& x=\overline{1}
-		\end{aligned}
+		                                                  & \overline{2} x=-\overline{1}  \\
+		                                                  & \overline{2} x=\overline{2}   \\
+		                                                  & x=\overline{1}
+	\end{aligned}
 \]
