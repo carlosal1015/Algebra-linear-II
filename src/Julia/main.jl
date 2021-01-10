@@ -1,3 +1,5 @@
+#!/usr/bin/env julia
+
 using LinearAlgebra
 
 A = [1 2 3; 4 1 6; 7 8 1]
@@ -26,7 +28,7 @@ sB = Symmetric(B)
 
 x = [1; 2; 3]
 
-sB\x
+sB \ x
 
 U = UniformScaling(2);
 
@@ -56,9 +58,9 @@ dot([im; im], [1; 1])
 
 dot(1:5, 2:6)
 
-x = fill(2., (5,5));
+x = fill(2., (5, 5));
 
-y = fill(3., (5,5));
+y = fill(3., (5, 5));
 
 dot(x, y)
 
@@ -135,7 +137,7 @@ Supper = Symmetric(A)
 
 Slower = Symmetric(A, :L)
 
-A = [1 0 2+2im 0 3-3im; 0 4 0 5 0; 6-6im 0 7 0 8+8im; 0 9 0 1 0; 2+2im 0 3-3im 0 4];
+A = [1 0 2 + 2im 0 3 - 3im; 0 4 0 5 0; 6 - 6im 0 7 0 8 + 8im; 0 9 0 1 0; 2 + 2im 0 3 - 3im 0 4];
 
 Hupper = Hermitian(A)
 

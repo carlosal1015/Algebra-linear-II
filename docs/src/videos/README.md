@@ -35,4 +35,8 @@ sidebar: auto
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GgWnd_sDlKI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+## [Aula 12/01/2021](https://carlosal1015.github.io/Algebra-linear-II/aulas/espaços-vetoriais.html)
+
+- [PDF]()
+
 Escrito em $\KaTeX$.

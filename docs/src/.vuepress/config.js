@@ -82,6 +82,7 @@ module.exports = {
             "sistemas-lineares",
             "matrizes",
             "reposição",
+            "espaços-vetoriais",
           ],
         },
       ],
