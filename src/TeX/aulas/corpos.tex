@@ -1,0 +1,361 @@
+\chapter{Corpos e Sistemas Lineares\quad$\left(06/01/2021\right)$}
+
+\begin{definition}[Corpo]
+
+	Um \index{corpo}\emph{corpo} é um conjunto não vazio $\mathbb{F}$
+	munido de duas operações: adição mais e multiplicação.
+
+	\[
+		\begin{aligned}
+			+\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+			\left(x,y\right)                  & \longmapsto x+y
+		\end{aligned}\qquad
+		\begin{aligned}
+			\cdot\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+			\left(x,y\right)                      & \longmapsto x\cdot y
+		\end{aligned}
+	\]
+
+	e tais que en $\left(\mathbb{F},+\right)$
+
+	\begin{enumerate}[label={(A\arabic*)},leftmargin=0em,itemindent=*]
+		\item\label{adição:1}
+
+		      (Asociatividade na adição)
+		      $\left(x+y\right)+z=x+\left(y+z\right)$,
+		      $\forall x,y,z\in\mathbb{F}$;
+
+		\item\label{adição:2}
+
+		      (Existênza de neutro aditivo)
+		      $\exists0\in\mathbb{F}$ tal que $x+0=0+x=x$,
+		      $\forall x\in\mathbb{F}$;
+
+		\item\label{adição:3}
+
+		      (Existênza de elemento oposto o inverso aditivo)
+		      Dado $x\in\mathbb{F}$, existe $-x\in\mathbb{F}$ tal que
+		      $x+\left(-x\right)=\left(-x\right)+x=0$;
+
+		\item\label{adição:4}
+
+		      (Conmutatividade na adição)
+		      $x+y=y+x$, $\forall x,y\in\mathbb{F}$;
+	\end{enumerate}
+
+	e $\left(\mathbb{F}\setminus\left\{0\right\},\cdot\right)$
+
+	\begin{enumerate}[label={(M\arabic*)},leftmargin=0em,itemindent=*]
+		\item\label{multiplicação:1}
+
+		      (Associatividade na multiplicação)
+		      $\left(x\cdot y\right)\cdot z=x\cdot\left(y\cdot z\right)$,
+		      $\forall x,y,z\in\mathbb{F}$;
+
+
+		\item\label{multiplicação:2}
+
+		      (Existênza do elemento neutro na multiplicação)
+		      $\exists 1\in\mathbb{F}$ tal que $x\cdot 1=1\cdot x=x$, $\forall x\in\mathbb{F}$;
+
+		\item\label{multiplicação:3}
+
+		      (Existênza inverso multiplicativo)
+		      Dado $x\in\mathbb{F}\setminus\left\{0\right\}$,
+		      existe $x^{-1}\in\mathbb{F}$ tal que
+		      $x\cdot x^{-1}=x^{-1}\cdot x=1$;
+
+		\item\label{multiplicação:4}
+
+		      (Conmutatividade na multiplicação)
+		      $x\cdot y=y\cdot x$, $\forall x,y\in\mathbb{F}$;
+	\end{enumerate}
+
+	\begin{enumerate}[label={(D)},leftmargin=0em,itemindent=*]
+		\item\label{distributiva}
+
+		      (Distributiva)
+		      $x\cdot\left(y+z\right)=x\cdot y+x\cdot z$,
+		      $\forall x,y,z\in\mathbb{F}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	$x\cdot0=0$, $\forall x\in\mathbb{F}$.
+\end{proposition}
+
+\begin{proof}
+	\begin{math}
+		x\cdot0=
+		\overset{A2}{=}
+		x\cdot\left(0+0\right)
+		\overset{D}{=}
+		x\cdot0+x\cdot0
+	\end{math}.
+	Assim
+	\begin{align*}
+		x\cdot0+
+		\underbrace{x\cdot0+\left(-x\cdot0\right)}_{=0}
+		        & =
+		\underbrace{x\cdot0+\left(-x\cdot0\right)}_{=0} \\
+		x\cdot0+
+		0       & \overset{A3}{=}
+		0                                               \\
+		x\cdot0 & \overset{A2}{=}
+		0.
+	\end{align*}
+\end{proof}
+
+\begin{example}
+	\begin{enumerate}[a)]\leavevmode
+		\item
+
+		      $\left(\mathbb{Z},+,\cdot\right)$ não é um corpo.
+		      De fato não existe o inverso multiplicativo de $2$ em
+		      $\mathbb{Z}$, ou seja, a equação $2\cdot x=1$ não se
+		      resolue em $\mathbb{Z}$;
+
+		\item
+
+		      $\left(\mathbb{Q},+,\cdot\right)$ é um corpo, onde
+		      \begin{math}
+			      \mathbb{Q}=
+			      \left\{
+			      \frac{a}{b}\mid a,b\in\mathbb{Z},b\neq0
+			      \right\}
+		      \end{math}
+		      e $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$ e
+		      $\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
+
+		\item
+
+		      $\left(\mathbb{R},+,\cdot\right)$ é um corpo (conjunto dos
+		      números reais);
+
+		\item
+
+		      $\left(\mathbb{C},+,\cdot\right)$ é um corpo, onde
+		      \begin{math}
+			      \mathbb{C}=
+			      \left\{
+			      a+bi\mid a,b\in\mathbb{R},\text{ e }i^{2}=1
+			      \right\}
+		      \end{math},
+
+		      \[
+			      \begin{aligned}
+				      +\colon\mathbb{C}\times\mathbb{C}                & \longrightarrow\mathbb{C} \\
+				      \left(\left(a+bi\right),\left(c+di\right)\right) & \longmapsto
+				      \left(a+c\right)+
+				      \left(b+d\right)i
+			      \end{aligned}\qquad
+			      \begin{aligned}
+				      \cdot\colon\mathbb{C}\times\mathbb{C}            & \longrightarrow\mathbb{C} \\
+				      \left(\left(a+bi\right),\left(c+di\right)\right) & \longmapsto
+				      \left(ac-bd\right)+
+				      \left(ad+bc\right)i
+			      \end{aligned}
+		      \]
+
+		      \begin{align*}
+			      \left(a+bi\right)\left(c+di\right)
+			       & =ac+adi+bci+bdi^{2}=                       \\
+			       & =ac+\left(-1\right)bd+\left(ad+bc\right)i= \\
+			       & =\left(ac-bd\right)+\left(ad+bc\right)i.
+		      \end{align*}
+
+		      $\mathbb{C}$ é chamado del conjunto nos números complexos.
+		      Tome $a+bi\in\mathbb{C}\setminus\left\{0\right\}$
+		      $(0=0+0i)$.
+
+		      Assim
+
+		      \begin{align*}
+			      \left(a+bi\right)\left(a-bi\right)
+			       & =a^{2}+b^{2}+\left(ab-ba\right)i= \\
+			       & =a^{2}+b^{2} \neq 0               \\
+			      \left(a+bi\right)
+			      \underbrace{
+				      \left(a-bi\right)
+				      {\left(a^{2}+b^{2}\right)}^{-1}
+			      }_{}
+			       & =1.
+		      \end{align*}
+
+		      Logo
+		      \[
+			      {\left(a+bi\right)}^{-1}=
+			      \frac{a}{a^{2}+b^{2}}-
+			      \frac{b}{a^{2}+b^{2}}i.
+		      \]
+
+		\item
+
+		      $\left(\mathbb{Z}/p\mathbb{Z},+,\cdot\right)$ é um corpo,
+		      onde $p$ é primo e
+		      \begin{math}
+			      \mathbb{Z}/p\mathbb{Z}=
+			      \left\{
+			      \overline{a}\mid a\in\mathbb{Z}
+			      \right\},
+			      \overline{a}=
+			      \left\{
+			      a+pn\mid n\in\mathbb{Z}
+			      \right\}
+		      \end{math}
+		      e $0\leq a\leq p-1$.
+
+		      \[
+			      \begin{aligned}
+				      +\colon\mathbb{Z}/p\mathbb{Z}\times\mathbb{Z}/p\mathbb{Z} & \longrightarrow\mathbb{Z}/p\mathbb{Z} \\
+				      \left(\overline{a},\overline{b}\right)                    & \longmapsto
+				      \overline{a+b}
+			      \end{aligned}\qquad
+			      \begin{aligned}
+				      \cdot\colon\mathbb{Z}/p\mathbb{Z}\times\mathbb{Z}/p\mathbb{Z} & \longrightarrow\mathbb{Z}/p\mathbb{Z} \\
+				      \left(\overline{a},\overline{b}\right)                        & \longmapsto
+				      \overline{a\cdot b}
+			      \end{aligned}
+		      \]
+		      Tome $p=3$.
+		      Assim
+		      \begin{math}
+			      \mathbb{Z}/3\mathbb{Z}=
+			      \left\{
+			      \overline{0},
+			      \overline{1},
+			      \overline{2}
+			      \right\}
+		      \end{math}.
+
+		      \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
+			      \hline
+			      +            & \overline{0} & \overline{1} & \overline{2} \\
+			      \hline
+			      \overline{0} & \overline{0} & \overline{1} & \overline{2} \\
+			      \hline
+			      \overline{1} & \overline{1} & \overline{2} & \overline{0} \\
+			      \hline
+			      \overline{2} & \overline{2} & \overline{0} & \overline{1} \\
+			      \hline
+		      \end{tabular}
+
+		      \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
+			      \hline
+			      \cdot        & \overline{1} & \overline{2} \\
+			      \hline
+			      \overline{1} & \overline{1} & \overline{2} \\
+			      \hline
+			      \overline{2} & \overline{2} & \overline{1} \\
+			      \hline
+		      \end{tabular}
+		      $\overline{2}+\overline{2}=\overline{2+2}=\overline{4}=\overline{3\cdot1+1}=\overline{1}$.
+	\end{enumerate}
+\end{example}
+
+Note que a equação $x^{2}+\overline{1}=\overline{0}$ não tem solução
+em $\left(\mathbb{Z}/p\mathbb{Z},+,\cdot\right)$.
+
+Defina:
+\begin{math}
+	F=
+	\left\{
+	\overline{a}+
+	\overline{b}i\mid
+	\overline{a},\overline{b}\in\mathbb{Z}/3\mathbb{Z}
+	\text{ e }
+	i^{2}=
+	\overline{2}
+	\right\}
+\end{math}.
+
+\[
+	\begin{aligned}
+		+\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+		\left(
+		\overline{a}+\overline{b}i,
+		\overline{c}+\overline{d}i
+		\right)                           & \longmapsto
+		\left(\overline{a}+\overline{c}\right)+
+		\left(\overline{b}+\overline{d}\right)i
+	\end{aligned}\qquad
+	\begin{aligned}
+		\cdot\colon\mathbb{F}\times\mathbb{F} & \longrightarrow\mathbb{F} \\
+		\left(
+		\overline{a}+\overline{b}i,
+		\overline{c}+\overline{d}i
+		\right)                               & \longmapsto
+		\left(
+		\overline{a}\cdot\overline{c}+
+		2\overline{b}\cdot\overline{d}
+		\right)+
+		\left(
+		\overline{a}\cdot\overline{d}+
+		\overline{b}\cdot\overline{c}
+		\right)i
+	\end{aligned}
+\]
+Mostre que $\left(\mathbb{F},+,\cdot\right)$ é um corpo com $9$ elementos.
+%https://www.learn-portuguese-with-rafa.com/portuguese-keyboard-characters.html
+
+\begin{definition}
+	A característica de um corpo $\mathbb{F}$ é o menor inteiro positivo $n$ (se existir) tal que $\underbrace{1+\cdots+1}_{n}=0$.
+
+	Se tal $n$ não existe, diremos que $F$ tem característica $0$.
+\end{definition}
+
+\begin{proposition}
+	Seja $\mathbb{F}$ um corpo.
+	Sea característica de $F$ é um inteiro positivo $n$, então $n$ é primo.
+\end{proposition}
+
+\begin{proof}
+	Exercízio.
+\end{proof}
+
+\begin{example}
+	\begin{enumerate}[a)]\leavevmode
+		\item
+
+		      Resolva em $\mathbb{Q}$ o sistema
+
+		      \[
+			      \begin{cases}
+				      2 x+3 y & =1, \\
+				      x+4 y   & =2.
+			      \end{cases}
+		      \]
+
+		      % 2 x+3 y=1 \\
+		      % 		-2 x-8 y=-4
+		      % 	\Rightarrow
+		      % 		2 x+3 y=1 \\
+		      % 		-5 y=-3 \Rightarrow y=\frac{3}{5}
+		      % 		2 x+3 \cdot \frac{3}{5}=1 \\
+		      % 		2 x+\frac{9}{5}=1 \Rightarrow 2 x=-\frac{4}{5} \Rightarrow x=-\frac{2}{5}
+
+		      \[
+			      \begin{cases}
+				      \overline{2}x+\overline{2}y= & \overline{1} \\
+				      \overline{2}x+y=             & \overline{0}
+			      \end{cases}
+		      \]
+
+		      \[
+			      \begin{cases}
+				      \overline{2}x+\overline{2}y & =\overline{1} \\
+				      r_{y}                       & =\bar{I}
+			      \end{cases}
+		      \]
+		\item Resolva em $\mathbb{Z}/3\mathbb{Z}$ o sistema
+		      \[
+			      \begin{aligned}
+				      \overline{2} x+\overline{2} \cdot I=1 \Rightarrow & 2 x=\overline{1}-\overline{2} \\
+				                                                        & \overline{2} x=-\overline{1}  \\
+				                                                        & \overline{2} x=\overline{2}   \\
+				                                                        & x=\overline{1}
+			      \end{aligned}
+		      \]
+		      Daí $\left(\overline{1},\overline{1}\right)$ é solução do sistema.
+	\end{enumerate}
+\end{example}

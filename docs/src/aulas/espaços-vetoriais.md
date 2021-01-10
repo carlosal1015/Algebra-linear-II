@@ -1,0 +1,5 @@
+---
+noGlobalSocialShare: true
+---
+
+# Espaços vetoriais
