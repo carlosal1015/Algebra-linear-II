@@ -20,6 +20,8 @@ jobs:
           git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
           git sparse-checkout set src/Julia
           git checkout
+          pwd
+          ls
 
       - uses: julia-actions/setup-julia@v1
         with:
