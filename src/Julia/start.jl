@@ -6,6 +6,8 @@ if pwd() == homedir() * "/Git_Projects/Web/Algebra-linear-II"
     activate(pwd() * "/src/Julia")
 elseif pwd() == homedir() * "/Git_Projects/Web/Algebra-linear-II/src/Julia"
     activate("")
+elseif pwd() == homedir() * "/work/Algebra-linear-II/Algebra-linear-II/"
+    activate(pwd() * "/src/Julia")
 end
 
 #https://discourse.julialang.org/t/how-to-get-a-function-to-print-stuff-with-repl-like-formatting/45877
@@ -14,9 +16,6 @@ function printout(x)
     println()
 end
 
-printout(status())
-printout(pwd())
-printout(homedir())
 include("version.jl")
 include("docs.jl")
 include("galois.jl")
