@@ -1,0 +1,48 @@
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','out','blg','idx','ind',
+% arara: --> 'toc','bbl', 'bcf','run.xml','ilg','pdf']
+% arara: --> }
+% arara: lualatex: {
+% arara: --> shell: 1,
+% arara: --> draft: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: pythontex
+% arara: biber
+% arara: makeindex
+% arara: lualatex: {
+% arara: --> shell: 1,
+% arara: --> draft: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: lualatex: {
+% arara: --> shell: 1,
+% arara: --> draft: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: lualatex: {
+% arara: --> shell: 1,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','out','blg','idx','ind',
+% arara: --> 'toc','bbl', 'bcf','run.xml','ilg']
+% arara: --> }
+
+\input{preâmbulo}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{introdução}
+\input{teoria/main}
+\input{prática/main}
+\input{tutorial/main}
+
+\printindex
+
+\end{document}

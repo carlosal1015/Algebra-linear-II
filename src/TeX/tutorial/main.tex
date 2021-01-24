@@ -1,0 +1,140 @@
+\setpartpreamble{
+
+  \
+
+  \begin{center}
+    \includesvg[width=.4\paperwidth]{julia}
+  \end{center}
+}
+\part{Tutorial}
+
+\appendix
+
+\chapter{Overview about Julia}
+
+En agosto del 2018 se lanzó la versión definitiva LTS y actualmente
+estamos en la versión  \texttt{1.5.6}.
+
+Para ser eficiente, el desarrollo del lenguaje se planteó como
+objetivos:
+
+\begin{itemize}
+  \item No interpretable, sino compilable, uso de LLVM como compilador JIT (Just in time).
+        La primera ejecución va lenta porque compila y ejecuta, la segunda
+        va mucho más rápido.
+  \item Tipado de variables recomendado, pero no obligatorio.
+  \item Aversión a las variables globales.
+  \item Paralización.
+        Cualquier bucle será tan rápido como una operación vectorial.
+  \item Desde un principio, se concibió para distribuir cálculos
+        entre distintos procesadores.
+  \item Club del petaflop: Julia, C, C++, Java y Fortran.
+  \item Modular, permite desarrollos independientes.
+  \item Políglota. Se puede invocar funciones de C, Fortran, R,
+        Python, etc.
+\end{itemize}
+
+%https://julialang.org/blog/2017/03/piday/
+\begin{juliaconsole}
+  1/0
+  3^2#ans
+  eps()
+  typeof(π)
+  tan(π/4)
+  √3
+  ADD = 0x00AB0
+\end{juliaconsole}
+% Ctrl + r, esc.
+
+Julia is a modern, expressive, high-performance programming language designed for scientific computation and data manipulation.
+Originally developed by a group of computer scientists and mathematicians at MIT led by Alan Edelman, Julia combines three key features for highly intensive computing tasks as perhaps no other contemporary programming language does: it is fast, easy to learn and use, and open source.
+
+Algorithms for Optimization
+
+\chapter{\href{https://docs.julialang.org/en/v1/stdlib/LinearAlgebra}{\texttt{LinearAlgebra}} from Julia}
+
+Não há necessidade de instalar nenhum programa, você só precisa de
+uma conta do Google e seguir as instruções do \href{https://github.com/Dsantra92/Julia-on-Colab}{repositório}\footnote{\href{https://colab.research.google.com/github/Dsantra92/Julia-on-Colab/blob/master/julia\_on\_collab.ipynb}{\texttt{julia\_on\_collab.ipynb}}}.
+
+\begin{listing}[H]
+  \footnotesize
+  %\inputminted{c}{exercise3_1.c}
+  \begin{minted}[autogobble]{julia}
+    f(x) = x.^2 + π
+    const ⊗ = kron
+    const Σ = sum # Although `sum` may be just as good in the code.
+    # Calculate Σ_{j=1}^5 j^2
+    Σ([j^2 for j ∈ 1:5])
+    \end{minted}
+  \caption{Programa \texttt{main.jl}.}
+  \label{lst:3.1}
+\end{listing}
+
+.
+\section{Matrix calculus}
+
+%https://www.hpcwire.com/off-the-wire/julia-joins-petaflop-club
+
+For a comprensihve tutorial about Julia look
+%https://julia.quantecon.org/_downloads/pdf/quantitative_economics_with_julia.pdf
+
+\begin{juliacode}
+  #https://discourse.julialang.org/t/round-float-with-julia-1-1/27683
+  using Random
+  Random.seed!(1)
+  n=100
+  X=[ones(n) randn(n)]
+  y = X*[1.0;2.0] + randn(n)*3.0
+  b=X\y
+  println("OLS regression coefficients=", round(b[1], digits=2), round(b[2], digits=2))
+\end{juliacode}
+
+\begin{juliaconsole}
+  using Pkg;Pkg.status()
+\end{juliaconsole}
+
+% Δx= 0.1
+% Δt = 0.3
+% v = Δx/Δt
+% const δ = 0.57
+% C = 1 + 2im
+% D = 2.0::Float64
+% A0 = 1
+% B0 = 2
+% A0 = 1.0
+% B0 = 2.0
+% @code_llvm A0 + B0
+% @code_llvm A1 + B1
+% @code_native A1 + B1
+
+% @time A0 + B0
+% @time A1 + B1
+% Matriz = [1 2 3
+% 4 5 6
+% 7 8 9]
+% Matriz[2, 3]
+% Matriz[2, :]
+% m, n = size(Matriz)
+% zeros(2, 3)
+% ones(2, 3)
+% Matriz'
+% range(0, stop=2π, length=10)
+% B = collect(Float64, 0:0.1:2)
+% B[1]
+% B[end]
+% A = [1 2; 3 4]
+% B = [3 4; 2 1]
+% A*B
+% A.*B
+
+% B = copy(A)
+% B[1, 1] = -1
+% A
+% Texto = "Bom dia, ."
+% typeof(Texto)
+% Texto[end]
+% length(Texto)
+% Saludo = readline()
+% #parse()
+% using LinearAlgebra
+% det(A)

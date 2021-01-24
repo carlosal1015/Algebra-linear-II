@@ -1,0 +1,740 @@
+\chapter{Exercícios de Fixação\quad$\left(15/01/2021\right)$}
+
+\begin{questions}
+  \question\label{exercício:2.1}
+
+  Defina sobre $\mathbb{R}^{2}$ as seguintes operações:
+
+  \[
+    \begin{aligned}
+      +\colon\mathbb{R}^{2}\times\mathbb{R}^{2}      & \longrightarrow\mathbb{R}^{2} \\
+      \left(\left(x,y\right),\left(a,b\right)\right) & \longmapsto
+      \left(x+a,0\right)
+    \end{aligned}\qquad
+    \begin{aligned}
+      \cdot\colon\mathbb{R}\times\mathbb{R}^{2} & \longrightarrow\mathbb{R}^{2} \\
+      \left(c,\left(x,y\right)\right)           & \longmapsto
+      \left(cx,0\right)
+    \end{aligned}
+  \]
+
+  O conjunto $\mathbb{R}^{2}$ é um espaço vetorial com essas operações?
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.2}
+
+  Defina sobre
+  \begin{math}
+    V=
+    \left\{
+    \left(x,y\right)\in
+    \mathbb{R}^{2}\mid
+    x>0,y>0
+    \right\}
+  \end{math}
+  as seguintes operações:
+
+  \[
+    \begin{aligned}
+      +\colon\mathbb{R}^{2}\times\mathbb{R}^{2}      & \longrightarrow\mathbb{R}^{2} \\
+      \left(\left(x,y\right),\left(a,b\right)\right) & \longmapsto
+      \left(xa,yb\right)
+    \end{aligned}\qquad
+    \begin{aligned}
+      \cdot\colon\mathbb{R}\times\mathbb{R}^{2} & \longrightarrow\mathbb{R}^{2} \\
+      \left(c,\left(x,y\right)\right)           & \longmapsto
+      \left(x^{c},y^{c}\right)
+    \end{aligned}
+  \]
+  Mostre que $V$ é um espaço vetorial com essas operações.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.3}
+
+  Resolva:
+  \begin{parts}
+    \part\label{exercício:2.3a}
+
+    O vetor $\left(3,-1,0,-1\right)$ pertence ao subespaço
+    \begin{math}
+      W=
+      \left\langle
+      \left(2,-1,3,2\right),
+      \left(-1,1,1,3\right),
+      \left(1,1,9,-5\right)
+      \right\rangle
+    \end{math}
+    de $\mathbb{R}^{4}$?
+
+    \part\label{exercício:2.3b}
+
+    Determine uma base para o subespaço vertorial de $\mathbb{R}^{5}$
+    das soluções do sistema linear homogêneo
+    $\csysteme[xyzwt]{x-2y+z+w+t=0,3x+y-z-4t=0,2x+y-3z+w=0}$;
+
+    \part\label{exercício:2.3c}
+
+    Determine uma base para o subespaço vertorial de
+    ${\left(\mathbb{Z}/5\mathbb{Z}\right)}^{5}$ das soluções do
+    sistema linear homogêneo
+    \begin{math}
+      \csysteme[xyzwt]{
+        x-\overline{2}y+z+w+t=\overline{0},
+        \overline{2}x+y-z+t=\overline{0},
+        \overline{3}x+y+\overline{3}z+w=\overline{0}
+      }
+    \end{math},
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+      .
+
+      \part
+
+      .
+
+      \part
+
+      .
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.4}
+
+  Sejam $V$ um espaço vetorial sobre um corpo $F$ e $U$ e $W$
+  subespaços de $V$ tais que $U+W=V$ e $U \cap W=\left\{0\right\}$.
+  Mostre que cada vetor $v\in V$ é escrito de maneira única como
+  $v=u+w$, onde $u\in U$ e $w\in W$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.5}
+
+  Mostre que o conjunto dos polinômios sobre uma variável com
+  coeficientes em $\mathbb{R}$ é um espaço vetorial sobre
+  $\mathbb{R}$ munido das operações usuais de soma e multiplicação
+  por escalar.
+  Determine uma base para esse espaço vetorial.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.6}
+
+  Seja $S$ um subconjunto de um espaço vetorial $V$.
+  Mostre que $S$ é LD se, e somente se, existir um vetor $v\in S$ que
+  pode ser escrito como combinação linear dos elementos de
+  $S\setminus\left\{v\right\}$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.7}
+
+  Considere o seguinte espaço vetorial sobre $\mathbb{R}$:
+
+  \[
+    \mathcal{P}_{3}
+    \left(\mathbb{R}\right)=
+    \left\{
+    a+bx+cx^{2}+dx^{3}\mid
+    a,b,c,d\in\mathbb{R}
+    \right\}.
+  \]
+
+  \begin{parts}
+    \part\label{exercício:2.7a}
+
+    Mostre que $\alpha=\left\{1,2+x,3x-x^{2},x-x^{3}\right\}$ é uma
+    base de $\mathcal{P}_{3}\left(\mathbb{R}\right)$;
+
+    \part\label{exercício:2.7b}
+
+    Escreva as coordenadas de $p\left(x\right)=1+x+x^{2}+x^{3}$ com
+    relação a base $\alpha$;
+
+    \part\label{exercício:2.7c}
+
+    Determine as matrizes mudança de base
+    ${\left[I\right]}_{\alpha}^{e}$ e
+    ${\left[I\right]}_{e}^{\alpha}$, onde
+    $e=\left\{1,x,x^{2},x^{3}\right\}$.
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+      .
+
+      \part
+
+      .
+
+      \part
+
+      .
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.8}
+
+  Faça o que se pede:
+
+  \begin{parts}
+    \part\label{exercício:2.8a}
+
+    Considere a função
+    $T\colon\mathbb{C}\to\mathcal{M}_{2}\left(\mathbb{R}\right)$
+    dada por
+
+    \[
+      T\left(x+yi\right)=
+      \begin{bmatrix*}
+        x+7y & 5y \\
+        -10y & x-7y
+      \end{bmatrix*}.
+    \]
+
+    Moste que $T$ é uma transformação linear.
+    Prove que
+    \begin{math}
+      T\left(z_{1}z_{2}\right)=
+      T\left(z_{1}\right)
+      T\left(z_{2}\right),
+      \forall z_{1},z_{2}\in\mathbb{C}
+    \end{math};
+
+    \part\label{exercício:2.8b}
+
+    Mostre que a composta de transformações lineares é uma transformação linear;
+
+    \part\label{exercício:2.8c}
+
+    Mostre que uma função $T\colon\mathbb{F}^{n}\to\mathbb{F}$ é uma
+    transformação linear se, e somente se, existem escalares
+    $c_{1},\dotsc,c_{n}$ no corpo $\mathbb{F}$ tais que
+
+    \[
+      T
+      \left(x_{1},\dotsc,x_{n}\right)=
+      c_{1}x_{1}+\dotsc+c_{n}x_{n}.
+    \]
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+      .
+
+      \part
+
+      .
+
+      \part
+
+      .
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.9}
+
+  Faça o que se pede:
+
+  \begin{parts}
+    \part\label{exercício:2.9a}
+
+    Considere $\mathbb{R}^{4}$ e seus subespaços
+    \begin{math}
+      W=
+      \left\langle
+      \left(1,0,1,1\right),
+      \left(0,-1,-1,-1\right)
+      \right\rangle
+    \end{math}
+    e
+    \begin{math}
+      U=
+      \left\{
+      \left(x,y,z,w\right)\in
+      \mathbb{R}^{4}\mid
+      x+y=0,
+      z+t=0
+      \right\}
+    \end{math}.
+    Determine uma transformação linear
+    $T\colon\mathbb{R}^{4}\to\mathbb{R}^{4}$ tal que
+    $\operatorname{Nuc}\left(T\right)=U$ e
+    $\operatorname{Im}\left(T\right)=W$;
+
+    \part\label{exercício:2.9b}
+
+    Considere ${\left(\mathbb{Z}/5\mathbb{Z}\right)}^{4}$ e seus
+    subespaços
+    \begin{math}
+      W=
+      \left\langle
+      \left(
+      \overline{1},
+      \overline{0},
+      \overline{1},
+      \overline{1}
+      \right),
+      \left(
+      \overline{0},
+      \overline{4},
+      \overline{4},
+      \overline{4}
+      \right)
+      \right\rangle
+    \end{math}
+    e
+    \begin{math}
+      U=
+      \left\{
+      \left(x,y,z,w\right)\in
+      {\left(\mathbb{Z}/5\mathbb{Z}\right)}^{4}\mid
+      x+y=
+      \overline{0},
+      z+t=
+      \overline{0}
+      \right\}
+    \end{math}.
+    Determine uma transformação linear
+    $T\colon\mathbb{R}^{4}\to\mathbb{R}^{4}$ tal que
+    $\operatorname{Nuc}\left(T\right)=V$ e
+    $\operatorname{Im}\left(T\right)=W$;
+
+    \part\label{exercício:2.9c}
+
+    Determine uma base para o núcleo e uma base para a imagem da
+    transformação linear $T\colon\mathbb{C}^{2}\to\mathbb{R}^{2}$
+    dada por $T\left(x+yi,a+bi\right)=\left(x+2a,-x+2b\right)$.
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+      .
+
+      \part
+
+      .
+      \part
+
+      .
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.10}
+
+  Sejam $V$ e $W$ espaços vetoriais sobre um mesmo corpo $\mathbb{F}$
+  e $T\colon V\to W$.
+  Mostre que $T$ é injetora se, e somente se, $T$ leva subconjunto LI
+  em subconjunto LI.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.11}
+
+  Seja
+  $T\colon\mathbb{C}^{3}\to\mathcal{P}_{2}\left(\mathbb{C}\right)$
+  a transformação linear definida por
+  $T\left(1,0,0\right)=1+ix^{2}$,
+  $T\left(0,1,0\right)=x+x^{2}$ e
+  $T\left(0,0,1\right)=i+x$.
+  Exiba uma fórmula para $T$ e decida se $T$ é um isomorfismo.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.12}
+
+  Seja $F$ um corpo e $T\colon\mathbb{F}^{2}\to\mathbb{F}^{2}$ dada
+  por
+  \begin{math}
+    T\left(x,y\right)=
+    \left(x+y,x\right),
+    \forall\left(x,y\right)\in
+    \mathbb{F}^{2}
+  \end{math}.
+  Mostre que $T$ é um isomorfismo e exiba uma fómula para $T^{-1}$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.13}
+
+  Considere as bases $\alpha=\left\{1,1+x,1+x^{2}\right\}$ de
+  $\mathcal{P}_{2}\left(\mathbb{R}\right)$ e
+  \begin{math}
+    \beta=
+    \left\{
+    \left(1,0\right),
+    \left(i,0\right),
+    \left(1,1\right),
+    \left(1,i\right)
+    \right\}
+  \end{math}
+  de $\mathbb{C}^{2}$ como espaços vetoriais sobre $\mathbb{R}$.
+  Determine as coordenadas da transformação linear
+  $T\colon\mathcal{P}_{2}\left(\mathbb{R}\right)\to\mathbb{C}^{2}$ dada
+  por $T\left(a+bx+cx^{2}\right)=\left(a+bi,b+ci\right)$ com relação
+  à base de
+  \begin{math}
+    L
+    \left(
+    \mathcal{P}_{2}\left(\mathbb{R}\right),
+    \mathbb{C}^{2}
+    \right)
+  \end{math}
+  construída no Teorema 2-(ii) da Aula $9$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.14}
+
+  Considere a base
+  \begin{math}
+    \alpha=
+    \left\{
+    \left(1,0,-1\right),
+    \left(1,1,1\right),
+    \left(2,2,0\right)
+    \right\}
+  \end{math}
+  de $\mathbb{C}^{3}$ como espaço vetorial sobre $\mathbb{C}$.
+  Determine a base dual $\alpha^{\ast}$ de
+  ${\left(\mathbb{C}^{3}\right)}^{\ast}$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.15}
+
+  Considere $T\colon\mathbb{R}^{2}\to\mathbb{R}^{3}$ dada por
+  $T\left(x,y\right)=\left(2x+3y,y-x,3x\right)$ e as bases
+  $\alpha=\left\{\left(1,2\right),\left(2,-1\right)\right\}$ de
+  $\mathbb{R}^{2}$ e
+  \begin{math}
+    \beta=
+    \left\{
+    \left(1,1,1\right),
+    \left(0,1,1\right),
+    \left(0,0,1\right)
+    \right\}
+  \end{math}
+  de $\mathbb{R}^{3}$.
+
+  Calcule ${\left[T\right]}_{\beta}^{\alpha}$,
+  ${\left[T\right]}_{\beta}^{e_{1}}$ e
+  ${\left[T\right]}_{e_{2}}^{\alpha}$ onde $e_{1}$ é a base canônica
+  de $\mathbb{R}^{2}$ e $e_{2}$ é a base canônica de
+  $\mathbb{R}^{3}$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.16}
+
+  Sejam
+  $T\colon\mathbb{R}^{3}\to\mathcal{P}_{2}\left(\mathbb{R}\right)$ e
+  $G\colon\mathcal{P}_{2}\left(\mathbb{R}\right)\to\mathbb{R}^{3}$
+  transformações lineares tais que
+  \[
+    {\left[T\right]}_{\beta}^{\alpha}=
+    \begin{bmatrix*}
+      1 & 2 & -1 \\
+      1 & 0 & -1 \\
+      0 & -1 & 0
+    \end{bmatrix*}\quad
+    \text { e }\quad
+    {\left[G\right]}_{\alpha}^{\beta}=
+    \begin{bmatrix*}
+      1 & 1 & 2 \\
+      1 & -1 & 0 \\
+      -1 & 1 & 2
+    \end{bmatrix*}
+  \]
+  onde
+  \begin{math}
+    \alpha=
+    \left\{
+    \left(1,1,0\right),
+    \left(0,1,0\right),
+    \left(0,0,1\right)
+    \right\}
+  \end{math}
+  é base de $\mathbb{R}^{3}$ e $\beta=\left\{1,1+x,1+x^{2}\right\}$ é
+  base de $\mathcal{P}_{2}\left(\mathbb{R}\right)$.
+  Determine bases para
+  \begin{math}
+    \operatorname{Nuc}
+    \left(T\right),
+    \operatorname{Im}
+    \left(T\right),
+    \operatorname{Nuc}
+    \left(G\circ T\right)
+  \end{math}
+  e $\operatorname{Im}\left(G\circ T\right)$.
+
+  \begin{solutionordottedlines}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.17}
+
+  Seja
+  \begin{math}
+    T\colon
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{C}\right)\to
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{C}\right)
+  \end{math}
+  a transformação linear definida por
+  \[
+    T
+    \begin{bmatrix*}
+      x & y \\
+      z & w
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}
+      0 & x \\
+      z-w & 0
+    \end{bmatrix*}.
+  \]
+
+  \begin{parts}
+    \part\label{exercício:2.17a}
+
+    Determine a matriz $\left[T\right]$ de $T$ com relação à base canônica $e$;
+
+    \part\label{exercício:2.17b}
+
+    Determine a matriz de $T$ com relação à base
+    \[
+      \alpha=
+      \left\{
+      \begin{bmatrix*}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        0 & 1 \\
+        1 & 0
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        1 & 0 \\
+        1 & 1
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        0 & 1 \\
+        0 & 1
+      \end{bmatrix*}
+      \right\};
+    \]
+
+    \part\label{exercício:2.17c}
+
+    Exiba a matriz $M$ tal que ${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+
+      \part
+
+
+      \part
+
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.18}
+
+  Seja
+  \begin{math}
+    T\colon
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{Z}/7\mathbb{Z}\right)\to
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{Z}/7\mathbb{Z}\right)
+  \end{math}
+  a transformação linear definida por
+  \[
+    T
+    \begin{bmatrix*}
+      x & y \\
+      z & w
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}
+      \overline{0} & x \\
+      z+\overline{6}w & \overline{0}
+    \end{bmatrix*}.
+  \]
+
+  \begin{parts}
+    \part\label{exercício:2.18a}
+
+    Determine a matriz $[T]$ de $T$ com relação à base canônica $e$;
+
+    \part\label{exercício:2.18b}
+
+    Determine a matriz de $T$ com relação à base
+
+    $$
+      \alpha=\left\{
+      \begin{bmatrix*}
+        \overline{1} & \overline{0} \\
+        \overline{0} & \overline{1}
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        \overline{0} & \overline{1} \\
+        \overline{1} & \overline{0}
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        \overline{1} & \overline{0} \\
+        \overline{1} & \overline{1}
+      \end{bmatrix*},
+      \begin{bmatrix*}
+        \overline{0} & \overline{1} \\
+        \overline{0} & \overline{1}
+      \end{bmatrix*}.
+      \right\}
+    $$
+
+    \part\label{exercício:2.18c}
+
+    Exiba a matriz $M$ tal que ${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
+  \end{parts}
+
+  \question\label{exercício:2.19}
+
+  Seja
+  \begin{math}
+    T\colon
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{Z}/7\mathbb{Z}\right)\to
+    \mathcal{M}_{2\times2}
+    \left(\mathbb{Z}/7\mathbb{Z}\right)
+  \end{math}
+  a transformação linear definida por
+  $$
+    T
+    x y \\
+    z w
+    =
+    \overline{0}  x \\
+    z+\overline{6} w \overline{0}
+  $$
+
+  \begin{parts}
+    \begin{multicols}{3}
+      \part\label{exercício:2.19a}
+
+      Determine a matriz $\left[T\right]$ de $T$ com relação à base
+      canônica $e$;
+
+      \part\label{exercício:2.19b}
+
+      Determine a matriz de $T$ com relação à base
+      $$
+        \alpha=
+        \left\{
+        \overline{1} \overline{0} \\
+        \overline{0} \overline{1}
+        ,
+        \overline{0} \overline{1} \\
+        \overline{1} \overline{0}
+        ,
+        \overline{1} \overline{0} \\
+        \overline{1} \overline{1}
+        \overline{0} \overline{1} \\
+        \overline{0} \overline{1}
+        \right\}
+      $$
+
+      \part\label{exercício:2.19c}
+
+      Exiba a matriz $M$ tal que
+      ${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
+    \end{multicols}
+  \end{parts}
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+
+      \part
+
+
+      \part
+
+    \end{parts}
+  \end{solutionordottedlines}
+
+  \question\label{exercício:2.20}
+
+  Seja $T\colon\mathbb{Q}^{3}\to\mathbb{Q}^{3}$ uma transformação linear
+  cuja matriz com relação à base canônica seja
+  $$
+    1 1 0 \\
+    -1 0 1 \\
+    0 -1 -1
+  $$
+
+  \begin{parts}
+    \begin{multicols}{3}
+      \part\label{exercício:2.20a}
+
+      Determine $T\left(x,y,z\right)$;
+
+      \part\label{exercício:2.20b}
+
+      Qual é a matriz do operador linear $T$ com relação à base
+      \begin{math}
+        \alpha=
+        \left\{
+        \left(-1,1,0\right),
+        \left(1,-1,1\right),
+        \left(0,1,-1\right)
+        \right\}
+      \end{math}?
+
+      \part\label{exercício:2.20c}
+
+      O operador $T$ é invertível? Justifique!
+    \end{multicols}
+  \end{parts}
+
+
+  \begin{solutionordottedlines}
+    \begin{parts}
+      \part
+
+
+      \part
+
+
+      \part
+
+    \end{parts}
+  \end{solutionordottedlines}
+\end{questions}

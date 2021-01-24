@@ -1,0 +1,172 @@
+\makeatletter
+\patchcmd{\PEX@}{\dp\Pbox@>\dp\z@}{\ht\Pbox@>\dp\z@}{}{}
+\patchcmd{\SQEX@}{\dp\Sbox@>\dp0}{\ht\Sbox@>\dp0}{}{}
+\makeatother
+
+\makeatletter
+% Fix weird space
+\patchcmd{\LEFTRIGHT}
+{\kern-2\nulldelimiterspace\mskip-\thinmuskip}
+{\kern-2\nulldelimiterspace}
+{}{}
+% Two new boxes
+\newsavebox{\mtp@matrixbox}
+\newsavebox{\mtp@casesbox}
+% Round parentheses should always be used by default
+% `pmatrix' from `amsmath'
+\renewenvironment{pmatrix}{%
+  \matrix@check\pmatrix\setbox\mtp@matrixbox=\hbox\bgroup$\env@matrix
+}{%
+  \endmatrix$\egroup\PARENS{\copy\mtp@matrixbox}%
+}
+% Curly braces are used only if `curlybraces' is set
+% From `mtpro2.sty': \DeclareOption{curlybraces}{\let\mtp@br=c}
+\ifx\mtp@br c
+  % `Bmatrix' from `amsmath'
+  \renewenvironment{Bmatrix}{%
+    \setbox\mtp@matrixbox=\hbox\bgroup$\env@matrix
+  }{%
+    \endmatrix$\egroup\LEFTRIGHT\lbrace\rbrace{\copy\mtp@matrixbox}%
+  }
+  % `cases' from `amsmath'
+  \renewcommand*\env@cases{%
+  \let\@ifnextchar\new@ifnextchar
+  \setbox\mtp@casesbox=\hbox\bgroup$%
+    \def\arraystretch{1.2}%
+    \array{@{}l@{\quad}l@{}}%
+    }
+    \renewenvironment{cases}{%
+    \matrix@check\cases\env@cases
+    }{%
+    \endarray$\egroup\LEFTRIGHT\lbrace.{\copy\mtp@casesbox}%
+  }
+\fi
+% Now, the matrices from `mathtools'
+\MHInternalSyntaxOn
+\MaybeMHPrecedingSpacesOff
+% `pmatrix*' from `mathtools'
+\renewenvironment{pmatrix*}[1][c]
+{\setbox\mtp@matrixbox=\hbox\bgroup$\MT_matrix_begin:N #1}
+{\MT_matrix_end:$\egroup\PARENS{\copy\mtp@matrixbox}}
+\MH_if_meaning:NN \mtp@br c
+% `Bmatrix*' from `mathtools'
+\renewenvironment{Bmatrix*}[1][c]
+{\setbox\mtp@matrixbox=\hbox\bgroup$\MT_matrix_begin:N #1}
+{\MT_matrix_end:$\egroup\LEFTRIGHT\lbrace\rbrace{\copy\mtp@matrixbox}}
+\MH_fi:
+\MHPrecedingSpacesOn
+\MHInternalSyntaxOff
+\makeatother
+% Patches end
+
+\NewDocumentCommand{\csysteme}{som}{%
+  \LEFTRIGHT\{.{%
+      \sysdelim..
+      \IfBooleanTF{#1}
+      {\IfNoValueTF{#2}{\systeme*{#3}}{\systeme*[#2]{#3}}}
+      {\IfNoValueTF{#2}{\systeme{#3}}{\systeme[#2]{#3}}}%
+    }%
+}
+
+%\setlength\columnsep{10pt} % This is the default columnsep for all pages
+\setmainfont{TeX Gyre Pagella}
+\setmonofont{Fira Code}[Contextuals=Alternate]
+
+\setkomafont{title}{\bfseries\sffamily\Huge\color{DarkBlue}}
+\setkomafont{subtitle}{\bfseries\sffamily\Large\color{DarkBlue}}
+\setkomafont{author}{\bfseries\sffamily\large\color{DarkBlue}}
+\setkomafont{date}{\bfseries\sffamily\color{DarkBlue}}
+\setkomafont{chapter}{\LARGE\color{DarkBlue}}
+\setkomafont{section}{\Large\color{DarkBlue}}
+\setkomafont{subsection}{\large\color{DarkBlue}}
+
+\urlstyle{rm}
+
+\newunicodechar{∈}{\makebox[\fontcharwd\font`a]{\(\in\)}}
+\newunicodechar{⊗}{\makebox[\fontcharwd\font`a]{\(\otimes\)}}
+
+\usetikzlibrary{matrix,arrows.meta,positioning}
+
+\definecolor{myyellow}{RGB}{240,217,1}
+\definecolor{mygreen}{RGB}{143,188,103}
+\definecolor{myred}{RGB}{234,38,40}
+\definecolor{myblue}{RGB}{53,101,167}
+
+\newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+
+\newcounter{tmp}
+
+\newcommand\tikzmark[1]{%
+  \tikz[remember picture,baseline=-0.65ex]
+  \node[inner sep=0,outer sep=0] (#1){};%
+}
+
+\newcommand\mess[4][25pt]{%
+  \stepcounter{tmp}%
+  \begin{tikzpicture}[remember picture,overlay,>=latex,xshift=#1,cyan]
+    \node[cyan,inner sep=2pt] at ([xshift=#1]#2) (a\thetmp) {$#4$};%circle,draw,
+    \draw[->] (a\thetmp.south) |- (#3);
+  \end{tikzpicture}%
+}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução}\par\noindent}
+\definecolor{SolutionColor}{rgb}{0.2,0.9,1}
+\colorsolutionboxes
+\definecolor{SolutionBoxColor}{rgb}{0.2,0.9,1}
+\vqword{Questão}
+\vpword{Pontos}
+\vsword{Pontuaçõe}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[chapter]
+\newtheorem{proposition}[definition]{Proposição}
+\newtheorem{example}[definition]{Exemplo}
+\newtheorem{exercise}[definition]{Exercício}
+\newtheorem{remark}[definition]{Observação}
+
+\graphicspath{ {img/} }
+
+% \newmintedfile[juliacode]{julia}{
+%   breaklines,
+%   breakanywhere,
+%   tabsize=4,
+%   samepage=false,
+%   showspaces=false,
+%   showtabs =false
+% }
+
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=.1,
+  contents={
+      \begin{tikzpicture}[remember picture,overlay]
+        \node at ([yshift=11pt,xshift=5pt]current page.center) {\includegraphics[width=8.5cm]{unb}};
+      \end{tikzpicture}}
+}
+
+\hypersetup{
+  pdfinfo={
+      Title={Álgebra linear~Verão 2021~Notas das aulas na escola},
+      Author={Alex Dantas et al.},
+      Keywords={corpos, sistemas lineares},
+      Subject={Álgebra linear},
+      Producer={TeXstudio 3.0.4 Using Qt Version 5.15.2},
+      Creator={LuaHBTeX, Version 1.12.0 (TeX Live 2020/Arch Linux)},
+    }
+  %	hyperref,
+  pdfencoding=auto,
+  linktocpage=true,
+  colorlinks=true,
+  linkcolor=NavyBlue,
+  urlcolor=magenta,
+  linktoc=all,
+  pdfpagelabels,
+  bookmarks=true,
+  unicode,
+  pdfborder = {0 0 0}
+  %	filecolor = red,
+}
+
+\addbibresource{referências.bib}

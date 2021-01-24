@@ -1,0 +1,267 @@
+\chapter{Matrizes\quad$\left(08/01/2021\right)$}
+
+Podemos denotar uma matriz $A$ sobre um corpo $\mathbb{F}$ de ordem
+$m\times n$ por $A={\left(a_{ij}\right)}_{m\times n}$.
+
+Sejam $A={\left(a_{ij}\right)}_{m\times n}$ e
+$B={\left(b_{jl}\right)}_{n\times p}$ duas matrizes sobre um corpo
+$\mathbb{F}$.
+Definimos o producto de $A$ por $B$ como a matriz
+$C={\left(c_{il}\right)}_{m\times p}$ dada por
+\[
+  c_{il}=
+  \sum_{j=1}^{n}
+  a_{i j}b_{jl}=
+  a_{i1}b_{il}+\dotsb+a_{in}b_{nl}
+\]
+%\section*{Ilustração}
+\begin{figure}[H]
+  \centering
+  \input{ilustração}
+  \caption{Ilustração.}
+\end{figure}
+
+\[
+  \begin{pNiceMatrix}
+    a_{11} & \cdots & a_{1n} \\
+    \vdots & \vdots & \vdots \\
+    a_{m1} & \cdots & a_{mn}
+  \end{pNiceMatrix}
+  \begin{pNiceMatrix}
+    b_{11} & \cdots & b_{1p} \\
+    \vdots & \vdots & \vdots \\
+    b_{n1} & \cdots & b_{np}
+  \end{pNiceMatrix}=
+  \begin{pNiceMatrix}
+    c_{11} & \cdots & c_{1p} \\
+    \vdots & \vdots & \vdots \\
+    c_{m1} & \cdots & c_{mp}
+  \end{pNiceMatrix}.
+\]
+
+\begin{example}
+  Temos que
+  \[
+    {\begin{pNiceMatrix}
+          1 & 2  \\
+          2 & -1
+        \end{pNiceMatrix}}_{2\times2}
+      {\begin{pNiceMatrix}
+          1 & 0 & 4 \\
+          3 & 2 & 5
+        \end{pNiceMatrix}}_{2\times3}=
+    {\begin{pNiceMatrix}
+      7  & 4  & 14 \\
+      -1 & -2 & 3
+    \end{pNiceMatrix}}_{2\times3}.
+  \]
+\end{example}
+
+\begin{proposition}
+  Sejam matrices $A={\left(a_{ij}\right)}_{m\times n}$,
+  $B={\left(a_{jl}\right)}_{n\times p}$ e
+  $C={\left(a_{lk}\right)}_{p\times q}$ matrizes sobre um corpo
+  $\mathbb{F}$.
+  Então $\left(AB\right)C=A\left(BC\right)$.
+\end{proposition}
+
+\begin{proof}
+  Veja que
+  \begin{math}
+    \left(AB\right)C=
+    {\left(\alpha_{ik}\right)}_{m\times q}
+  \end{math},
+  \begin{math}
+    AB=
+    {\left(d_{il}\right)}_{m\times p}
+  \end{math}
+  onde
+  \begin{align*}
+    d_{il}
+     & =\sum_{l=1}^{n}
+    a_{ij}b_{jl}
+    \shortintertext{e}
+    \alpha_{ik}
+     & =\sum_{l=1}^{p}
+    d_{il}c_{lk}=
+    \sum_{l=1}^{p}
+    \left(\sum_{j=1}^{n}a_{ij}b_{jl}\right)c_{lk}= \\
+     & =\sum_{l=1}^{p}
+    \left(\sum_{j=1}^{n}a_{ij}b_{jl}c_{lk}\right)= \\
+     & =\sum_{j=1}^{n}
+    a_{ij}\left(\sum_{l=1}^{p}b_{jl}c_{lk}\right)=\beta_{ik}
+  \end{align*}
+  com $A\left(BC\right)={\left(\beta_{ik}\right)}_{m\times q}$.
+\end{proof}
+
+Chamaremos a matriz quadrada
+$I_{m}={\left(\delta_{ij}\right)}_{m\times m}$ definida por
+\[
+  \delta_{ij}=
+  \begin{cases}
+    1 & , \text{se }i=j,     \\
+    0 & , \text{se }i\neq j,
+  \end{cases}
+\]
+de matriz identidade de ordem $m\times m$.
+
+Note que se $A={\left(a_{jl}\right)}_{m\times n}$, então $I_{m}A=A$, e se $B={\left(b_{li}\right)}_{n\times m}$, então $BI_{m}=B$.
+
+
+$I_{m}A={\left(c_{il}\right)}_{m\times m}$ é tal que
+$c_{il}=\sum_{j=1}^{m}\delta_{ij}a_{jl}=a_{il}$ con $1\leq i\leq m$,
+e $I_{m}A=A$.
+
+\begin{example}
+  Se $m=3$, então
+  \[
+    I_{3}=
+    \begin{pNiceMatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{pNiceMatrix}.
+  \]
+\end{example}
+Dizemos que uma matriz quadrada $A={\left(a_{ij}\right)}_{m\times m}$
+tem inversa se existe uma matriz
+$B={\left(b_{ij}\right)}_{m\times m}$ tal que $AB=BA=I_{m}$.
+
+Denotaremos a matriz $B$ por $A^{-1}$.
+
+\begin{definition}
+  Seja $c\in\mathbb{F}\setminus\left\{0\right\}$.
+  Uma matriz quadrada de ordem $m\times m$ $E$ é dita elementar se
+  $E$ é de uma das formas
+  \begin{enumerate}
+    \item
+
+          $E_{1}={\left(e_{ij}\right)}_{m\times m}$, onde
+          \[
+            e_{ij}=
+            \begin{cases}
+              \delta_{ij}, & \text{se }i\neq k \\
+              \delta_{ij}, & \text{se }i=k
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$\\[\baselineskip]
+                \begin{math}
+                  E_{1}=
+                  \begin{pNiceMatrix}
+                    1 & 0 & 0 \\
+                    0 & c & 0 \\
+                    0 & 0 & 1
+                  \end{pNiceMatrix}
+                \end{math}
+              \end{varwidth}}
+          \]
+          con $k$ um inteiro fixo entre $1$ e $m$;
+    \item
+
+          $E_{2}={\left(e_{ij}\right)}_{m\times m}$, onde
+          \[
+            e_{ij}=
+            \begin{cases}
+              \delta_{ij}, & \text{se }i\neq l\text{ e }i\neq k \\
+              \delta_{lj}, & \text{se }i=k                      \\
+              \delta_{kj}, & \text{se }i=l
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$, $l=3$\\[\baselineskip]
+                \begin{math}
+                  \begin{pNiceMatrix}
+                    1 & 0 & 0 \\
+                    0 & 0 & 1 \\
+                    0 & 1 & 0
+                  \end{pNiceMatrix}
+                \end{math}
+              \end{varwidth}}
+          \]
+          con $k<l$ inteiros fixos entre $1$ e $m$;
+    \item
+
+          $E_{3}={\left(e_{ij}\right)}_{m\times m}$, onde
+          \[
+            e_{ij}=
+            \begin{cases}
+              \delta_{i j},                  & i\neq k \\
+              \delta_{kj}+c\cdot\delta_{lj}, & i=k
+            \end{cases}\qquad
+            \fbox{\begin{varwidth}{\textwidth}
+                $m=3$, $k=2$, $l=3$\\[\baselineskip]
+                \begin{math}
+                  \begin{pNiceMatrix}
+                    1 & 0 & 0 \\
+                    0 & 1 & c \\
+                    0 & 0 & 1
+                  \end{pNiceMatrix}
+                \end{math}
+              \end{varwidth}}
+          \]
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  Calcule
+  \[
+    \begin{pNiceMatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 2 \\
+      0 & 0 & 1
+    \end{pNiceMatrix}
+    \begin{pNiceMatrix}
+      1 & 2 & 3  & -1 \\
+      2 & 2 & 1  & 1  \\
+      1 & 1 & -1 & 2  \\
+    \end{pNiceMatrix}=
+    \begin{pNiceMatrix}
+      1 & 2 & 3  & -1
+      4 & 4 & -1 & 5
+      1 & 1 & -1 & 2
+    \end{pNiceMatrix}
+  \]
+\end{example}
+Dada uma matriz $A={\left(a_{ij}\right)}_{m\times m}$ o efeito de multiplicar uma matriz elementar $E$ por $A$ pode ser colocado como:
+\begin{enumerate}
+  \item
+
+        $E_{1}A$: multiplica uma linha $k$ de $A$ por um escalar $c$;
+
+  \item
+
+        $E_{2}A$: troca duas linhas $l$ e $k$ de posições
+        $\left(k<l\right)$;
+
+  \item
+
+        $E_{3}A$: soma uma linha $k$ com outra linha $l$ multiplicada por um escalar $c\in\mathbb{F}$.
+\end{enumerate}
+
+% \[
+%   E_{1}=
+%   \left(e_{ij}\right)_{m\times m}\equiv
+%   A=\left(a_{jl}\right)_{m\times n} \\
+%   E_{1}A=
+%   \left(c_{il}\right)_{m\times n}\text{com}
+%   c_{il}=
+%   \sum_{j=1}^{n}e_{ij}a_{je}=
+%   a_{il}, i\neq k,
+%   ca_{il},i=k
+%   \underbrace{
+%   a_{11} & \cdots & a_{14} \\
+%   a_{m1} & \vdots & a_{mn}
+%     _{A}
+%   \underbrace{
+%     x_{2} \\
+%     \vdots \\
+%     x_{n}
+%   }_{X}=
+%   \underbrace{
+%     \gamma_{1} \\
+%     \vdots \\
+%     y_{m}
+%   }_{y}
+%   a_{1} x_{2}+\dotsb+a_{n} x_{n}=y_{2} \\
+%   \vdots \\
+%   a_{m 1} x_{2}+\dotsb+a_{w_{x}} x_{n}=y_{m}
+% \]

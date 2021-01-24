@@ -1,0 +1,17 @@
+name = "TheProject"
+JULIA_CPU_THREADS = 26
+JULIA_EDITOR = "emacs"
+JULIA_NUM_THREADS = 26
+authors = ["Oromion Aznarán caznaranl@uni.pe"]
+version = "1.0.0"
+
+[deps]
+AsyPlots = "77e5a97a-5ef9-58df-9d21-21957d92d960"
+Latexify = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
+PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"
+SymPy = "24249f21-da20-56a4-8eb1-6a02cf4ae2e6"
+
+[compat]
+julia = "1.5.3"

@@ -1,0 +1,12 @@
+name = "IntroLinearAlgebra"
+uuid = "adbb13bf-072a-4629-8362-b6b687df0aa6"
+authors = ["Oromion <caznaranl@uni.pe>"]
+version = "0.1.0"
+
+[deps]
+AsyPlots = "77e5a97a-5ef9-58df-9d21-21957d92d960"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+Requires = "ae029012-a4dd-5104-9daa-d747884805df"

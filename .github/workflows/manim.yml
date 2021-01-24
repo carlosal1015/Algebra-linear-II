@@ -1,0 +1,45 @@
+name: Compiling manim
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/Python/**
+
+jobs:
+  manim_test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Partial Clone
+        shell: bash
+        run: |
+          REPO="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+          git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
+          git sparse-checkout set src/Python
+          git checkout
+
+      - uses: addnab/docker-run-action@v1
+        with:
+          image: manimcommunity/manim:v0.2.0
+          options: -v ${{github.workspace}}:/manim
+          shell: bash
+          run: |
+            cd src/Python && for i in *.py; do manim "$i" -aqh; done
+
+      - name: Check video files
+        run: |
+          find src/Python/media -type d \( -path src/Python/media/*/partial_movie_files \) -prune -false -o -type f -name "*.mp4" -exec file -- {} + | grep -q ' MP4 '
+
+      - name: "Tar files"
+        run: |
+          find src/Python/media -type d \( -path src/Python/media/*/partial_movie_files \) -prune -false -o -type f -name "*.mp4" | tar --zstd -cf Video.tar.zst -T -
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Video-artifact
+          path: Video.tar.zst
+          if-no-files-found: error
+          retention-days: 5

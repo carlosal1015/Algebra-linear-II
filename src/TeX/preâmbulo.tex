@@ -1,0 +1,85 @@
+\RequirePackage[leqno]{mathtools}%fleqn
+\documentclass[
+  fontsize=12pt,
+  answers,
+  addpoints,
+  pagesize,
+  paper=landscape,
+  a5,
+  DIV=calc,
+  headsepline,
+  footsepline,
+  % abstract=true,
+  bibliography=totoc
+]{kommaexam}
+
+\usepackage[margin={.43cm}]{geometry}%,.43cm
+\usepackage[brazilian]{babel}
+\usepackage{fontspec}%unicode-math,mathpazo,pdfpages
+\usepackage{newunicodechar}
+\usepackage{csquotes}
+\usepackage[useregional]{datetime2}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx,svg}
+\usepackage{caption,subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{systeme,amssymb,amsthm}
+\usepackage[lite]{mtpro2}
+\usepackage[chapter]{minted}
+\usepackage{background}
+\usepackage{tikz}
+\usepackage{varwidth}
+\usepackage{booktabs}
+\usepackage{nicematrix}
+\usepackage{bookmark}
+\usepackage{bbm}
+
+\usepackage{imakeidx}
+\makeindex[
+  columns=2,
+  title=Índice,
+  options= -s header.ist,
+  intoc
+]
+
+\usepackage[
+  citestyle=numeric,
+  style=numeric,
+  backend=biber,
+  maxnames=5,
+  minnames=3
+]{biblatex}
+\usepackage[usefamily={julia,juliacon}]{pythontex}
+\usepackage{hyperref}
+
+\input{configuration}
+
+\title{Álgebra Linear II}
+
+\subtitle{
+  \href{https://www.mat.unb.br/verao2021/verao/verao_pt.html}{
+    XLIX Escola de Verão en Matemática da UnB
+  }
+}
+
+\titlehead{\Huge
+\[
+  J_{j}=
+  \begin{pNiceMatrix}
+    \lambda_{j} & 1           &        &             & 0           \\
+                & \lambda_{j} & 1      &             &             \\
+                &             & \ddots & \ddots      &             \\
+                &             &        & \lambda_{j} & 1           \\
+    0           &             &        &             & \lambda_{j}
+  \end{pNiceMatrix}
+  \in\mathbb{C}^{s_{j}\times s_{j}}.
+\]
+}
+
+\author{Aulas do professor Alex Carrazedo Dantas\thanks{alex\MVAt mat.unb.br}}
+
+\date{
+  Última modificação: \today{} às $\DTMcurrenttime$.
+  \\[\baselineskip]
+  \url{https://carlosal1015.github.io/Algebra-linear-II/pdf/main.pdf}
+}

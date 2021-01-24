@@ -1,0 +1,72 @@
+name: Deploy pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/**
+
+jobs:
+  deploy_pages:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Partial Clone
+        shell: bash
+        run: |
+          REPO="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+          git clone -q --filter=blob:none --no-checkout --depth=1  --sparse $REPO .
+          git sparse-checkout set docs
+          git checkout
+
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: latex.yml
+          name: PDF-artifact
+
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: manim.yml
+          name: Video-artifact
+
+      - name: "Untar files"
+        run: |
+          tar -I zstd -xvf PDF.tar.zst
+          mkdir docs/src/.vuepress/public/pdf
+          wget https://ecloud.global/s/MZADNGTccCMr8yp/download -O docs/src/.vuepress/public/pdf/tutoria.pdf
+          wget https://ecloud.global/s/eyyMNyQg5a5AT6p/download -O docs/src/.vuepress/public/pdf/corpos.pdf
+          wget https://ecloud.global/s/59Jws39eJNrGQjE/download -O docs/src/.vuepress/public/pdf/sistemas-lineares.pdf
+          wget https://ecloud.global/s/kporc92NX8a7xNf/download -O docs/src/.vuepress/public/pdf/matrizes.pdf
+          wget https://ecloud.global/s/6AxaPCzFKbGxFNe/download -O docs/src/.vuepress/public/pdf/exercicios1.pdf
+          wget https://ecloud.global/s/jrfnpbrAtMG9NX4/download -O docs/src/.vuepress/public/pdf/matrizes-e-sistemas-lineares.pdf
+          wget https://ecloud.global/s/LCaFSmY9wf8QD6A/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/mNs7zRtcCFqWFLx/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/bMHM5SmsWyLDTXE/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/yyHFN2BrGotMKmA/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/w3QefXMHkNesPQH/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/RKSSQ3Xr9ybicy6/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/xo22b99de4bdnr8/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/ay4i6PEAD2EgjsY/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/r5wzzJbnbwanfKi/download -O docs/src/.vuepress/public/pdf/.pdf
+          mv src/TeX/*.pdf docs/src/.vuepress/public/pdf
+          tar -I zstd -xvf Video.tar.zst
+          mkdir docs/src/.vuepress/public/video
+          #find src/Python/media/videos -name "*.mp4" -exec mv "{}" docs/src/.vuepress/public/video
+          mv src/Python/media/videos/**/**/*.mp4 docs/src/.vuepress/public/video
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15.5.1"
+      - run: cd docs && yarn install && yarn src:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/src/.vuepress/dist
