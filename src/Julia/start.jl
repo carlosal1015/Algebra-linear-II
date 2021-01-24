@@ -14,8 +14,9 @@ function printout(x)
     println()
 end
 
+status()
 include("version.jl")
 include("docs.jl")
 include("galois.jl")
-#include("latex.jl")
+include("latex.jl")
 #include("plots.jl")
