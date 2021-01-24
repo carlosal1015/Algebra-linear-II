@@ -14,7 +14,7 @@ function printout(x)
     println()
 end
 
-status()
+printout(status())
 include("version.jl")
 include("docs.jl")
 include("galois.jl")
