@@ -16,6 +16,6 @@ end
 
 include("version.jl")
 include("docs.jl")
-#include("galois.jl")
+include("galois.jl")
 #include("latex.jl")
 #include("plots.jl")
