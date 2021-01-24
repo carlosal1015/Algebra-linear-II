@@ -6,11 +6,11 @@ const LOCAL_PATH = homedir() * "/Git_Projects/Web/Algebra-linear-II";
 const GHA_PATH = homedir() * "/work/Algebra-linear-II/Algebra-linear-II";
 
 if pwd() == LOCAL_PATH
-    activate("/src/Julia")
+    activate(LOCAL_PATH * "/src/Julia")
 elseif pwd() == LOCAL_PATH * "/src/Julia"
     activate("")
 elseif pwd() == GHA_PATH
-    activate("/src/Julia")
+    activate(GHA_PATH * "/src/Julia")
 end
 
 #https://discourse.julialang.org/t/how-to-get-a-function-to-print-stuff-with-repl-like-formatting/45877
