@@ -1,13 +1,16 @@
 #!/usr/bin/env julia
 
-import Pkg: activate, status
+import Pkg: activate, status;
 
-if pwd() == homedir() * "/Git_Projects/Web/Algebra-linear-II"
-    activate(pwd() * "/src/Julia")
-elseif pwd() == homedir() * "/Git_Projects/Web/Algebra-linear-II/src/Julia"
+const LOCAL_PATH = homedir() * "/Git_Projects/Web/Algebra-linear-II";
+const GHA_PATH = homedir() * "/work/Algebra-linear-II/Algebra-linear-II/";
+
+if pwd() == LOCAL_PATH
+    activate("/src/Julia")
+elseif pwd() == LOCAL_PATH * "/src/Julia"
     activate("")
-elseif pwd() == homedir() * "/work/Algebra-linear-II/Algebra-linear-II/"
-    activate(pwd() * "/src/Julia")
+elseif pwd() == GHA_PATH
+    activate("/src/Julia")
 end
 
 #https://discourse.julialang.org/t/how-to-get-a-function-to-print-stuff-with-repl-like-formatting/45877
