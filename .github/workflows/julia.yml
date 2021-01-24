@@ -26,5 +26,5 @@ jobs:
           version: "^1.5.2"
           arch: x86
           show-versioninfo: true
-      - run: ./src/julia/start.jl
+      - run: ls -l src/julia && ./src/julia/start.jl
         shell: bash
