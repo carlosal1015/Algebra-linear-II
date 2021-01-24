@@ -15,6 +15,8 @@ function printout(x)
 end
 
 printout(status())
+printout(pwd())
+printout(homedir())
 include("version.jl")
 include("docs.jl")
 include("galois.jl")

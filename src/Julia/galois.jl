@@ -15,8 +15,7 @@ GF{p}(x::T) where {p,T<:Integer} = GF{p,T}(x)
 
 import Base: convert, inv, one, promote_rule, show, zero, abs, conj, isless
 #https://github.com/JuliaData/DataFrames.jl/issues/1139#issue-198117727
-using Primes
-#import Primes: isprime
+import Primes: isprime
 
 #https://stackoverflow.com/a/58253283/9302545
 function call(::Type{GF{p}}, x::Integer) where {p}
