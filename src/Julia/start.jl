@@ -3,7 +3,7 @@
 import Pkg: activate, status;
 
 const LOCAL_PATH = homedir() * "/Git_Projects/Web/Algebra-linear-II";
-const GHA_PATH = homedir() * "/work/Algebra-linear-II/Algebra-linear-II/";
+const GHA_PATH = homedir() * "/work/Algebra-linear-II/Algebra-linear-II";
 
 if pwd() == LOCAL_PATH
     activate("/src/Julia")
@@ -18,9 +18,9 @@ function printout(x)
     show(stdout, "text/plain", x)
     println()
 end
-printout(status())
 printout(pwd())
 printout(homedir())
+printout(status())
 include("version.jl")
 #include("docs.jl")
 #include("galois.jl")
