@@ -54,6 +54,7 @@ jobs:
           wget https://ecloud.global/s/xo22b99de4bdnr8/download -O docs/src/.vuepress/public/pdf/.pdf
           wget https://ecloud.global/s/ay4i6PEAD2EgjsY/download -O docs/src/.vuepress/public/pdf/.pdf
           wget https://ecloud.global/s/r5wzzJbnbwanfKi/download -O docs/src/.vuepress/public/pdf/.pdf
+          wget https://ecloud.global/s/qc2qioEtNNXcPmB/download -O docs/src/.vuepress/public/pdf/.pdf
           mv src/TeX/*.pdf docs/src/.vuepress/public/pdf
           tar -I zstd -xvf Video.tar.zst
           mkdir docs/src/.vuepress/public/video
