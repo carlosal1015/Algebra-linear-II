@@ -8,6 +8,7 @@ version = "1.0.0"
 [deps]
 AsyPlots = "77e5a97a-5ef9-58df-9d21-21957d92d960"
 Latexify = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
+PGFPlotsX = "8314cec4-20b6-5062-9cdb-752b83310925"
 PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"

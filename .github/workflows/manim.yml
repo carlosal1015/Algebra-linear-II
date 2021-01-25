@@ -27,7 +27,7 @@ jobs:
           options: -v ${{github.workspace}}:/manim
           shell: bash
           run: |
-            cd src/Python && for i in *.py; do manim "$i" -aqh; done
+            for i in ./src/Python/*.py; do manim "$i" -aqh; done
 
       - name: Check video files
         run: |

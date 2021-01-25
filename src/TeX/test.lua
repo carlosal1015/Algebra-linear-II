@@ -12,8 +12,8 @@ ffi.cdef [[
   char *jl_string_ptr(jl_value_t *);
 ]]
 
-JULIA.jl_init_with_image__threading("/usr/lib/julia/", "sys.so")
-
+JULIA.jl_init_with_image__threading("../Julia/", "IntroLinearAlgebra.so")
+-- JULIA.jl_init_with_image__threading("/usr/lib/julia/", "sys.so")
 julia = julia or {}
 
 function julia.eval(str, flag)
