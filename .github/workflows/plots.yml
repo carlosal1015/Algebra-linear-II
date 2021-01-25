@@ -1,11 +1,11 @@
-name: Pushing LaTeX + Julia image
+name: Pushing Julia image standalone
 
 on:
   push:
     branches:
       - main
     paths:
-      - src/Docker/**
+      - src/Docker/Plots.Dockerfile
 
 jobs:
   push_image:

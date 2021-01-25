@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - src/Docker/**
+      - src/Docker/Mtpro2.Dockerfile
 
 jobs:
   push_image:
