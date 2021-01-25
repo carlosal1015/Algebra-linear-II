@@ -22,7 +22,7 @@ ENV MAIN_PKGS="\
 
 COPY *.toml ${JULIA_PROJECT}
 
-RUN ls
+RUN ls && ls root
 
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
