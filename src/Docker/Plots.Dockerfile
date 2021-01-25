@@ -20,9 +20,9 @@ ENV MAIN_PKGS="\
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
-COPY Manifest.toml ${JULIA_PROJECT}
+RUN cd ~/.julia/environments/v1.5 && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Project.toml && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Manifest.toml
 
-RUN ls && ls root
+RUN ~/.julia
 
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
