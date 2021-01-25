@@ -1,7 +1,7 @@
 name = "TheProject"
-JULIA_CPU_THREADS = 26
+JULIA_CPU_THREADS = 4
 JULIA_EDITOR = "emacs"
-JULIA_NUM_THREADS = 26
+JULIA_NUM_THREADS = 4
 authors = ["Oromion Aznarán caznaranl@uni.pe"]
 version = "1.0.0"
 

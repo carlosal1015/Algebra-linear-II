@@ -21,10 +21,24 @@ jobs:
           git sparse-checkout set src/Julia
           git checkout
 
-      - uses: julia-actions/setup-julia@v1.6.0
+      - uses: addnab/docker-run-action@v1
         with:
-          version: "^1.5.2"
-          arch: x86
-          show-versioninfo: never
-      - run: ./src/Julia/start.jl
-        shell: bash
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ghcr.io
+          image: ghcr.io/carlosal1015/algebra-linear-ii:plots
+          options: -v ${{github.workspace}}:/work
+          shell: bash
+          run: |
+            which julia
+            ls -R ~/.julia
+            julia -e 'using Pkg; Pkg.status()'
+            # ./work/src/Julia/start.jl
+
+      # - uses: julia-actions/setup-julia@v1.6.0
+      #   with:
+      #     version: "^1.5.2"
+      #     arch: x86
+      #     show-versioninfo: never
+      # - run: ./src/Julia/start.jl
+      #   shell: bash
