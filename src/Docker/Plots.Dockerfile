@@ -20,9 +20,9 @@ ENV MAIN_PKGS="\
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
-COPY ../Julia/Manifest.toml $JULIA_PROJECT/Manifest.toml
+COPY Manifest.toml $JULIA_PROJECT/Manifest.toml
 
-COPY ../Julia/Project.toml $JULIA_PROJECT/Project.toml
+COPY Project.toml $JULIA_PROJECT/Project.toml
 
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
