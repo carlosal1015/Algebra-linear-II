@@ -20,9 +20,8 @@ ENV MAIN_PKGS="\
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
-COPY Manifest.toml $JULIA_PROJECT/Manifest.toml
-
-COPY Project.toml $JULIA_PROJECT/Project.toml
+COPY Manifest.toml ${JULIA_PROJECT}/Manifest.toml
+COPY Project.toml ${JULIA_PROJECT}/Project.toml
 
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
@@ -41,3 +40,6 @@ RUN rm -f /etc/localtime && \
 # RUN	apt-get -yq purge $GIT_BUILD_PKGS && \
 #   apt-get -yq autoremove && \
 #   rm -rf /var/lib/apt/lists/*
+
+RUN	apt-get -yq autoremove && \
+  rm -rf /var/lib/apt/lists/*

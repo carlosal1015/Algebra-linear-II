@@ -283,5 +283,5 @@ media
 *.so
 *.txt
 
-src/Docker/Manifest.toml
-src/Docker/Project.toml
+!src/Docker/Manifest.toml
+!src/Docker/Project.toml
