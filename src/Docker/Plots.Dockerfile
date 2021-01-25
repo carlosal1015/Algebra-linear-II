@@ -20,7 +20,7 @@ ENV MAIN_PKGS="\
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
-COPY *.toml ${JULIA_PROJECT}
+COPY Manifest.toml ${JULIA_PROJECT}
 
 RUN ls && ls root
 
