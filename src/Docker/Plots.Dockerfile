@@ -22,7 +22,7 @@ ENV MAIN_PKGS="\
 
 COPY *.toml ${JULIA_PROJECT}
 
-RUN ls /root
+RUN ls
 
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
@@ -35,8 +35,6 @@ RUN rm -f /etc/localtime && \
 # apt-get install -yq --no-install-recommends $GCC_PKGS
 
 RUN	julia -e 'using Pkg;Pkg.instantiate();Pkg.activate("/root");using PackageCompiler;create_sysimage([:Latexify, :Plots]; cpu_target="generic",replace_default=true);'
-
-RUN ls
 # julia -e 'using Pkg; Pkg.activate("");using PackageCompiler;create_sysimage([:Latexify, :Plots]; sysimage_path="IntroLinearAlgebra.so", precompile_execution_file="start.jl", cpu_target="skylake");'
 
 # RUN	apt-get -yq purge $GIT_BUILD_PKGS && \
