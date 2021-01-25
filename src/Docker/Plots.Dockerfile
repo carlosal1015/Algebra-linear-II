@@ -20,8 +20,8 @@ ENV MAIN_PKGS="\
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
-RUN ls -a ~
-#RUN cd ~/.julia/environments/v1.5 && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Project.toml && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Manifest.toml
+RUN cd ~ && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Project.toml && curl -LO https://raw.githubusercontent.com/carlosal1015/Algebra-linear-II/main/src/Julia/Manifest.toml
+
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
   apt-get update -qq && \
