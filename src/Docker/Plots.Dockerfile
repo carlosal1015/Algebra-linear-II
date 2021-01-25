@@ -16,7 +16,7 @@ ENV MAIN_PKGS="\
   # GIT_BUILD_PKGS="\
   # make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip" \
   GCC_PKGS="\
-  gcc g++ python" \
+  gcc g++ python3-dev" \
   DEBIAN_FRONTEND=noninteractive \
   JULIA_PROJECT=/root
 
