@@ -32,7 +32,8 @@ RUN rm -f /etc/localtime && \
 # make prefix=/usr/local install && \
 # apt-get install -yq --no-install-recommends $GCC_PKGS
 
-RUN	julia -e 'using Pkg;Pkg.instantiate();Pkg.activate("/root");using PackageCompiler;create_sysimage([:Latexify, :Plots]; cpu_target="generic",replace_default=true);'
+#https://github.com/JuliaLang/julia/blob/master/src/processor_x86.cpp#L257
+RUN	julia -e 'using Pkg;Pkg.instantiate();Pkg.activate("/root");using PackageCompiler;create_sysimage([:Latexify, :Plots]; cpu_target="skylake-avx512",replace_default=true);'
 # julia -e 'using Pkg; Pkg.activate("");using PackageCompiler;create_sysimage([:Latexify, :Plots]; sysimage_path="IntroLinearAlgebra.so", precompile_execution_file="start.jl", cpu_target="skylake");'
 
 # RUN	apt-get -yq purge $GIT_BUILD_PKGS && \
