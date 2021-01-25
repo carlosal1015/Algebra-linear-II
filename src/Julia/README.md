@@ -1,4 +1,4 @@
-## Julia
+## JuliaLang
 
 - [](https://github.com/sswatson/IntroLinearAlgebra.jl/blob/master/src/IntroLinearAlgebra.jl)
 - [](https://brentian.github.io/2020/04/08/first-try-julia)

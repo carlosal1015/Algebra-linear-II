@@ -30,9 +30,8 @@ jobs:
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
-            which julia
-            ls -R ~/.julia
-            julia -e 'using Pkg; Pkg.status()'
+            pwd
+            ls -R /work
             # ./work/src/Julia/start.jl
 
       # - uses: julia-actions/setup-julia@v1.6.0
