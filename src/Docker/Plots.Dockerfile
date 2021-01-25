@@ -21,6 +21,7 @@ ENV MAIN_PKGS="\
   JULIA_PROJECT=/root
 
 COPY ../Julia/Manifest.toml $JULIA_PROJECT/Manifest.toml
+
 COPY ../Julia/Project.toml $JULIA_PROJECT/Project.toml
 
 RUN rm -f /etc/localtime && \
