@@ -26,7 +26,8 @@ COPY ../Julia/Project.toml $JULIA_PROJECT/Project.toml
 RUN rm -f /etc/localtime && \
   ln -s /usr/share/zoneinfo/America/Lima /etc/localtime && \
   apt-get update -qq && \
-  apt-get install -yq --no-install-recommends $MAIN_PKGS# $GIT_BUILD_PKGS
+  apt-get install -yq --no-install-recommends $MAIN_PKGS
+
 # cd /tmp && curl -LO https://codeload.github.com/git/git/zip/v2.29.2 && \
 # unzip v2.29.2 && cd git-2.29.2 && make prefix=/usr/local all && \
 # make prefix=/usr/local install && \
