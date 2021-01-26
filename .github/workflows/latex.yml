@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - src/TeX/*.tex
+      - src/TeX/**
 
 jobs:
   build_latex:
@@ -30,7 +30,7 @@ jobs:
           options: -v ${{github.workspace}}:/work
           shell: bash
           run: |
-            cd /work/src/TeX && arara [ma]*.tex
+            cd /work/src/TeX && arara -L ptbr [ma]*.tex
 
       # - name: Compile LaTeX document with arara
       #   uses: xu-cheng/texlive-action/full@v1
