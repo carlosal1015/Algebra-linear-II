@@ -113,6 +113,7 @@ module.exports = {
             "polinômios",
             "fatoração-única",
             "determinantes",
+            "formas-canônicas-operadores-diagonalizáveis",
             "operadores-diagonalizáveis",
           ],
         },

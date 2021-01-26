@@ -92,11 +92,21 @@ sidebar: auto
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KzDGFbEQAOs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-## [Aula 25/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/operadores-diagonalizáveis.html)
+## [Aula 25/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-canônicas-operadores-diagonalizáveis.html)
 
 - [PDF](https://ecloud.global/s/qc2qioEtNNXcPmB)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wMeZjOfAbww" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## [Aula 26/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/operadores-diagonalizáveis.html)
+
+- [PDF](https://ecloud.global/s/H3qqKbzN526tFTC)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FiOHLNAG3Sk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aYkjls_al7s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mVcXZ2kJEYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <p align="center">
 <audio ref='themeSong' src="https://github.com/HuangJiaLian/DataBase0/blob/master/sound/My_Tree.mp3?raw=true" controls loop preload></audio>
