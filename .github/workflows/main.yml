@@ -58,8 +58,8 @@ jobs:
           mv src/TeX/*.pdf docs/src/.vuepress/public/pdf
           tar -I zstd -xvf Video.tar.zst
           mkdir docs/src/.vuepress/public/video
-          #find src/Python/media/videos -name "*.mp4" -exec mv "{}" docs/src/.vuepress/public/video
-          mv src/Python/media/videos/**/**/*.mp4 docs/src/.vuepress/public/video
+          #find media/videos -name "*.mp4" -exec mv "{}" docs/src/.vuepress/public/video
+          mv media/videos/**/**/*.mp4 docs/src/.vuepress/public/video
 
       - uses: actions/setup-node@v2
         with:

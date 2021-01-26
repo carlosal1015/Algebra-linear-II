@@ -1,6 +1,9 @@
 %\iffalse; /usr/bin/env arara ${0##*/} && exit # \fi
 % arara: lualatex: { shell: yes }
-% arara: pythontex
+% arara: pythontex: {
+% arara: --> jobs: 4,
+% arara: --> verbose: yes
+% arara: --> }
 % arara: lualatex: { shell: yes }
 
 \documentclass{article}
