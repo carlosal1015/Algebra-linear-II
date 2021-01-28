@@ -1,6 +1,10 @@
 ---
-noGlobalSocialShare: true
+title: Videos
+lang: pt-BR
+description: Aula 2
+tags: ["videos"]
 sidebar: auto
+noGlobalSocialShare: true
 ---
 
 # Videos 👨🏼‍🏫
@@ -237,6 +241,7 @@ sidebar: auto
 ## [Aula 27/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/polinômio-minimal.html)
 
 - [PDF](https://ecloud.global/s/DxesHxFtP899yH9)
+- [Exercícios de Fixação](https://ecloud.global/s/jjttWk68rGRQwkp)
 
 <iframe
   width="560"
@@ -247,9 +252,34 @@ sidebar: auto
   allowfullscreen
 ></iframe>
 
+## [Aula 28/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-de-jordan.html)
+
+- [PDF](https://ecloud.global/s/42aBEAxo2p3xtjD)
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/BVMsaKZzIfI"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
+
+## [Aula 29/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/.html)
+
+- [PDF]()
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
+
 <p align="center">
 <audio ref='themeSong' src="https://github.com/HuangJiaLian/DataBase0/blob/master/sound/My_Tree.mp3?raw=true" controls loop preload></audio>
 </p>
-
 
 Escrito em $\KaTeX$.

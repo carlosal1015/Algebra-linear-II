@@ -1,10 +1,16 @@
 ---
+title: Determinantes
+lang: pt-BR
+description: Aula 14
+tags: ["determinantes", "aula"]
 noGlobalSocialShare: true
 ---
 
+# {{ $frontmatter.title }} $21/01/2021$
+
 [[toc]]
 
-# Determinantes
+<br>
 
 <p align="center">
   <img
@@ -13,11 +19,13 @@ noGlobalSocialShare: true
   />
 </p>
 
-<br>
-
 <video style="display: block; margin: 0 auto" width="70%" controls>
   <source src="/Algebra-linear-II/video/OpeningManim.mp4" type="video/mp4" />
 </video>
+
+<br>
+
+## Resumo
 
 <br>
 

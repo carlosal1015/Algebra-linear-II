@@ -1,12 +1,12 @@
 ---
-title: "Formas canônicas: operadores diagonalizáveis"
+title: Formas de Jordan
 lang: pt-BR
-description: Aula 15
-tags: ["formas canônicas", "operadores diagonalizáveis", "aula"]
+description: Aula 17
+tags: ["polinômio", "aula"]
 noGlobalSocialShare: true
 ---
 
-# {{ $frontmatter.title }} $25/01/2021$
+# {{ $frontmatter.title }} $28/01/2021$
 
 [[toc]]
 
@@ -21,7 +21,7 @@ noGlobalSocialShare: true
 <br>
 
 <iframe
-  src="/Algebra-linear-II/pdf/tutoria.pdf"
+  src="https://ecloud.global/s/ay4i6PEAD2EgjsY"
   width="100%"
   height="600"
 ></iframe>

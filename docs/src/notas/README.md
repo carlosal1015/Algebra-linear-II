@@ -1,10 +1,12 @@
 ---
-title: Aula 1 (Introdução)
+title: Introdução
 lang: pt-BR
+description: Aula 1
+tags: ["introdução", "aula"]
 noGlobalSocialShare: true
 ---
 
-# Introdução ao curso :school:
+# {{ $frontmatter.title }} :school: $04/01/2021$
 
 [[toc]]
 

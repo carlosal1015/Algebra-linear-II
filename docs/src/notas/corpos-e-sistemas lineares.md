@@ -1,10 +1,12 @@
 ---
-noGlobalSocialShare: true
-title: Aula 2 (Corpo)
+title: Corpos e sistemas lineares
 lang: pt-BR
+description: Aula 2
+tags: ["corpos", "sistemas lineares", "aula"]
+noGlobalSocialShare: true
 ---
 
-# Corpos
+# {{ $frontmatter.title }} $06/01/2021$
 
 [[toc]]
 

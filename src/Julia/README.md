@@ -75,3 +75,4 @@ https://github.com/anj1/AlgebraicNumbers.jl
 https://www.youtube.com/watch?v=3WkxhuzcSCE
 https://nemocas.github.io/Nemo.jl/latest/polynomial.html
 https://link.springer.com/chapter/10.1007%2F978-3-8274-2601-7_17
+http://www.cip.ifi.lmu.de/~grinberg/algebra/trach.pdf

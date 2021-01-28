@@ -59,7 +59,7 @@ module.exports = {
     repo: "carlosal1015/Algebra-linear-II",
     editLinks: true,
     smoothScroll: true,
-    docsDir: "docs",
+    docsDir: "docs/src",
     docsBranch: "main",
     editLinkText: "Ajude-nos a melhorar esta página!",
     logo: "/img/escola_pt.svg",
@@ -110,7 +110,6 @@ module.exports = {
               { text: "JuliaLang 🏎️", link: "https://julialang.org" }
             ]
           }
-          //     { text: "Deutsch 🇩🇪", link: "" }
         ],
         sidebar: {
           "/notas/": [
@@ -119,7 +118,7 @@ module.exports = {
               collapsable: false,
               children: [
                 "",
-                "corpos",
+                "corpos-e-sistemas lineares",
                 "sistemas-lineares",
                 "matrizes",
                 "matrizes-e-sistemas-lineares",
@@ -130,11 +129,12 @@ module.exports = {
                 "matriz-de-uma-transformação-linear",
                 "funcionais-lineares",
                 "polinômios",
-                "fatoração-única",
+                "polinômio-sobre-um-corpo-F",
                 "determinantes",
                 "formas-canônicas-operadores-diagonalizáveis",
                 "operadores-diagonalizáveis",
-                "polinômio-minimal"
+                "polinômio-minimal",
+                "formas-de-jordan"
               ]
             }
           ]
@@ -171,7 +171,7 @@ module.exports = {
             items: [
               { text: "Moodle 🌐", link: "https://moodle.mat.unb.br/20201" },
               {
-                text: "XLIX Escola de Verão MAT/UnB 🏫",
+                text: "XLIX Summer School MAT/UnB 🏫",
                 link: "https://www.mat.unb.br/verao2021/verao/verao_pt.html"
               },
               {
@@ -182,7 +182,6 @@ module.exports = {
             ]
           }
         ],
-        // algolia: {},
         sidebar: {
           "/en/notes/": [
             {
@@ -190,7 +189,7 @@ module.exports = {
               collapsable: false,
               children: [
                 "",
-                "fields",
+                "fields-and-linear-systems",
                 "system-of-linear-equations",
                 "matrices",
                 "matrices-and-linear-systems",
@@ -201,17 +200,86 @@ module.exports = {
                 "matrix-of-a-linear-transformation",
                 "linear-functional",
                 "polynomials",
-                "unique-factorization",
+                "polynomial-over-a-field-F",
                 "determinants",
                 "canonical-form-diagonalizable-operator",
                 "diagonalizable-operator",
-                "minimal-polynomial"
+                "minimal-polynomial",
+                "jordan-form"
               ]
             }
           ]
-          // "/zh/nested": [
-          //   /* ... */
-          // ]
+        }
+      },
+      "/de/": {
+        label: "Deutsch 🇩🇪",
+        selectText: "Sprachen",
+        editLinkText: "Bearbeiten Sie diese Seite auf GitHub",
+        lastUpdated: "Letztes Update",
+        serviceWorker: {
+          updatePopup: {
+            message: "Neuer Inhalt verfügbar.",
+            buttonText: "Aktualisieren"
+          }
+        },
+        nav: [
+          {
+            text: "Lektionen",
+            ariaLabel: "Unterrichtsmenü",
+            items: [
+              { text: "Anmerkungen 🗒️", link: "/en/notas/" },
+              { text: "Videos 📹", link: "/en/videos/" },
+              {
+                text: "PDF 📖",
+                link:
+                  "https://carlosal1015.github.io/Algebra-linear-II/pdf/main.pdf"
+              }
+            ]
+          },
+          {
+            text: "Links",
+            ariaLabel: "Links Menü",
+            items: [
+              { text: "Moodle 🌐", link: "https://moodle.mat.unb.br/20201" },
+              {
+                text: "XLIX Summer School MAT/UnB 🏫",
+                link: "https://www.mat.unb.br/verao2021/verao/verao_pt.html"
+              },
+              {
+                text: "Ecloud ☁️",
+                link: "https://ecloud.global/s/fMPD4eBEL4G6CWQ"
+              },
+              { text: "JuliaLang 🏎️", link: "https://julialang.org" }
+            ]
+          }
+        ],
+        sidebar: {
+          "/de/anmerkungen/": [
+            {
+              title: "Notizen zur Klasse",
+              collapsable: false,
+              children: [
+                "",
+                "körpers-und-lineares-gleichungssystem",
+                "system-of-linear-equations",
+                "matrices",
+                "matrices-and-linear-systems",
+                "vector-spaces",
+                "finite-dimensional-vector-spaces",
+                "linear-map",
+                "vector-space-of-linear-maps",
+                "matrix-of-a-linear-transformation",
+                "linear-functional",
+                "polynomials",
+                "polynom-über-einem-F-körper",
+                "determinants",
+                "canonical-form-diagonalizable-operator",
+                "diagonalizable-operator",
+                "minimal-polynomial",
+                "jordansche-form"
+              ]
+            }
+          ]
         }
       }
     }
