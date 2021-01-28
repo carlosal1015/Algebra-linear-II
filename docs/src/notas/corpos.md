@@ -1,11 +1,20 @@
 ---
 noGlobalSocialShare: true
+title: Aula 2 (Corpo)
+lang: pt-BR
 ---
 
 # Corpos
 
-<p align='center'>
-<img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/%C3%9Cbersicht_K%C3%B6rper.svg' width='95%'>
+[[toc]]
+
+<br>
+
+<p align="center">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/7/7a/%C3%9Cbersicht_K%C3%B6rper.svg"
+    width="95%"
+  />
 </p>
 
 Um _corpo_ é um conjunto não vazio $\mathbb{F}$ munido de duas
@@ -54,22 +63,16 @@ e $\left(\mathbb{F}\setminus\left\{0\right\},\cdot\right)$
   $x\cdot\left(y+z\right)=x\cdot y+x\cdot z$,
   $\forall x,y,z\in\mathbb{F}$.
 
-## Browser
-
-$\mathbb{F}$ é
-
-$$
-\frac{1}{2}\overline{x}.
-$$
-
-Sistemas linears
-
-[Aula 2 - (06/01/2021) - Corpos](https://www.youtube.com/watch?v=z9GZVGrg1As)
-
-## Video
-
-<video style="display:block; margin: 0 auto;" width="70%" controls>
-<source src="/Algebra-linear-II/video/OpeningManim.mp4" type="video/mp4">
+<video style="display: block; margin: 0 auto" width="70%" controls>
+  <source src="/Algebra-linear-II/video/OpeningManim.mp4" type="video/mp4" />
 </video>
 
-<iframe src="/Algebra-linear-II/pdf/tutoria.pdf" width="100%" height="600"></iframe>
+## Resumo
+
+<br>
+
+<iframe
+  src="/Algebra-linear-II/pdf/tutoria.pdf"
+  width="100%"
+  height="600"
+></iframe>
