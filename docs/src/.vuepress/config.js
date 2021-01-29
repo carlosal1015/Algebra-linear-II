@@ -32,12 +32,17 @@ module.exports = {
     "/": {
       lang: "pt-BR",
       title: "Álgebra linear II",
-      description: "Gerador de site estático com base em Vue"
+      description: "Notas das aulas na escola de verão"
     },
     "/en/": {
       lang: "en-US",
       title: "Linear algebra II",
-      description: "Vue-powered Static Site Generator"
+      description: "Summer school class notes"
+    },
+    "/de/": {
+      lang: "de-DE",
+      title: "Lineare algebra II",
+      description: "Notizen zur Sommerschulklasse"
     }
   },
   /**
@@ -227,8 +232,8 @@ module.exports = {
             text: "Lektionen",
             ariaLabel: "Unterrichtsmenü",
             items: [
-              { text: "Anmerkungen 🗒️", link: "/en/notas/" },
-              { text: "Videos 📹", link: "/en/videos/" },
+              { text: "Anmerkungen 🗒️", link: "/de/anmerkungen/" },
+              { text: "Videos 📹", link: "/de/videos/" },
               {
                 text: "PDF 📖",
                 link:

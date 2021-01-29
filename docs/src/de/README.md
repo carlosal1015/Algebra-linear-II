@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: img/escola_pt.svg
 tagline: Notizen zur Sommerschulklasse.
 actionText: Schnellstart →
 actionLink: /de/anmerkungen/
+heroImage: /img/escola_pt.svg
 footer: Hergestellt von Oromion mit ❤️
 noGlobalSocialShare: true
 ---
