@@ -1,92 +1,396 @@
 \chapter{Espaços vetoriais\quad$\left(12/01/2021\right)$}
 
 \begin{definition}
-  Um conjunto não vazio $V$ é chamado de espaço vetorial sobre um corpo $\mathbb{F}$ se em $V$ estão definidas duas operações
+	Um conjunto não vazio $V$ é chamado de espaço vetorial sobre um corpo $\mathbb{F}$ se em $V$ estão definidas duas operações
 
-  \[
-    \begin{aligned}
-      +\colon V\times V & \longrightarrow V \\
-      \left(u,v\right)  & \longmapsto u+v
-    \end{aligned}\qquad
-    \begin{aligned}
-      \cdot\colon\mathbb{F}\times V & \longrightarrow V    \\
-      \left(c,v\right)              & \longmapsto c\cdot v
-    \end{aligned}
-  \]
+	\[
+		\begin{aligned}
+			+\colon V\times V & \longrightarrow V \\
+			\left(u,v\right)  & \longmapsto u+v
+		\end{aligned}\qquad
+		\begin{aligned}
+			\cdot\colon\mathbb{F}\times V & \longrightarrow V    \\
+			\left(c,v\right)              & \longmapsto c\cdot v
+		\end{aligned}
+	\]
 
+	\begin{enumerate}[label={(A\arabic*)},leftmargin=0em,itemindent=*]
+		\item\label{adição_vetores:1}
+
+		      \begin{math}
+			      u+
+			      \left(v+w\right)=
+			      \left(u+v\right)+
+			      w,
+			      \forall u,v,\omega\in V.
+		      \end{math}
+
+		\item\label{adição_vetores:2}
+
+		      Existe um único vetor nulo $O\in V$ tal que
+
+		      \begin{math}
+			      v+0=
+			      0+v=
+			      v,
+			      \forall v\in V.
+		      \end{math}
+
+		\item\label{adição_vetores:3}
+
+		      Dado $v\in V$, existe um único vetor $-v\in V$ tal que
+		      \begin{math}
+			      v+\left(-v\right)=
+			      \left(-v\right)+v=
+			      0;
+		      \end{math}
+
+		\item\label{adição_vetores:4}
+
+		      \begin{math}
+			      u+v=
+			      v+u,
+			      \forall u,v\in V.
+		      \end{math}
+	\end{enumerate}
+
+	\begin{enumerate}[label={(E\arabic*)},leftmargin=0em,itemindent=*]
+		\item\label{multiplicação_vetores:1}
+
+		      \begin{math}
+			      1\cdot v=
+			      v,
+			      \forall v\in V
+		      \end{math},
+		      onde $1\in\mathbb{F}$.
+
+		\item\label{multiplicação_vetores:2}
+
+		      \begin{math}
+			      \left(ck\right)v=
+			      c\left(kv\right),
+			      \forall v\in V,E
+			      \text{ e }
+			      \forall c,k\in\mathbb{F}.
+		      \end{math}
+
+		\item\label{multiplicação_vetores:3}
+
+		      \begin{math}
+			      c\left(u+v\right)=
+			      cu+cv,
+			      \forall u,v\in V,
+			      \forall c\in\mathbb{F}
+		      \end{math}
+		\item\label{multiplicação_vetores:4}
+
+		      \begin{math}
+			      \left(c+k\right)v=
+			      cv+kv,
+			      \forall v\in V
+			      \text{ e }
+			      c,k\in\mathbb{F}
+		      \end{math}.
+	\end{enumerate}
 \end{definition}
 
-% (A1) $u+\left(v+w\right)=\left(u+v\right)+w,\forall u,v,\omega\in V$.
-% (A2) Exr un $O\in V$ taa ave avk $v+\left(-v\right)=\left(-v\right)+v=0$;
-% (A4) $u_{+}v=v+u,\forall u,v\in V_{i}$
-% (E1) $I.v=v,\forall v\in V$, owor $1\in\mathbb{F}$;
-% (E2) $\left(ck\right)v=c\left(kv\right), \forall v\in V,E\forall c, k \in \mathbb{F}$
-% $(\pm 3) c\left(u+v\right)=cu+cv,\forall u,v\in V,\forall c\in\mathbb{F}$
-% (E4) $\left(c+k\right)v=cv+kv,\quad\forall v\in V_{E}c,k\in\mathbb{F}$.
 
-% \mathbb{F}^{n}=\left\{\left(x_{2},\dotsc,x_{n}\right)\mid x_{i}\in \mathbb{F},i=1,\dotsc,n\right\},
+\begin{example}\leavevmode
+	\begin{enumerate}
+		\item
+		      Se $\mathbb{F}$ é um corpo, então
+		      \[
+			      \mathbb{F}^{n}=
+			      \left\{
+			      \left(x_{1},\dotsc,x_{n}\right)
+			      \mid x_{i}\in\mathbb{F},
+			      i=1,\dotsc,n
+			      \right\},
+		      \]
+		      com $n$ um enteiro positivo, é um espaço vetorial sobre
+		      $\mathbb{F}$, onde as operações são dada por
 
-% \mathbb{F}^{m\times n}=
-% \mathscr{N}_{N\times n}\left(\mathbb{F}\right)=
-% \left\{A=\left(a_{ij}\right)_{w+1}\mid a_{ij}\in\mathbb{F}\right\}
+		      \[
+			      \begin{aligned}
+				      +\colon
+				      \mathbb{F}^{n}\times
+				      \mathbb{F}^{n} & \longrightarrow
+				      \mathbb{F}^{n}                   \\
+				      \left(
+				      \left(x_{1},\dotsc,x_{n}\right),
+				      \left(y_{1},\dotsc,y_{n}\right)
+				      \right)        & \longmapsto
+				      \left(x_{1}+y_{1},\dotsc,x_{n}+y_{n}\right)
+			      \end{aligned},\qquad
+			      \begin{aligned}
+				      \cdot\colon
+				      \mathbb{F}\times
+				      \mathbb{F}^{n}                                 & \longrightarrow
+				      \mathbb{F}^{n}                                                   \\
+				      \left(c,\left(x_{1},\dotsc,x_{n}\right)\right) & \longmapsto
+				      \left(cx_{1},\dotsc,cx_{n}\right).
+			      \end{aligned}
+		      \]
+
+		\item
+
+		      Se $\mathbb{K}$ é um subcorpo de $\mathbb{F}$, então $\mathbb{F}$ é um espaço vetorial sobre $\mathbb{K}$.
+
+		\item
+		      O conjunto
+		      \[
+			      \mathbb{F}^{m\times n}=
+			      \mathcal{M}_{m\times n}\left(\mathbb{F}\right)=
+			      \left\{
+			      A=
+			      {\left(a_{ij}\right)}_{w+1}
+			      \mid a_{ij}\in
+			      \mathbb{F}
+			      \right\},
+		      \]
+		      onde $\mathbb{F}$ é um corpo, munido das operações
+		      \[
+			      \begin{aligned}
+				      +\colon
+				      \mathbb{F}^{m\times n}\times
+				      \mathbb{F}^{m\times n} &
+				      \longrightarrow
+				      \mathbb{F}^{m\times n}               \\
+				      \left(A,B\right)       & \longmapsto
+				      {\left(a_{ij}\right)}_{m\times n}+
+				      {\left(b_{ij}\right)}_{m\times n}=
+				      {\left(a_{ij}+b_{ij}\right)}_{m\times n}
+			      \end{aligned},\qquad
+			      \begin{aligned}
+				      \cdot\colon
+				      \mathbb{F}\times
+				      \mathbb{F}^{m\times n} & \longrightarrow
+				      \mathbb{F}^{n}                           \\
+				      \left(c,A\right)       & \longmapsto
+				      c\cdot
+				      {\left(a_{ij}\right)}_{m\times n}=
+				      {\left(c\cdot a_{ij}\right)}_{m\times n}.
+			      \end{aligned}
+		      \]
+		      é um espaço vetorial sobre $\mathbb{F}$.
+	\end{enumerate}
+\end{example}
+
+\begin{proposition}
+	Em um espaço vetorial valem
+	\begin{enumerate}
+		\item $0\cdot v=0$;
+		\item $c\cdot 0=0$;
+		\item $-v=\left(-1\right)v$, para todo vetor $v$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Subespaço vetorial]
+	Seja $V$ um espaço vetorial sobre	um corpo $\mathbb{F}$.
+	Um subconjunto não vazio $W$ de $V$ é chamado de subespaço vetorial
+	de $V$ se $W$ munido das operações de $V$ é um espaço vetorial.
+\end{definition}
+
+\begin{itemize}
+	\item
+
+	      Em outras palavras, $W$ é um subespaço vetorial de $V$ se
+
+	      \begin{enumerate}
+		      \item
+
+		            $0\in W$;
+
+		      \item
+
+		            $w_{1}+w_{2}\in W$, $\forall w_{1},w_{2}\in W$;
+
+		      \item
+
+		            $c\cdot w\in W$, $\forall c\in\mathbb{F}$ e $w\in W$.
+	      \end{enumerate}
+	\item
+
+	      Mais ainda, $W$ é um subespaço vetorial de $V$ se
+	      \begin{enumerate}
+		      \item
+
+		            $W$ é  vazio;
+
+		      \item
+
+		            $w_{1}+cw_{2}\in W$, $\forall c\in\mathbb{F}$ e $\forall w_{1},w_{2}\in W$.
+	      \end{enumerate}
+\end{itemize}
+
+\begin{example}
+	\begin{enumerate}\leavevmode
+		\item
+
+		      $\left\{0\right\}$, $V$ são subespaços vetoriais de $V$;
+
+		\item
+
+		      Seja $A={\left(a_{ij}\right)}_{m\times n}$ uma matriz sobre um corpo $\mathbb{F}$. Então o conjunto solução do sistema homogêneo
+		      \[
+			      A
+				      {X}_{n\times1}=
+			      {0}_{m\times1}
+		      \]
+		      é um subespaço vetorial de $\mathbb{F}^{n}$.
+
+		      \begin{proof}
+			      Seja $W$ o conjunto solução de $AX=0$.
+			      Note que $W$ é não vazio, pois $\left(0,\dotsc,0\right)\in W$.
+			      Sejam $X_{0}$, $X_{1}$ duas soluções de $AX=0$.
+			      Assim
+			      \begin{align*}
+				      A\left(X_{0}+cX_{1}\right)
+				       & =AX_{0}+cAX_{1} &  & \\
+				       & =0 + c\cdot 0=0 &  &
+			      \end{align*}
+			      para todo $c\in\mathbb{F}$.
+			      Daí $X_{0}+cX_{1}\in W$ e o resultado segue.
+		      \end{proof}
+
+		\item
+
+		      \begin{math}
+			      W=
+			      \left\{
+			      A=
+			      {\left(a_{ij}\right)}_{3\times2}
+			      \mid a_{11}=0
+			      \right\}
+		      \end{math}
+		      é um subespaço vetorial de $\mathbb{F}^{3\times2}=\mathcal{M}_{3\times2}\left(\mathbb{F}\right)$;
+
+		\item
+
+		      \begin{math}
+			      W=
+			      \left\{
+			      f\colon
+			      \mathbb{R}\to\mathbb{R}
+			      \mid f\left(1\right)=0
+			      \right\}
+		      \end{math}
+		      é um subespaço vetorial
+		      \begin{math}
+			      \mathcal{F}=
+			      \left\{
+			      f\colon
+			      \mathbb{R}\to\mathbb{R}
+			      \mid f\text{ é função.}
+			      \right\}
+		      \end{math}.
+	\end{enumerate}
+\end{example}
 
 
-% +\colon A+B=
-% \left(a_{ij}\right)_{mx+1}+
-% \left(b_{i j}\right)_{wxn}=
-% \left(a_{ij}+b_{ij}\right)_{w\times n}\\
-% \therefore cA=c\cdot\left(a_{ij}\right)_{mx_{n}}=
-% \left(c\cdot a_{ij}\right)_{m\times n}
+\fbox{$
+		+\colon
+		\left(f+g\right)\left(x\right)=
+		f\left(x\right)+
+		g\left(x\right),\quad
+		\cdot\colon
+		\left(cf\right)\left(x\right)=
+		cf\left(x\right).
+	$}
 
+\begin{proposition}
+	Sejam $V$ um espaço vetorial e
+\end{proposition}
 
-% i) $0\in W$;
-% iii) $c\omega\in\omega,\forall c\in\mathbb{F}_{r}w\in\omega$
+\begin{enumerate}
+	\item
 
-% i) W $\pi$ wat vazro
-% ii) $w_{1}+cw_{2}\in W,\forall c\in\mathbb{F}_{k}\forall\omega_{1},w_{2}\in W$.
+	      \begin{math}
+		      \cap_{i\in I}w_{i}
+	      \end{math};
 
-% A\left(X_{0}+c X_{1}\right)=A X_{0}+c A X_{1}
+	\item
 
-% c) W=
-% \left\{A=\left(a_{ij}\right)_{3\times 2}\mid a_{n}=0\right\}
+	      \begin{math}
+		      \sum_{i\in 1}w_{i}=
+		      \left\{
+		      w_{i}+a_{i}+\dotsb+w_{i_{n}}
+		      \mid w_{i}\in W_{j}\in
+		      n\in\mathbb{Z}_{>1}
+		      \right\}
+	      \end{math};
+
+\end{enumerate}
+
+% x+c v &=
+% \left(u_{i_{1}}+\dotsb+u_{i_{e}}\right)+
+% c\left(v_{j_{1}}+\dotsb+v_{j k}\right)=\\
+% &=
+% u_{i_{2}}+\dotsb+u_{i_{e}}+c v_{j_{2}}+\dotsb+c_{v_{k}} \in \sum_{i\in\tau}
+% w_{i}
+
+% \bigcap_{i\in 2}w_{i}\subseteq U_{i\in I}w_{i}\subseteq\sum_{i\in Z}w_{i}
+
+% \left(x,y,z\right)=
+% x\left(1,0,0\right)+
+% y\left(0,1,0\right)+
+% z\left(0,0,1\right)
+
+% \left(x,y,z\right)=
+% -xi\left(i,1,0\right)+
+% \left(y+xi-z\right)
+% \left(0,1,0\right)-
+% zi\left(0,i,i\right)
+
+% W=
+% \left\{
+% c_{2}v_{2}+\dotsb+c_{n}v_{n}
+% \mid v_{i}\in S_{\varepsilon}c_{i}\in\mathbb{F}
+% \right\}
 
 % \begin{aligned}
-%    & \text { d) } \omega=\{f\colon\mathbb{R}\to\mathbb{R}\mid f(1)=0\} \text { i } \\
-%    & \mathbb{F}=\{f: \mathbb{R} \rightarrow \mathbb{R}) \text { f is runcto }\}
+% 	u+cv & =
+% 	\left(
+% 	c_{2}u_{2}+
+% 	\dotsb+
+% 	c_{n}u_{n}
+% 	\right)+
+% 	c\left(k_{1}v_{2}+\dotsb+k_{m}v_{m}\right)= \\
+% 	     & =
+% 	c_{1}u_{2}+
+% 	\dotsb+
+% 	c_{n}u_{n}+
+% 	\left(ck_{1}\right)v_{2}+
+% 	\dotsb+
+% 	\left(ck_{m}\right)v_{m}
+% 	\in W.
 % \end{aligned}
-
-% +:\left(f+g\right)\left(x\right)=f\left(x\right)+g\left(x\right),\quad\therefore\left(cf\right)\left(x\right)=cf\left(x\right)
-
-
-% i) \cap \omega_{i} \text { ; } \\
-% ii)\sum_{i\in 1}\omega_{i}=\left\{w_{i}+a_{i}+\dotsb+w_{i_{n}}\mid \omega_{i}\in W_{j}\in n\in\mathbb{Z}_{>1}\right\}
-
-
-% x+c v & =\left(u_{i_{1}}+\dotsb+u_{i_{e}}\right)+c\left(v_{j_{1}}+\dotsb+v_{j k}\right)=          \\
-% & =u_{i_{2}}+\dotsb+u_{i_{e}}+c v_{j_{2}}+\dotsb+c_{v_{k}} \in \sum_{i \in \tau} \omega_{i}
-
-% \bigcap_{i\in 2}\omega_{i}\subseteq U_{i\in I}\omega_{i}\subseteq \sum_{i\in Z}\omega_{i}
-
-% \left(x,y,z\right)=x\left(1,0,0\right)+y\left(0,1,0\right)+z\left(0,0,1\right)
-
-% \left(x,y,z\right)=-x i\left(i,1,0\right)+\left(y+xi-z\right)\left(0,1,0\right)-zi\left(0,i,i\right)
-
-% W=\left\{c_{2}v_{2}+\dotsb+c_{n}v_{n}\mid v_{i}\in S_{\varepsilon}c_{i}\in\mathbb{F}\right\}
-
-% \begin{aligned}
-%   u+cv & =\left(c_{2}u_{2}+\dotsb+c_{n}u_{n}\right)+c\left(k_{1}v_{2}+\dotsb+k_{m}v_{m}\right)=       \\
-%        & =c_{1}u_{2}+\dotsb+c_{n}u_{n}+\left(ck_{1}\right)v_{2}+\dotsb+\left(ck_{m}\right)v_{m}\in W.
-% \end{aligned}
-
-% \left\langle S\right\rangle=\bigcap_{S\leq w}w
 
 % \left\langle S\right\rangle=
-% \left\{c_{2}v_{2}+\dotsb+c_{n}v_{n}\mid v_{i}\in S_{\varepsilon}c_{2} \in\mathbb{F}\right\}=W
+% \bigcap_{S\leq w}w
 
-% \omega=c_{2}v_{2}+\dotsb+c_{n}v_{n}\in\cap u
+% \left\langle S\right\rangle=
+% \left\{
+% c_{2}v_{2}+
+% \dotsb+
+% c_{n}v_{n}
+% \mid v_{i}\in
+% S_{\varepsilon}c_{2}\in
+% \mathbb{F}\right\}=
+% W
+
+% W=
+% c_{2}v_{2}+
+% \dotsb+
+% c_{n}v_{n}\in
+% \cap u
 
 % \mathbb{C}^{3}=
-% \left\langle\left(i,1,0\right),\left(0,1,0\right),\left(0,i,i\right)\right\rangle
+% \left\langle
+% \left(i,1,0\right),
+% \left(0,1,0\right),
+% \left(0,i,i\right)
+% \right\rangle
 
 % x+y+z=0                                        \\
 % 2x+y+2z=0                                      \\
@@ -96,48 +400,48 @@
 
 % DS Szs7rum DADO. No7k aun
 % \[
-%   W=
-%   \left\{
-%   z\left(-1,0,1\right)\mid
-%   z\in\mathbb{R}
-%   \right\}= \\
-%   =\left\langle\left(-1,0,1\right)\right\rangle
+% 	W=
+% 	\left\{
+% 	z\left(-1,0,1\right)\mid
+% 	z\in\mathbb{R}
+% 	\right\}= \\
+% 	=\left\langle\left(-1,0,1\right)\right\rangle
 % \]
 
 % \[
-%   W=
-%   \left\{
-%   \left(z+y,y,z\right)\mid
-%   z,y\in\mathbb{R}
-%   \right\}=       \\
-%   =\left\{
-%   y\left(1,1,0\right)+
-%   z\left(1,0,1\right)\mid
-%   y,z\in\mathbb{R}\right\}= \\
-%   =
-%   \left\langle
-%   \left(1,1,0\right),
-%   \left(1,0,1\right)
-%   \right\rangle
+% 	W=
+% 	\left\{
+% 	\left(z+y,y,z\right)\mid
+% 	z,y\in\mathbb{R}
+% 	\right\}=       \\
+% 	=\left\{
+% 	y\left(1,1,0\right)+
+% 	z\left(1,0,1\right)\mid
+% 	y,z\in\mathbb{R}\right\}= \\
+% 	=
+% 	\left\langle
+% 	\left(1,1,0\right),
+% 	\left(1,0,1\right)
+% 	\right\rangle
 % \]
 
 % \[
-%   x+y+z=1 \\
-%   2 x+y+2 z=2
-%   \quad \implies
-%   x+y+z =1 \to x=1-z \\
-%   -y    =0 \to y=0
+% 	x+y+z=1 \\
+% 	2 x+y+2 z=2
+% 	\quad \implies
+% 	x+y+z =1 \to x=1-z \\
+% 	-y    =0 \to y=0
 % \]
 
 
 % $S=
-%   \left\{
-%   \left(1-z,0,z\right)\mid
-%   z\in\mathbb{R}
-%   \right\}=
-%   \left\{
-%   \left(1,0,0\right)+
-%   z\left(-1,0,1\right)\mid
-%   z\in\mathbb{R}
-%   \right\}
+% 	\left\{
+% 	\left(1-z,0,z\right)\mid
+% 	z\in\mathbb{R}
+% 	\right\}=
+% 	\left\{
+% 	\left(1,0,0\right)+
+% 	z\left(-1,0,1\right)\mid
+% 	z\in\mathbb{R}
+% 	\right\}
 % $

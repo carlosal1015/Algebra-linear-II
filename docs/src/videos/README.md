@@ -252,7 +252,7 @@ noGlobalSocialShare: true
   allowfullscreen
 ></iframe>
 
-## [Aula 28/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-de-jordan.html)
+## [Aula 28/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-de-jordan_parte1.html)
 
 - [PDF](https://ecloud.global/s/42aBEAxo2p3xtjD)
 
@@ -265,7 +265,20 @@ noGlobalSocialShare: true
   allowfullscreen
 ></iframe>
 
-## [Aula 29/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/.html)
+## [Aula 29/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-de-jordan_parte2.html)
+
+- [PDF](https://ecloud.global/s/wpn7mjCxp7JXycb)
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/Oms6NQcpKTU"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
+
+## [Aula 30/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/.html)
 
 - [PDF]()
 

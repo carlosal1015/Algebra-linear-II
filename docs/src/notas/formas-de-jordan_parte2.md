@@ -1,12 +1,12 @@
 ---
-title: Formas de Jordan
+title: Formas de Jordan -- Parte 2
 lang: pt-BR
-description: Aula 17
+description: Aula 18
 tags: ["polinômio", "aula"]
 noGlobalSocialShare: true
 ---
 
-# {{ $frontmatter.title }} $28/01/2021$
+# {{ $frontmatter.title }} $29/01/2021$
 
 [[toc]]
 

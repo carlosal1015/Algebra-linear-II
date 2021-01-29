@@ -139,7 +139,8 @@ module.exports = {
                 "formas-canônicas-operadores-diagonalizáveis",
                 "operadores-diagonalizáveis",
                 "polinômio-minimal",
-                "formas-de-jordan"
+                "formas-de-jordan_parte1",
+                "formas-de-jordan_parte2"
               ]
             }
           ]
@@ -210,7 +211,8 @@ module.exports = {
                 "canonical-form-diagonalizable-operator",
                 "diagonalizable-operator",
                 "minimal-polynomial",
-                "jordan-form"
+                "jordan-form-part-1",
+                "jordan-form-part-2"
               ]
             }
           ]
@@ -281,7 +283,8 @@ module.exports = {
                 "canonical-form-diagonalizable-operator",
                 "diagonalizable-operator",
                 "minimal-polynomial",
-                "jordansche-form"
+                "jordansche-form-teil-1",
+                "jordansche-form-teil-2"
               ]
             }
           ]
