@@ -1,5 +1,4 @@
 const { description } = require("../../package");
-const moment = require("moment");
 
 const extendsNetworks = {
   email: {
@@ -162,7 +161,7 @@ module.exports = {
             text: "Lessons",
             ariaLabel: "Lessons Menu",
             items: [
-              { text: "Notes 🗒️", link: "/en/notas/" },
+              { text: "Notes 🗒️", link: "/en/notes/" },
               { text: "Videos 📹", link: "/en/videos/" },
               {
                 text: "PDF 📖",
@@ -268,21 +267,21 @@ module.exports = {
               children: [
                 "",
                 "körpers-und-lineares-gleichungssystem",
-                "system-of-linear-equations",
-                "matrices",
-                "matrices-and-linear-systems",
-                "vector-spaces",
-                "finite-dimensional-vector-spaces",
-                "linear-map",
-                "vector-space-of-linear-maps",
-                "matrix-of-a-linear-transformation",
-                "linear-functional",
-                "polynomials",
+                "lineares-gleichungssystem",
+                "matrizen",
+                "matrizen-und-lineare-systeme",
+                "vektorraums",
+                "n-dimensionale-vektorraum",
+                "lineare-abbildung",
+                "vektorraum-der-linearen-abbildungen",
+                "abbildungsmatrix",
+                "linearform",
+                "polynoms",
                 "polynom-über-einem-F-körper",
-                "determinants",
-                "canonical-form-diagonalizable-operator",
-                "diagonalizable-operator",
-                "minimal-polynomial",
+                "determinanten",
+                "kanonische-form-diagonalisierbare-operator",
+                "diagonalisierbare-operator",
+                "minimalpolynom",
                 "jordansche-form-teil-1",
                 "jordansche-form-teil-2"
               ]
@@ -344,7 +343,6 @@ module.exports = {
     "@vuepress/last-updated",
     {
       transformer: (timestamp, lang) => {
-        // Don't forget to install moment yourself
         const moment = require("moment");
         moment.locale(lang);
         return moment(timestamp).fromNow();
