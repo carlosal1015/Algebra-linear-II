@@ -268,6 +268,7 @@ noGlobalSocialShare: true
 ## [Aula 29/01/2021](https://carlosal1015.github.io/Algebra-linear-II/notas/formas-de-jordan_parte2.html)
 
 - [PDF](https://ecloud.global/s/wpn7mjCxp7JXycb)
+- [Exercícios de Fixação](https://ecloud.global/s/ScJ2FSjSZneQirZ)
 
 <iframe
   width="560"
