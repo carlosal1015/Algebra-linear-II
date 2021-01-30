@@ -1,0 +1,229 @@
+\chapter{Exercícios de Fixação\quad$\left(29/01/2021\right)$}
+
+\begin{questions}
+	\question\label{exercício:4.1}
+
+	Determine a forma de Jordan de
+	$T\colon\mathbb{C}^{6}\to\mathbb{C}^{6}$ definida por
+	\[
+		T\left(x,y,z,w,t,k\right)=
+		\left(2x,x+2y,-x+2z,y+2w,x+y+z+w+2t,t-k\right).
+	\]
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.2}
+
+	Encontre a forma de Jordan das seguinte matrizes
+
+	\begin{parts}
+		\begin{multicols}{4}
+			\part\label{exercício:4.2a}
+
+			\[
+				\begin{bNiceMatrix}
+					5  & -9  & -4 \\
+					6  & -11 & -5 \\
+					-7 & 13  & 6
+				\end{bNiceMatrix}
+			\]
+
+			\part\label{exercício:4.2b}
+
+			\[
+				\begin{bNiceMatrix}
+					0 & -9 & 0 & 0 \\
+					1 & 6  & 0 & 0 \\
+					0 & 0  & 3 & 0 \\
+					0 & 0  & 0 & 3
+				\end{bNiceMatrix}
+			\]
+
+			\part\label{exercício:4.2c}
+
+			\[
+				\begin{bNiceMatrix}
+					3 & -1 & 1  & -7 \\
+					9 & -3 & -7 & -1 \\
+					0 & 0  & 4  & -8 \\
+					0 & 0  & 2  & -4
+				\end{bNiceMatrix}
+			\]
+
+			\part\label{exercício:4.2d}
+			\NiceMatrixOptions{
+				cell-space-top-limit = 3pt
+			}
+			\[
+				\begin{bNiceMatrix}
+					\overline{8} & \overline{12} & \overline{0} & \overline{0} \\
+					\overline{4} & \overline{12} & \overline{0} & \overline{0} \\
+					\overline{0} & \overline{0}  & \overline{9} & \overline{2} \\
+					\overline{0} & \overline{0}  & \overline{2} & \overline{6}
+				\end{bNiceMatrix}
+			\]
+			\NiceMatrixOptions{
+				cell-space-top-limit = 0pt
+			}
+		\end{multicols}
+		A matriz de (d) está sobre o corpo $\mathbb{Z}/13\mathbb{Z}$.
+	\end{parts}
+
+	\begin{parts}
+		\part
+
+		\part
+
+		\part
+
+		\part
+	\end{parts}
+
+	\question\label{exercício:4.3}
+
+	Mostre que as seguintes matrizes são semelhantes:
+
+	\[
+		\begin{bNiceMatrix}
+			-1 & 0 & 0 & -2 \\
+			0  & 1 & 0 & 4  \\
+			-1 & 0 & 1 & 1  \\
+			0  & 0 & 0 & 1
+		\end{bNiceMatrix}
+		\quad
+		\begin{bNiceMatrix}
+			1  & 0 & 0 & 0  \\
+			-1 & 1 & 0 & 0  \\
+			0  & 1 & 1 & 0  \\
+			0  & 0 & 0 & -1
+		\end{bNiceMatrix}
+	\]
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.4}
+
+	Seja
+	\begin{math}
+		T\colon
+		\mathcal{P}_{n}
+		\left(\mathbb{R}\right)\to
+		\mathcal{P}_{n}
+		\left(\mathbb{R}\right)
+	\end{math}
+	dado por $T\left(p\left(x\right)\right)=p\left(x+1\right)$.
+
+	\begin{parts}
+		\part\label{exercício:4.4a}
+
+		Determine a forma de Jordan de $T$;
+
+		\part\label{exercício:4.4b}
+
+		Para $n=4,$ encontre uma base $\beta$ de
+		$\mathcal{P}_{n}\left(\mathbb{R}\right)$ tal que
+		${\left[T\right]}_{\beta}$ seja a forma de Jordan de $T$.
+	\end{parts}
+
+	\begin{parts}
+		\part
+
+		\part
+	\end{parts}
+
+	\question\label{exercício:4.5}
+
+	Seja $A$ uma matriz $9\times9$ cujo polinômio característico é
+	$-{\left(x-3\right)}^{5}{\left(x-2\right)}^{4}$ e cujo polinômio
+	minimal é $\left(x-3\right)^{3}{\left(x-2\right)}^{2}$.
+	Dê as possíveis formas de Jordan de $A$.
+
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.6}
+
+	Seja
+	\begin{math}
+		T\colon
+		\mathcal{M}_{2\times2}
+		\left(\mathbb{R}\right)\to
+		\mathcal{M}_{2\times2}
+		\left(\mathbb{R}\right)
+	\end{math}
+	um operador linear cuja matriz em relação à base
+	\[
+		\beta=\left\{
+		\begin{bNiceMatrix}
+			1 & 0 \\
+			1 & 0
+		\end{bNiceMatrix},
+		\begin{bNiceMatrix}
+			1 & 0 \\
+			0 & 0
+		\end{bNiceMatrix},
+		\begin{bNiceMatrix}
+			0 & 1 \\
+			0 & 1
+		\end{bNiceMatrix},
+		\begin{bNiceMatrix}
+			0 & 0 \\
+			0 & 1
+		\end{bNiceMatrix}
+		\right\}
+	\]
+	é dada por
+	\[
+		[T]_{\beta}=
+		\begin{bNiceMatrix}
+			3 & -1 & 1  & -7 \\
+			9 & -3 & -7 & -1 \\
+			0 & 0  & 4  & -8 \\
+			0 & 0  & 2  & -4
+		\end{bNiceMatrix}.
+	\]
+	Determine uma matriz
+	$M\in\mathcal{M}_{4\times4}\left(\mathbb{R}\right)$ tal que
+	$M^{-1}{\left[T\right]}_{\beta}M$ é a forma de Jordan de
+	${\left[T\right]}_{\beta}$.
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.7}
+
+	Determine, a menos de semelhança, todas matrizes $3\times3$
+	complexas $A$ tais que $A^{3}=I_{3}$.
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.8}
+
+	Sejam $n\geq2$ um inteiro positivo e $B$ uma matriz $n\times n$
+	sobre um corpo $\mathbb{F}$.
+	Suponha que $B^{n}=0$ e $B^{n-1}\neq0$.
+	Mostre que não existe uma $n\times n$ matriz $A$ tal que $A^{2}=B$.
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+
+	\question\label{exercício:4.9}
+
+	Seja $A$ uma matriz $6\times6$ sobre $\mathbb{R}$ tal que
+	$A^{4}-8A^{2}+16I=0$.
+	Quais são as possíveis formas de Jordan não semelhantes de $A$?
+
+	\begin{solutionordottedlines}
+		.
+	\end{solutionordottedlines}
+\end{questions}

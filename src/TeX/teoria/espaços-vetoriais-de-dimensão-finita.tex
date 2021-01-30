@@ -166,4 +166,82 @@
 	% 	a_{m1}x_{1}+\cdots+a_{mn}x_{n}=0
 	% 	}
 	% \]
+	tenha uma solução nula $\left(\left(x_{1},\dotsc,x_{n}\right)\neq\left(0,\dotsc,0\right)\right)$.
+	Pela proposição 5 da aula 5, segue que o sistema tem solução não nula.
+	Afirmação segue.
+\end{proof}
+
+Nas condições do teorema 4, dizemos que o espaço vetorial $V$ é finitamente gerado.
+
+\begin{proposition}
+	Todo espaço vetorial $V$ sobre um corpo $\mathbb{F}$ finitamente gerado possui uma base.
+	Toda base de $V$ tem a mesma quantidade de elementos.
+\end{proposition}
+
+\begin{proof}
+	Sejam $v_{1},\dotsc,v_{m}\in V$ vetores distintos tais que $\left\langle v_{1},\dotsc,v_{m}\right\rangle=V$.
+	Escolha $u_{1}\in\left\{v_{1},\dotsc,v_{m}\right\}\setminus\left\{0\right\}$.
+	Note que $\left\{u_{1}\right\}$ é LI.
+	Se $\left\langle u_{1}\right\rangle=V$, acabou, pois $\left\{u_{1}\right\}$ será uma base de $V$.
+	Se $\left\langle u_{1}\right\rangle\subseteq V$, existe um $u_{1}\in\left\{v_{1},\dotsc,v_{m}\right\}\setminus\left\{0\right\}$ tal que $u_{2}\notin\left\langle u_{1}\right\rangle$.
+	Daí $\left\{u_{1},u_{2}\right\}$ é LI.
+	Se $\left\langle u_{1},u_{2}\right\rangle=V$, acabou, pois
+	$\left\{u_{1},u_{2}\right\}$ será uma base.
+	Esse processo para em uma quantidade finita de passos, obtendo
+	$\left\{u_{1},\dotsc,u_{\ell}\right\}$ subconjunto de
+	$\left\{v_{1},\dotsc,v_{m}\right\}$ que é uma base de $V$.
+	Sejam $\left\{u_{1},\dotsc,u_{\ell}\right\}$ e $\left\{w_{1},\dotsc,w_{k}\right\}$ duas base de $V$.
+	Como $\left\langle u_{1},\dotsc,u_{\ell}\right\rangle=V$, pelo teorema 4, $k\leq l$.
+	Usando o mesmo raciocínio, chegamos a $\ell\leq k$.
+	Por tanto, $\ell=k$ e o resultado segue.
+\end{proof}
+
+\begin{definition}
+	Seja $V$ um espaço vetorial finitamente gerado.
+	Chamaremos de dimensão de $V$ à quantidade de elementos de uma base de $V$. Notação: $\dim\left(V\right)$.
+\end{definition}
+
+\begin{example}
+	\begin{itemize}\leavevmode
+		\item
+
+		      Note que $\mathbb{C}=\left\{a+bi\mid a,b\in\mathbb{R}\right\}$ pode ser olhado como um espaço vetorial sobre $\mathbb{C}$ e sobre $\mathbb{R}$.
+		      Sobre $\mathbb{C}$, $\mathbb{C}$ tem dimensão $1$, pois $\left\{1\right\}$ é base.
+		      Já sobre $\mathbb{R}$, $\mathbb{C}$ tem dimensão $2$, pois $\left\{1,i\right\}$ é base.
+
+		\item
+
+		      $\mathbb{R}$ sobre $\mathbb{Q}$ não tem dimensão finita.
+	\end{itemize}
+\end{example}
+
+\begin{proposition}
+	Seja $V$ um espaço vetorial de dimensão $n$.
+	Então
+	\begin{enumerate}
+		\item Qualquer subconjunto de $V$ que contém mais do que $n$ elementos é LD;
+		\item Qualquer subconjunto de $V$ com menos do que $n$ elementos não gera $V$;
+		\item Se $W$ é um subespaço própio de $V$, então $\dim\left(W\right)<\dim\left(V\right)$;
+		\item Cada subconjunto LI de V pode ser completado para uma base de $V$;
+		\item Se $U$ e $W$ são subespaços de $V$, então $\dim U+\dim W=\dim\left(U\cap W\right)+\dim\left(U+W\right)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Exercício!
+\end{proof}
+
+\begin{proposition}
+	Se as linhas de uma matriz $A={\left(a_{ij}\right)}_{m\times n}$
+	formam um subconjunto LI de $\mathbb{F}^{m}$, então $A$ é invertível.
+\end{proposition}
+
+\begin{proof}
+	Como $\dim_{\mathbb{F}}\left(\mathbb{F}^{m}\right)$.
+	Logo existem matrizes elementares $E_{1},\dotsc,E_{n}$ tais que
+	\begin{align*}
+		\underbrace{E_{1}\dotsb E_{n}}_{A^{-1}}A
+		 & =I_{m}
+	\end{align*}
+
 \end{proof}

@@ -108,8 +108,9 @@
 
 	\question\label{exercício:2.4}
 
-	Sejam $V$ um espaço vetorial sobre um corpo $F$ e $U$ e $W$
-	subespaços de $V$ tais que $U+W=V$ e $U \cap W=\left\{0\right\}$.
+	Sejam $V$ um espaço vetorial sobre um corpo $\mathbb{F}$ e $U$ e
+	$W$ subespaços de $V$ tais que $U+W=V$ e
+	$U\cap W=\left\{0\right\}$.
 	Mostre que cada vetor $v\in V$ é escrito de maneira única como
 	$v=u+w$, onde $u\in U$ e $w\in W$.
 
@@ -198,10 +199,10 @@
 
 		\[
 			T\left(x+yi\right)=
-			\begin{bmatrix*}
-				x+7y & 5y \\
+			\begin{bNiceMatrix}
+				x+7y & 5y   \\
 				-10y & x-7y
-			\end{bmatrix*}.
+			\end{bNiceMatrix}.
 		\]
 
 		Moste que $T$ é uma transformação linear.
@@ -455,18 +456,18 @@
 	transformações lineares tais que
 	\[
 		{\left[T\right]}_{\beta}^{\alpha}=
-		\begin{bmatrix*}
-			1 & 2 & -1 \\
-			1 & 0 & -1 \\
+		\begin{bNiceMatrix}
+			1 & 2  & -1 \\
+			1 & 0  & -1 \\
 			0 & -1 & 0
-		\end{bmatrix*}\quad
+		\end{bNiceMatrix}\quad
 		\text { e }\quad
 		{\left[G\right]}_{\alpha}^{\beta}=
-		\begin{bmatrix*}
-			1 & 1 & 2 \\
-			1 & -1 & 0 \\
-			-1 & 1 & 2
-		\end{bmatrix*}
+		\begin{bNiceMatrix}
+			1  & 1  & 2 \\
+			1  & -1 & 0 \\
+			-1 & 1  & 2
+		\end{bNiceMatrix}
 	\]
 	onde
 	\begin{math}
@@ -506,15 +507,15 @@
 	a transformação linear definida por
 	\[
 		T
-		\begin{bmatrix*}
+		\begin{bNiceMatrix}
 			x & y \\
 			z & w
-		\end{bmatrix*}
+		\end{bNiceMatrix}
 		=
-		\begin{bmatrix*}
-			0 & x \\
+		\begin{bNiceMatrix}
+			0   & x \\
 			z-w & 0
-		\end{bmatrix*}.
+		\end{bNiceMatrix}.
 	\]
 
 	\begin{parts}
@@ -528,22 +529,22 @@
 		\[
 			\alpha=
 			\left\{
-			\begin{bmatrix*}
+			\begin{bNiceMatrix}
 				1 & 0 \\
 				0 & 1
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				0 & 1 \\
 				1 & 0
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				1 & 0 \\
 				1 & 1
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				0 & 1 \\
 				0 & 1
-			\end{bmatrix*}
+			\end{bNiceMatrix}
 			\right\};
 		\]
 
@@ -578,17 +579,22 @@
 	a transformação linear definida por
 	\[
 		T
-		\begin{bmatrix*}
+		\begin{bNiceMatrix}
 			x & y \\
 			z & w
-		\end{bmatrix*}
+		\end{bNiceMatrix}
 		=
-		\begin{bmatrix*}
-			\overline{0} & x \\
+		\NiceMatrixOptions{
+			cell-space-top-limit = 3pt
+		}
+		\begin{bNiceMatrix}
+			\overline{0}    & x            \\
 			z+\overline{6}w & \overline{0}
-		\end{bmatrix*}.
+		\end{bNiceMatrix}.
 	\]
-
+	\NiceMatrixOptions{
+		cell-space-top-limit = 0pt
+	}
 	\begin{parts}
 		\part\label{exercício:2.18a}
 
@@ -598,27 +604,33 @@
 
 		Determine a matriz de $T$ com relação à base
 
-		$$
+		\NiceMatrixOptions{
+			cell-space-top-limit = 3pt
+		}
+		\[
 			\alpha=\left\{
-			\begin{bmatrix*}
+			\begin{bNiceMatrix}
 				\overline{1} & \overline{0} \\
 				\overline{0} & \overline{1}
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				\overline{0} & \overline{1} \\
 				\overline{1} & \overline{0}
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				\overline{1} & \overline{0} \\
 				\overline{1} & \overline{1}
-			\end{bmatrix*},
-			\begin{bmatrix*}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
 				\overline{0} & \overline{1} \\
 				\overline{0} & \overline{1}
-			\end{bmatrix*}.
+			\end{bNiceMatrix}.
 			\right\}
-		$$
+		\]
 
+		\NiceMatrixOptions{
+			cell-space-top-limit = 0pt
+		}
 		\part\label{exercício:2.18c}
 
 		Exiba a matriz $M$ tal que ${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
@@ -635,46 +647,67 @@
 		\left(\mathbb{Z}/7\mathbb{Z}\right)
 	\end{math}
 	a transformação linear definida por
-	$$
+	\[
 		T
-		x y \\
-		z w
+		\begin{bNiceMatrix}
+			x & y \\
+			z & w
+		\end{bNiceMatrix}
 		=
-		\overline{0}  x \\
-		z+\overline{6} w \overline{0}
-	$$
+		\NiceMatrixOptions{
+			cell-space-top-limit = 3pt
+		}
+		\begin{bNiceMatrix}
+			\overline{0}    & x            \\
+			z+\overline{6}w & \overline{0}
+		\end{bNiceMatrix}.
+	\]
+
+	\NiceMatrixOptions{
+		cell-space-top-limit = 0pt
+	}
 
 	\begin{parts}
-		\begin{multicols}{3}
-			\part\label{exercício:2.19a}
+		\part\label{exercício:2.19a}
 
-			Determine a matriz $\left[T\right]$ de $T$ com relação à base
-			canônica $e$;
+		Determine a matriz $\left[T\right]$ de $T$ com relação à base
+		canônica $e$;
 
-			\part\label{exercício:2.19b}
+		\part\label{exercício:2.19b}
 
-			Determine a matriz de $T$ com relação à base
-			$$
-				\alpha=
-				\left\{
-				\overline{1} \overline{0} \\
-				\overline{0} \overline{1}
-				,
-				\overline{0} \overline{1} \\
-				\overline{1} \overline{0}
-				,
-				\overline{1} \overline{0} \\
-				\overline{1} \overline{1}
-				\overline{0} \overline{1} \\
-				\overline{0} \overline{1}
-				\right\}
-			$$
+		Determine a matriz de $T$ com relação à base
+		\NiceMatrixOptions{
+			cell-space-top-limit = 3pt
+		}
+		\[
+			\alpha=
+			\left\{
+			\begin{bNiceMatrix}
+				\overline{1} & \overline{0} \\
+				\overline{0} & \overline{1}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
+				\overline{0} & \overline{1} \\
+				\overline{1} & \overline{0}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
+				\overline{1} & \overline{0} \\
+				\overline{1} & \overline{1}
+			\end{bNiceMatrix},
+			\begin{bNiceMatrix}
+				\overline{0} & \overline{1} \\
+				\overline{0} & \overline{1}
+			\end{bNiceMatrix}
+			\right\}
+		\]
+		\NiceMatrixOptions{
+			cell-space-top-limit = 0pt
+		}
 
-			\part\label{exercício:2.19c}
+		\part\label{exercício:2.19c}
 
-			Exiba a matriz $M$ tal que
-			${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
-		\end{multicols}
+		Exiba a matriz $M$ tal que
+		${\left[T\right]}_{\beta}=M^{-1}\left[T\right]M$.
 	\end{parts}
 
 	\begin{solutionordottedlines}
@@ -694,34 +727,34 @@
 
 	Seja $T\colon\mathbb{Q}^{3}\to\mathbb{Q}^{3}$ uma transformação linear
 	cuja matriz com relação à base canônica seja
-	$$
-		1 1 0 \\
-		-1 0 1 \\
-		0 -1 -1
-	$$
+	\[
+		\begin{bNiceMatrix}
+			1  & 1  & 0  \\
+			-1 & 0  & 1  \\
+			0  & -1 & -1
+		\end{bNiceMatrix}.
+	\]
 
 	\begin{parts}
-		\begin{multicols}{3}
-			\part\label{exercício:2.20a}
+		\part\label{exercício:2.20a}
 
-			Determine $T\left(x,y,z\right)$;
+		Determine $T\left(x,y,z\right)$;
 
-			\part\label{exercício:2.20b}
+		\part\label{exercício:2.20b}
 
-			Qual é a matriz do operador linear $T$ com relação à base
-			\begin{math}
-				\alpha=
-				\left\{
-				\left(-1,1,0\right),
-				\left(1,-1,1\right),
-				\left(0,1,-1\right)
-				\right\}
-			\end{math}?
+		Qual é a matriz do operador linear $T$ com relação à base
+		\begin{math}
+			\alpha=
+			\left\{
+			\left(-1,1,0\right),
+			\left(1,-1,1\right),
+			\left(0,1,-1\right)
+			\right\}
+		\end{math}?
 
-			\part\label{exercício:2.20c}
+		\part\label{exercício:2.20c}
 
-			O operador $T$ é invertível? Justifique!
-		\end{multicols}
+		O operador $T$ é invertível? Justifique!
 	\end{parts}
 
 
