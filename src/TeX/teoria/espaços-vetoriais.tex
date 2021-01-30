@@ -1,7 +1,8 @@
 \chapter{Espaços vetoriais\quad$\left(12/01/2021\right)$}
 
 \begin{definition}
-	Um conjunto não vazio $V$ é chamado de espaço vetorial sobre um corpo $\mathbb{F}$ se em $V$ estão definidas duas operações
+	Um conjunto não vazio $V$ é chamado de espaço vetorial sobre um
+	corpo $\mathbb{F}$ se em $V$ estão definidas duas operações
 
 	\[
 		\begin{aligned}
@@ -134,7 +135,8 @@
 
 		\item
 
-		      Se $\mathbb{K}$ é um subcorpo de $\mathbb{F}$, então $\mathbb{F}$ é um espaço vetorial sobre $\mathbb{K}$.
+		      Se $\mathbb{K}$ é um subcorpo de $\mathbb{F}$, então
+		      $\mathbb{F}$ é um espaço vetorial sobre $\mathbb{K}$.
 
 		\item
 		      O conjunto
@@ -219,7 +221,8 @@
 
 		      \item
 
-		            $w_{1}+cw_{2}\in W$, $\forall c\in\mathbb{F}$ e $\forall w_{1},w_{2}\in W$.
+		            $w_{1}+cw_{2}\in W$, $\forall c\in\mathbb{F}$ e
+		            $\forall w_{1},w_{2}\in W$.
 	      \end{enumerate}
 \end{itemize}
 
@@ -231,7 +234,9 @@
 
 		\item
 
-		      Seja $A={\left(a_{ij}\right)}_{m\times n}$ uma matriz sobre um corpo $\mathbb{F}$. Então o conjunto solução do sistema homogêneo
+		      Seja $A={\left(a_{ij}\right)}_{m\times n}$ uma matriz sobre
+		      um corpo $\mathbb{F}$.
+		      Então o conjunto solução do sistema homogêneo
 		      \[
 			      A
 				      {X}_{n\times1}=
@@ -241,7 +246,8 @@
 
 		      \begin{proof}
 			      Seja $W$ o conjunto solução de $AX=0$.
-			      Note que $W$ é não vazio, pois $\left(0,\dotsc,0\right)\in W$.
+			      Note que $W$ é não vazio, pois
+			      $\left(0,\dotsc,0\right)\in W$.
 			      Sejam $X_{0}$, $X_{1}$ duas soluções de $AX=0$.
 			      Assim
 			      \begin{align*}
@@ -263,7 +269,11 @@
 			      \mid a_{11}=0
 			      \right\}
 		      \end{math}
-		      é um subespaço vetorial de $\mathbb{F}^{3\times2}=\mathcal{M}_{3\times2}\left(\mathbb{F}\right)$;
+		      é um subespaço vetorial de
+		      \begin{math}
+			      \mathbb{F}^{3\times2}=
+			      \mathcal{M}_{3\times2}\left(\mathbb{F}\right)
+		      \end{math};
 
 		\item
 
@@ -299,149 +309,258 @@
 	$}
 
 \begin{proposition}
-	Sejam $V$ um espaço vetorial e
+	Sejam $V$ um espaço vetorial e ${\left\{W_{i}\right\}}_{i\in I}$
+	uma família de subespaços vetorialis de $V$, onde $I$ é um conjunto
+	de índices.
+	Então são subespaços de $V$:
+	\begin{enumerate}
+		\item
+
+		      \begin{math}
+			      \cap_{i\in I}W_{i}
+		      \end{math};
+
+		\item
+
+		      \begin{math}
+			      \sum_{i\in I}W_{i}=
+			      \left\{
+			      w_{i_{1}}+w_{i_{2}}+\dotsb+w_{i_{n}}
+			      \mid w_{i_{j}}\in W_{i_{j}}
+			      \text{ e }
+			      n\in\mathbb{Z}_{>1}
+			      \right\}
+		      \end{math}.
+	\end{enumerate}
 \end{proposition}
 
-\begin{enumerate}
-	\item
-
-	      \begin{math}
-		      \cap_{i\in I}w_{i}
-	      \end{math};
-
-	\item
-
-	      \begin{math}
-		      \sum_{i\in 1}w_{i}=
-		      \left\{
-		      w_{i}+a_{i}+\dotsb+w_{i_{n}}
-		      \mid w_{i}\in W_{j}\in
-		      n\in\mathbb{Z}_{>1}
-		      \right\}
-	      \end{math};
-
-\end{enumerate}
-
-% x+c v &=
-% \left(u_{i_{1}}+\dotsb+u_{i_{e}}\right)+
-% c\left(v_{j_{1}}+\dotsb+v_{j k}\right)=\\
-% &=
-% u_{i_{2}}+\dotsb+u_{i_{e}}+c v_{j_{2}}+\dotsb+c_{v_{k}} \in \sum_{i\in\tau}
-% w_{i}
-
-% \bigcap_{i\in 2}w_{i}\subseteq U_{i\in I}w_{i}\subseteq\sum_{i\in Z}w_{i}
-
-% \left(x,y,z\right)=
-% x\left(1,0,0\right)+
-% y\left(0,1,0\right)+
-% z\left(0,0,1\right)
-
-% \left(x,y,z\right)=
-% -xi\left(i,1,0\right)+
-% \left(y+xi-z\right)
-% \left(0,1,0\right)-
-% zi\left(0,i,i\right)
-
-% W=
-% \left\{
-% c_{2}v_{2}+\dotsb+c_{n}v_{n}
-% \mid v_{i}\in S_{\varepsilon}c_{i}\in\mathbb{F}
-% \right\}
-
-% \begin{aligned}
-% 	u+cv & =
-% 	\left(
-% 	c_{2}u_{2}+
-% 	\dotsb+
-% 	c_{n}u_{n}
-% 	\right)+
-% 	c\left(k_{1}v_{2}+\dotsb+k_{m}v_{m}\right)= \\
-% 	     & =
-% 	c_{1}u_{2}+
-% 	\dotsb+
-% 	c_{n}u_{n}+
-% 	\left(ck_{1}\right)v_{2}+
-% 	\dotsb+
-% 	\left(ck_{m}\right)v_{m}
-% 	\in W.
-% \end{aligned}
-
-% \left\langle S\right\rangle=
-% \bigcap_{S\leq w}w
-
-% \left\langle S\right\rangle=
-% \left\{
-% c_{2}v_{2}+
-% \dotsb+
-% c_{n}v_{n}
-% \mid v_{i}\in
-% S_{\varepsilon}c_{2}\in
-% \mathbb{F}\right\}=
-% W
-
-% W=
-% c_{2}v_{2}+
-% \dotsb+
-% c_{n}v_{n}\in
-% \cap u
-
-% \mathbb{C}^{3}=
-% \left\langle
-% \left(i,1,0\right),
-% \left(0,1,0\right),
-% \left(0,i,i\right)
-% \right\rangle
-
-% x+y+z=0                                        \\
-% 2x+y+2z=0                                      \\
-% \mathbb{L}<z\to\alpha_{2}-2\alpha_{L} \\
-% x+y+z=0\to x=-z                         \\
-% -y=0\to y=0
-
-% DS Szs7rum DADO. No7k aun
-% \[
-% 	W=
-% 	\left\{
-% 	z\left(-1,0,1\right)\mid
-% 	z\in\mathbb{R}
-% 	\right\}= \\
-% 	=\left\langle\left(-1,0,1\right)\right\rangle
-% \]
-
-% \[
-% 	W=
-% 	\left\{
-% 	\left(z+y,y,z\right)\mid
-% 	z,y\in\mathbb{R}
-% 	\right\}=       \\
-% 	=\left\{
-% 	y\left(1,1,0\right)+
-% 	z\left(1,0,1\right)\mid
-% 	y,z\in\mathbb{R}\right\}= \\
-% 	=
-% 	\left\langle
-% 	\left(1,1,0\right),
-% 	\left(1,0,1\right)
-% 	\right\rangle
-% \]
-
-% \[
-% 	x+y+z=1 \\
-% 	2 x+y+2 z=2
-% 	\quad \implies
-% 	x+y+z =1 \to x=1-z \\
-% 	-y    =0 \to y=0
-% \]
+\begin{proof}
+	\begin{enumerate}\leavevmode
+		\item Note que $\cap_{i\in I}W_{i}$ é não vazia, pois $0\in W_{i}$,
+		      $\forall i\in I$.
+		      Se $u,v\in\cap_{i\in I}W_{i}$ e $c\in\mathbb{F}$, então
+		      \[
+			      u+cv\in W_{i}
+			      \text{ para todo }
+			      i\in I
+		      \]
+		      pois $W_{i}$ é subespaço, daí $u+cv\in\cap_{i\in I}W_{i}$ e o
+		      resultado segue.
+		\item Note que $\sum_{i\in I}W_{i}$ é não vazia pois $0\in\sum_{i\in I}W_{i}$.
+		      Tome $u,v\in\sum_{i\in I}W_{i}$ e $c\in\mathbb{F}$.
+		      Assim
+		      \begin{align*}
+			      u+cv & =
+			      \left(u_{i_{1}}+\dotsb+u_{i_{\ell}}\right)+
+			      c\left(v_{j_{1}}+\dotsb+v_{j_{k}}\right)= \\
+			           & =
+			      u_{i_{1}}+\dotsb+u_{i_{\ell}}+cv_{j_{1}}+\dotsb+c_{v_{k}}\in\sum_{i\in I}W_{i}.
+		      \end{align*}
+	\end{enumerate}
+\end{proof}
 
 
-% $S=
-% 	\left\{
-% 	\left(1-z,0,z\right)\mid
-% 	z\in\mathbb{R}
-% 	\right\}=
-% 	\left\{
-% 	\left(1,0,0\right)+
-% 	z\left(-1,0,1\right)\mid
-% 	z\in\mathbb{R}
-% 	\right\}
-% $
+\begin{remark}
+	Nem sempre a união de subespaços é um subespaço, mas
+	\begin{math}
+		\bigcap_{i\in I}W_{i}\subseteq
+		\cup_{i\in I}W_{i}\subseteq
+		\sum_{i\in I}W_{i}
+	\end{math}.
+\end{remark}
+
+\begin{definition}
+	Sejam $V$ um espaço vetorial e $v_{1},\dotsc,v_{n}$ vetores de $V$.
+	Dizemos que um vetor $v\in V$ é uma combinação linear dos vetores
+	$v_{1},\dotsc,v_{n}$ se existem escalares
+	$c_{1},\dotsc,c_{n}\in\mathbb{F}$ tais que
+	\[ v=c_{1}v_{1}+\dotsb+c_{n}v_{n}. \]
+\end{definition}
+
+\begin{example}
+	\begin{enumerate}\leavevmode
+		\item Todo vetor de $\mathbb{R}^{3}$ é uma combinação linear dos
+		      vetores $\left(1,0,0\right)$, $\left(0,1,0\right)$, $\left(0,0,1\right)$.
+		      De fato,
+		      \[
+			      \left(x,y,z\right)=
+			      x\left(1,0,0\right)+
+			      y\left(0,1,0\right)+
+			      z\left(0,0,1\right);
+		      \]
+		\item Todo vetor de $\mathbb{C}^{3}$ é uma combinação linear
+		      dos vetores $\left(i,1,0\right)$, $\left(0,1,0\right)$, $\left(0,i,i\right)$.
+		      De fato,
+		      \[
+			      \left(x,y,z\right)=
+			      -xi\left(i,1,0\right)+
+			      \left(y+xi-z\right)\left(0,1,0\right)-
+			      zi\left(0,i,i\right).
+		      \]
+	\end{enumerate}
+\end{example}
+
+\begin{proposition}
+Se $S$ é um subconjunto não vazio de um espaço vetorial $V$, então
+o conjunto
+\[
+	W=
+	\left\{
+	c_{1}v_{1}+\dotsb+c_{n}v_{n}
+	\mid v_{i}\in S
+	\text{ e }
+	c_{i}\in\mathbb{F}
+	\right\}
+\]
+é um subespaço vetorial de $V$.
+\end{proposition}
+
+\begin{proof}
+	Note que $W$ é não vazio, pois $S\subseteq W$.
+	Sejam $u,v\in W$ e $c\in\mathbb{F}$.
+	Então
+	\begin{align*}
+		u+cv
+		 & =
+		\left(
+		c_{1}u_{1}+
+		\dotsb+
+		c_{n}u_{n}
+		\right)+
+		c\left(k_{1}v_{1}+\dotsb+k_{m}v_{m}\right)= \\
+		 & =
+		c_{1}u_{1}+
+		\dotsb+
+		c_{n}u_{n}+
+		\left(ck_{1}\right)v_{1}+
+		\dotsb+
+		\left(ck_{m}\right)v_{m}
+		\in W.
+	\end{align*}
+\end{proof}
+
+\begin{definition}
+	Dado $S$ um subconjunto de um espaço vetorial $V$, chamaremos ao subespaço
+	\[
+		\left\langle S\right\rangle=
+		\bigcap_{S\subseteq W}W,\quad
+		\fbox{onde $W$ é subespaço de $V$}
+	\]
+	de subespaço de $V$ gerado por $S$.
+	(Assum $	\left\langle \emptyset\right\rangle=\left\{0\right\}$.)
+\end{definition}
+
+\begin{proposition}
+	Se $S$ é um subconjunto não vazio de $V$, então
+	\[
+		\left\langle S\right\rangle=
+		\left\{
+		c_{1}v_{1}+
+		\dotsb+
+		c_{n}v_{n}
+		\mid v_{i}\in S
+		\text{ e }
+		c_{i}\in
+		\mathbb{F}
+		\right\}=
+		W
+	\]
+\end{proposition}
+
+\begin{proof}
+	Pela proposição 9, $W$ é um subespaço de $V$ que contém $S$, logo $\left\langle S\right\rangle\subseteq W$ por definição.
+	Tome $w\in W$. Então existem vetores $v_{1},\dotsc,v_{n}$ em $S$ e escalares $c_{1},\dotsc,c_{n}\in\mathbb{F}$ tais que
+	\[
+		W=
+		\underbrace{c_{1}v_{1}}_{\in\cap_{S\subseteq U} U}+
+		\dotsb+
+		\underbrace{c_{n}v_{n}}_{\in\cap_{S\subseteq U} U}\in
+		\cap_{S\subseteq U}U,
+	\]
+	onde a interseção é tomada em todos os subespaços $U$ de $V$ que contém $S$.
+	Daí $W\subseteq\left\langle S\right\rangle$.
+\end{proof}
+
+\begin{example}
+	\begin{enumerate}\leavevmode
+		\item Pelo exemplo 8-b, temos que
+		      \[
+			      \mathbb{C}^{3}=
+			      \left\langle
+			      \left(i,1,0\right),
+			      \left(0,1,0\right),
+			      \left(0,i,i\right)
+			      \right\rangle;
+		      \]
+		\item Considere o sistema linear
+		      \[
+			      \csysteme[xyz]{
+				      x+y+z=0,
+				      2x+y+2z=0
+			      }%L_{2}\to L_{2}-2L_{1}
+			      \csysteme[xyz]{
+				      x+y+z=0,
+				      -y=0
+			      }%\implies x=-z \implies y=0
+		      \]
+		      Daí
+		      \begin{math}
+			      W=
+			      \left\{
+			      z\left(-1,0,1\right)\mid
+			      z\in\mathbb{R}
+			      \right\}
+		      \end{math}
+		      é solução do sistema dado.
+		      Note que
+		      \begin{align*}
+			      W
+			       & =\left\{z\left(-1,0,1\right)\mid z\in\mathbb{R}\right\}
+			       & =\left\langle\left(-1,0,1\right)\right\rangle.
+		      \end{align*}
+
+
+		      \begin{align*}
+			      W
+			       & =
+			      \left\{
+			      \left(z+y,y,z\right)\mid
+			      z,y\in\mathbb{R}
+			      \right\}                 \\
+			       & =
+			      \left\{
+			      y\left(1,1,0\right)+
+			      z\left(1,0,1\right)\mid
+			      y,z\in\mathbb{R}\right\} \\
+			       & =
+			      \left\langle
+			      \left(1,1,0\right),
+			      \left(1,0,1\right)
+			      \right\rangle
+		      \end{align*}
+	\end{enumerate}
+\end{example}
+
+\[
+	\csysteme[xyz]{
+		x+y+z=1,
+		2x+y+2z=2
+	}
+	\implies
+	\csysteme[xyz]{
+		x+y+z=1,
+		-y=0
+	}% 	 \implies x=1-z \implies y=0
+\]
+
+$S=
+	\left\{
+	\left(1-z,0,z\right)\mid
+	z\in\mathbb{R}
+	\right\}=
+	\left\{
+	\left(1,0,0\right)+
+	z\left(-1,0,1\right)\mid
+	z\in\mathbb{R}
+	\right\}
+$

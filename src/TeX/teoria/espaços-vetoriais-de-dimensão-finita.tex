@@ -1,8 +1,169 @@
 \chapter{Espaços vetoriais de dimensão finita\quad$\left(13/01/2021\right)$}
 
 \begin{definition}
-  Seja $V$ um espaço vetorial sobre um corpo $\mathbb{F}$.
-  Um subconjunto $S$ de $V$ é chamado linearmente dependente (LD)
-  se existem $n$ vetores distintos $v_{1},\dotc,v_{n}\in S$ e
-  escalares $c_{1},\dotsc,c_{n}\in\mathbb{F}$, não todos nulos.
+	Seja $V$ um espaço vetorial sobre um corpo $\mathbb{F}$.
+	Um subconjunto $S$ de $V$ é chamado linearmente dependente (LD)
+	se existem $n$ vetores distintos $v_{1},\dotsc,v_{n}\in S$ e
+	escalares $c_{1},\dotsc,c_{n}\in\mathbb{F}$, não todos nulos
+	$\left(\left(c_{1},\dotsc,c_{n}\right)\in\mathbb{F}^{n}\setminus\left\{\left(0,\dotsc,0\right)\right\}\right)$,
+	tais que
+	\[
+		c_{1}1v_{1}+\cdots+c_{n}v_{n}=
+		0.
+	\]
+	Caso contrário, $S$ é chamado de linearmente independiente (LI),
+	ou seja, se $v_{1},\dotsc,v_{n}\in S$ são vetores distintos de $S$
+	tais que
+	\[
+		c_{1}1v_{1}+\cdots+c_{n}v_{n}=
+		0,
+	\]
+	então $c_{1}=\cdots=c_{n}=0$.
 \end{definition}
+
+\begin{definition}
+	Dado um espaço vetorial $V$ sobre um corpo $\mathbb{F}$, dizemos
+	que um subconjunto $S$ é uma base de $V$ se
+	\begin{enumerate}
+		\item
+
+		      \begin{math}
+			      \left\langle S\right\rangle=
+			      V
+		      \end{math};
+
+		\item
+
+		      $S$ é LI.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	\begin{enumerate}\leavevmode
+		\item
+
+		      Considere o espaço vetorial $\mathcal{C}^{3}$ sobre
+		      $\mathcal{C}$.
+		      Note que o conjunto
+		      \[
+			      \left\{
+			      \left(i,1,0\right),
+			      \left(0,1,0\right),
+			      \left(0,i,i\right),
+			      \left(0,3,2\right)
+			      \right\}
+		      \]
+		      é LD, pois
+		      \[
+			      \left(0,0,0\right)=
+			      0\cdot\left(i,1,0\right)+
+			      1\cdot\left(0,1,0\right)+
+			      \left(-2i\right)\cdot\left(0,i,i\right)+
+			      \left(-1\right)\cdot\left(0,3,2\right)
+		      \]
+		      mas
+		      \[
+			      \left\langle
+			      \left(i,1,0\right),
+			      \left(0,1,0\right),
+			      \left(0,i,i\right),
+			      \left(0,3,2\right)
+			      \right\rangle=
+			      \mathbb{C}^{3};
+		      \]
+		\item
+
+		      Já
+		      \begin{math}
+			      \left\{
+			      \left(i,1,0\right),
+			      \left(0,1,0\right),
+			      \left(0,i,i\right)
+			      \right\}
+		      \end{math}
+		      é uma base de $\mathbb{C}^{3}$, pois
+		      \[
+			      x\left(i,1,0\right)+
+			      y\left(0,1,0\right)+
+			      z\left(0,i,i\right)=
+			      \left(0,0,0\right)
+			      \implies
+			      \csysteme[xyz]{
+				      ix=0,
+				      x+y+iz=0,
+				      iz=0
+			      }
+			      \implies x=y=z=0.
+		      \]
+		      logo é LI e gera $\mathbb{C}^{3}$
+		\item
+		      \begin{math}
+			      e=
+			      \left\{
+			      \underbrace{\left(1,0,\dotsc,0\right)}_{n},
+			      \underbrace{\left(0,1,\dotsc,0\right)}_{n},
+			      \underbrace{\left(0,0,\dotsc,1\right)}_{n}
+			      \right\}
+		      \end{math}
+		      é uma base para $\mathbb{F}^{n}$, chamada canônica.
+	\end{enumerate}
+\end{example}
+
+\begin{theorem}
+	Seja $V$ um espaço vetorial e $v_{1},\dotsc,v_{m}$ vetores de $V$
+	com mais do que $m$ elementos é LD.
+\end{theorem}
+
+\begin{proof}
+	Sejam $u_{1},u_{2},\dotsc,u_{n}\in V$ com $n>m$.
+	Escreva
+	\[
+		\begin{NiceMatrix}
+			u_{1} & =a_{11}v_{1}+\cdots+a_{m1}v_{m}  \\
+			u_{2} & =a_{12}v_{2}+\cdots+a_{m2}v_{m}  \\
+			      & =\vdots                          \\
+			u_{n} & =a_{1n}v_{1}+\cdots+a_{mn} v_{m}
+		\end{NiceMatrix}
+	\]
+	Afirmação: existem escalares $x_{1}\dotsc,x_{n}\in\mathbb{F}$,
+	não todos nulos, tais que
+	\[
+		x_{1}u_{1}+
+		\cdots+
+		x_{n}u_{n}=0.
+	\]
+	De fato,
+	\begin{gather}
+		first equation\\
+		\begin{split}
+			second & equation\\
+			& on two lines
+		\end{split}
+		\\
+		third equation
+	\end{gather}
+	% \[
+	% 	x_{1}u_{1}+\cdots+x_{n}u_{n}
+	% 	&=x_{1}\left(a_{11}v_{1}+\cdots+a_{m1}v_{m}\right)+
+	% 	\cdots \\
+	% 	&\phantom{=}\cdots+x_{n}\left(a_{1n}v_{1}+\cdots+a_{mn}v_{m}\right)
+	% 	=\left(
+	% 	\underbrace{
+	% 		a_{11}x_{1}+\cdots+a_{1n}x_{n}
+	% 	}_{\in\mathbb{F}}\right)v_{1}+
+	% 	\cdots+
+	% 	\left(
+	% 	\underbrace{
+	% 		a_{m1}x_{1}+\cdots+a_{mn}x_{n}
+	% 	}_{\in\mathbb{F}}
+	% 	\right)v_{m}.
+	% \]
+	Para que $x_{1}u_{1}+\cdots+x_{n}u_{n}=0$ basta que o sistema linear homogêneo
+	% \[
+	% 	\csysteme[xyz]{
+	% 	a_{n}x_{1}+\cdots+a_{1n}x_{n}=0,
+	% 	%\vdots=\vdots,
+	% 	a_{m1}x_{1}+\cdots+a_{mn}x_{n}=0
+	% 	}
+	% \]
+\end{proof}
