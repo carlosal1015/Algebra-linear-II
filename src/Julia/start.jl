@@ -25,3 +25,6 @@ include("docs.jl")
 include("galois.jl")
 include("latex.jl")
 include("plots.jl")
+
+#https://www.reddit.com/r/Julia/comments/2yoahp/saving_timings_using_time/
+#@elapsed using MyPackage

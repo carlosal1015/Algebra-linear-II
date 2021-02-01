@@ -2,7 +2,7 @@
 
 using InteractiveUtils
 
-versioninfo()
+versioninfo(verbose = true)
 Sys.CPU_THREADS
 Sys.cpu_summary()
 Sys.cpu_info()

@@ -1,0 +1,36 @@
+% arara: lualatex: { shell: yes }
+% arara: pythontex: {
+% arara: --> jobs: 4,
+% arara: --> verbose: yes
+% arara: --> }
+% arara: lualatex: { shell: yes }
+\documentclass{article}
+
+
+\usepackage{fontspec}
+\usepackage[usefamily={jl,julia,juliacon}]{pythontex}
+\newcommand\jltex[1]{\jl{tex(#1)}}
+\begin{document}
+
+\begin{juliacode}
+	using Pkg;
+	Pkg.activate("../Julia");
+	using SymPy, Latexify, LinearAlgebra
+	x = symbols("x")
+	θ = symbols("θ", real = true);
+	p = cos(θ)^2 + sin(θ)^2;
+	I = integrate(exp(x^2), x)
+	M = Sym[3 -2  4 -2; 5  3 -3 -2; 5 -2  2 -2; 5 -2 -3  3];
+	println(latexify(M))
+\end{juliacode}
+
+\jl{println(2)}
+% \[
+% 	\jltex{I}
+% \]
+
+\begin{juliacode}
+	println(1)
+\end{juliacode}
+
+\end{document}

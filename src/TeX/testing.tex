@@ -1,0 +1,40 @@
+% arara: lualatex: { shell: yes }
+%! arara: pythontex: {
+%! arara: --> jobs: 4,
+%! arara: --> verbose: yes
+%! arara: --> }
+% arara: lualatex: { shell: yes }
+\documentclass{article}
+\usepackage{luacode}
+\begin{luacode*}
+julia = require("julia")
+julia.init()
+
+local t = lua.get_functions_table()
+t[#t + 1] = function()
+    local expr = token.scan_string()
+    local str = julia.eval(expr)
+    if str then
+        tex.sprint(str)
+    end
+end
+token.set_lua("directjulia", #t, "global")
+\end{luacode*}
+\begin{document}
+
+\begin{luacode*}
+	julia.run[===[
+	function printout(x)
+		show(stdout, "text/plain", x)
+		println()
+	end
+	X = @elapsed using Plots
+	]===]
+\end{luacode*}
+
+%\edef\value{\directjulia{string(y[1])}}
+\edef\value{\directjulia{string(X)}}
+
+\texttt{\meaning\value}
+
+\end{document}

@@ -1,4 +1,6 @@
-#!/usr/bin/env luajit
+#!/usr/bin/env luahbtex
+
+--luajit
 
 ffi = require("ffi")
 JULIA = ffi.load("julia", true) -- /usr/lib/julia/sys.so
@@ -31,6 +33,8 @@ function printout(x)
 end
 
 printout(Array{0})
+print("A")
+#printout(@time using Plots)
 ]]
 
 JULIA.jl_eval_string(code)

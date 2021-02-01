@@ -12,23 +12,25 @@
 \setmainfont{TeX Gyre Pagella}
 \setsansfont{Latin Modern Sans}
 \setmonofont[Scale=0.8,Ligatures=NoCommon]{Cavalcade Mono}
+\usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage[usefamily={jl,julia,juliacon},gobble=auto]{pythontex}
 \usepackage{luacode}
-
+\usepackage{graphicx}
 \begin{luacode}
 ffi = require("ffi")
 JULIA = ffi.load("julia", true)
 
 ffi.cdef [[
-  void jl_init__threading(void);
+  void jl_init_with_image__threading(const char *julia_bindir,
+                                   const char *image_relative_path);
   int jl_is_initialized(void);
 
   typedef struct _jl_value_t jl_value_t;
   jl_value_t *jl_eval_string(const char*);
   char *jl_string_ptr(jl_value_t *);
 ]]
-JULIA.jl_init__threading()
+JULIA.jl_init_with_image__threading("../Julia/", "IntroLinearAlgebra.so")
 
 julia = julia or {}
 
@@ -46,7 +48,6 @@ end
 \begin{jlcode}
 	using Pkg;
 	Pkg.activate("../Julia");
-	Pkg.instantiate();
 	using SymPy
 	using LinearAlgebra
 
@@ -70,14 +71,14 @@ end
 	POINTS = 0
 	hsin(x) = sin(x,evaluate=false)
 	hcos(x) = cos(x,evaluate=false)
-	#  htan(x) = tan(x,evaluate=false)
-	#  hsec(x) = sec(x,evaluate=false)
-	#  hcsc(x) = csc(x,evaluate=false)
-	#  hcot(x) = cot(x,evaluate=false)
-	#  hexp(x) = exp(x,evaluate=false)
-	#  hpow(x...) = sympy.Pow(x...,evaluate=false)
-	#  hmul(x...) = sympy.Mul(x...,evaluate=false)
-	#  hadd(x...) = sympy.Add(x...,evaluate=false)
+	htan(x) = tan(x,evaluate=false)
+	hsec(x) = sec(x,evaluate=false)
+	hcsc(x) = csc(x,evaluate=false)
+	hcot(x) = cot(x,evaluate=false)
+	hexp(x) = exp(x,evaluate=false)
+	hpow(x...) = sympy.Pow(x...,evaluate=false)
+	hmul(x...) = sympy.Mul(x...,evaluate=false)
+	hadd(x...) = sympy.Add(x...,evaluate=false)
 \end{jlcode}
 
 \begin{jlcode}
@@ -90,7 +91,6 @@ end
 \end{jlcode}
 
 \newcommand\jltex[1]{\jl{tex(#1)}}
-
 \begin{document}
 
 A
@@ -104,6 +104,16 @@ A
 	\jltex{A} \jltex{v} = \jltex{A*v}.
 \]
 
+\begin{juliacode}
+	function printout(x)
+	show(stdout, "text/plain", x)
+	println()
+	end
+	import Pkg: activate
+	activate("../Julia");
+	printout(@elapsed using Plots)
+\end{juliacode}
+
 \begin{jlcode}
 	Pkg.activate("../Julia");
 	using Plots
@@ -112,9 +122,22 @@ A
 	savefig("myplot.pdf")
 \end{jlcode}
 
-\begin{center}
+\begin{figure}[ht!]
+	\centering
 	\jl{"\\includegraphics{myplot}"}
-\end{center}
+	\caption{Plots.}
+\end{figure}
+
+\begin{jlcode}
+	I = sympy.Integral(exp(x^2), x)
+	#I = integrate(exp(x^2), x)
+\end{jlcode}
+
+\[
+	\jltex{I}=\jltex{I.doit()}
+\]
+\jl{print(2)}
 
 %\jlverb{apropos("eigenvalue")}
 \end{document}
+%M = Array{0};
